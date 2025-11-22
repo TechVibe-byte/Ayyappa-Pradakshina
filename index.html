@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayyappa Pradakshina</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <img src="images/banner2.png" alt="Ayyappa Swamy Banner" class="banner">
+        <div class="header">
+            <h1>Ayyappa Pradakshina Tracker</h1>
+            <button id="theme-switcher">🌙</button>
+            <div class="language-switcher">
+                <span class="lang-label">English</span>
+                <label class="switch">
+                    <input type="checkbox" id="language-toggle">
+                    <span class="slider round"></span>
+                </label>
+                <span class="lang-label">Telugu</span>
+            </div>
+        </div>
+        <div class="time-tracker">
+            <div>Start Time: <span id="start-time">-</span></div>
+            <div>End Time: <span id="end-time">-</span></div>
+        </div>
+        <div id="progress-container">
+            <div id="progress-bar"></div>
+            <div id="progress-label">0%</div>
+        </div>
+        <div id="steps-container"></div>
+    </div>
+    <div class="history-container">
+        <h2>Completion History</h2>
+        <ul id="history-list"></ul>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

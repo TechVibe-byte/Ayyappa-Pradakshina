@@ -31,6 +31,7 @@ A simple, easy-to-use web application designed to help devotees track their prog
 ├── script.js           # The core JavaScript logic
 ├── README.md           # This file
 ├── images/
+│   ├── banner.jpg      # Banner image
 │   └── banner2.png     # Alternate banner image
 └── audio/
     ├── 1_audio.mp3     # Audio files for each of the 108 names
