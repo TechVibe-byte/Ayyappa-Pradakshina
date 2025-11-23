@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ayyappa Pradakshina</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -11,13 +14,24 @@
         <img src="images/banner2.png" alt="Ayyappa Swamy Banner" class="banner">
         <div class="header">
             <h1>Ayyappa Pradakshina</h1>
-            <button id="theme-switcher" aria-label="Switch between dark and light mode">🌙</button>
+            <div class="uiverse-switch-container">
+              <input class="uiverse-toggle-checkbox" id="theme-toggle" type="checkbox" />
+              <label class="uiverse-switch" for="theme-toggle">
+                <div class="uiverse-toggle">
+                  <div class="uiverse-led"></div>
+                </div>
+              </label>
+            </div>
             <div class="language-switcher">
                 <span class="lang-label">English</span>
-                <label class="switch">
-                    <input type="checkbox" id="language-toggle" aria-label="Switch between English and Telugu language">
-                    <span class="slider round"></span>
-                </label>
+                <div class="uiverse-switch-container">
+                  <input class="uiverse-toggle-checkbox" id="language-toggle" type="checkbox" />
+                  <label class="uiverse-switch" for="language-toggle">
+                    <div class="uiverse-toggle">
+                      <div class="uiverse-led"></div>
+                    </div>
+                  </label>
+                </div>
                 <span class="lang-label">Telugu</span>
             </div>
         </div>
@@ -26,26 +40,31 @@
             <div>End Time: <span id="end-time">-</span></div>
             <div>Streak: <span id="streak-count">0</span> days</div>
         </div>
-        <div id="progress-container">
-            <div id="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
-            <div id="progress-label">0%</div>
-        </div>
-        <div id="steps-container"></div>
+        <div class="dashboard">
+            <main>
+                <div id="progress-container">
+                    <div id="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                    <div id="progress-label">0%</div>
+                </div>
+                <div id="steps-container"></div>
+            </main>
+            <aside>
+                <div id="history-container" class="card">
+                    <h2>Completion History</h2>
+                    <ul id="history-list" role="list"></ul>
+                    <button id="clear-history" aria-label="Clear completion history">Clear History</button>
+                </div>
 
-        <div id="history-container">
-            <h2>Completion History</h2>
-            <ul id="history-list" role="list"></ul>
-            <button id="clear-history" aria-label="Clear completion history">Clear History</button>
-        </div>
+                <div id="badges-container" class="card">
+                    <h2>Badges</h2>
+                    <div id="badges-list"></div>
+                </div>
 
-        <div id="badges-container">
-            <h2>Badges</h2>
-            <div id="badges-list"></div>
-        </div>
-
-        <div id="leaderboard-container">
-            <h2>Leaderboard</h2>
-            <ul id="leaderboard-list"></ul>
+                <div id="leaderboard-container" class="card">
+                    <h2>Leaderboard</h2>
+                    <ul id="leaderboard-list"></ul>
+                </div>
+            </aside>
         </div>
     </div>
     <script src="script.js"></script>

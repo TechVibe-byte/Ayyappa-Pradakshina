@@ -226,7 +226,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const progressLabel = document.getElementById('progress-label');
     const startTimeElement = document.getElementById('start-time');
     const endTimeElement = document.getElementById('end-time');
-    const themeSwitcher = document.getElementById('theme-switcher');
+    const themeToggle = document.getElementById('theme-toggle');
     const languageToggle = document.getElementById('language-toggle');
     const body = document.body;
     const totalSteps = 108;
@@ -254,23 +254,17 @@ document.addEventListener('DOMContentLoaded', () => {
     if (currentTheme) {
         body.classList.add(currentTheme);
         if (currentTheme === 'dark-mode') {
-            themeSwitcher.textContent = '☀️';
-        } else {
-            themeSwitcher.textContent = '🌙';
+            themeToggle.checked = true;
         }
-    } else {
-        themeSwitcher.textContent = '🌙';
     }
 
-    themeSwitcher.addEventListener('click', () => {
-        if (body.classList.contains('dark-mode')) {
-            body.classList.remove('dark-mode');
-            localStorage.setItem('theme', 'light-mode');
-            themeSwitcher.textContent = '🌙';
-        } else {
+    themeToggle.addEventListener('change', () => {
+        if (themeToggle.checked) {
             body.classList.add('dark-mode');
             localStorage.setItem('theme', 'dark-mode');
-            themeSwitcher.textContent = '☀️';
+        } else {
+            body.classList.remove('dark-mode');
+            localStorage.setItem('theme', 'light-mode');
         }
     });
 
@@ -334,10 +328,25 @@ document.addEventListener('DOMContentLoaded', () => {
             const stepElement = document.createElement('div');
             stepElement.classList.add('step');
 
+            const label = document.createElement('label');
+            label.classList.add('ios-checkbox');
+
             const checkbox = document.createElement('input');
             checkbox.type = 'checkbox';
             checkbox.id = `step-${i}`;
             checkbox.addEventListener('change', updateProgress);
+
+            const checkboxWrapper = document.createElement('div');
+            checkboxWrapper.classList.add('checkbox-wrapper');
+            checkboxWrapper.innerHTML = `
+                <div class="checkbox-bg"></div>
+                <svg class="checkbox-icon" viewBox="0 0 24 24" fill="none">
+                    <path class="check-path" d="M4 12L10 18L20 6" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+            `;
+
+            label.appendChild(checkbox);
+            label.appendChild(checkboxWrapper);
 
             const stepNumber = document.createElement('span');
             stepNumber.classList.add('step-number');
@@ -347,7 +356,7 @@ document.addEventListener('DOMContentLoaded', () => {
             title.classList.add('step-title');
             title.textContent = ghosha[i - 1] || `Step ${i}`;
 
-            stepElement.appendChild(checkbox);
+            stepElement.appendChild(label);
             stepElement.appendChild(stepNumber);
             stepElement.appendChild(title);
 
@@ -433,14 +442,20 @@ document.addEventListener('DOMContentLoaded', () => {
         for (const badge of badges) {
             const badgeElement = document.createElement('div');
             badgeElement.classList.add('badge');
+            
+            const badgeIcon = document.createElement('div');
+            badgeIcon.classList.add('badge-icon');
+
             if (completions >= badge.completions) {
                 if (!earnedBadges.includes(badge.name)) {
                     earnedBadges.push(badge.name);
                 }
-                badgeElement.innerHTML = `<span>${badge.name}</span>`;
+                badgeIcon.textContent = '🏆';
+                badgeElement.innerHTML = `<span class="badge-icon">🏆</span><span>${badge.name}</span>`;
             } else {
                 badgeElement.classList.add('locked');
-                badgeElement.innerHTML = `<span>${badge.name} (Locked)</span>`;
+                badgeIcon.textContent = '🔒';
+                badgeElement.innerHTML = `<span class="badge-icon">🔒</span><span>${badge.name}</span>`;
             }
             badgesListElement.appendChild(badgeElement);
         }

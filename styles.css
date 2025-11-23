@@ -1,5 +1,5 @@
 body {
-    font-family: sans-serif;
+    font-family: 'Roboto', sans-serif;
     background-color: #f4f4f4;
     color: #333;
     display: flex;
@@ -35,23 +35,95 @@ body {
     margin-bottom: 1rem;
 }
 
+h1, h2 {
+    font-family: 'Roboto Slab', serif;
+}
+
 h1 {
     color: #ff9933;
     margin: 0;
 }
 
-#theme-switcher {
-    background: none;
-    border: 1px solid #ccc;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    cursor: pointer;
-    font-size: 1.5rem;
-    line-height: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+/* From Uiverse.io by chase2k25 */
+/* Switch Container */
+.uiverse-switch-container {
+  position: relative;
+  width: 60px;
+  height: 24px;
+  background: #d6d6d6;
+  border-radius: 20px;
+  box-shadow:
+    inset -3.2px -3.2px 6.4px #ffffff,
+    inset 3.2px 3.2px 6.4px #b0b0b0;
+}
+
+/* Hidden Checkbox */
+.uiverse-toggle-checkbox {
+  display: none;
+}
+
+/* Switch Label (Interactive Area) */
+.uiverse-switch {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: translateY(-50%);
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+/* Toggle Button */
+.uiverse-toggle {
+  position: absolute;
+  width: 32px;
+  height: 20px;
+  background: linear-gradient(145deg, #d9d9d9, #bfbfbf);
+  border-radius: 20px;
+  top: 2px;
+  left: 2px;
+  box-shadow:
+    -1.6px -1.6px 3.2px #ffffff,
+    1.6px 1.6px 3.2px #b0b0b0;
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 4px;
+}
+
+/* LED Light */
+.uiverse-led {
+  width: 4px;
+  height: 4px;
+  background: grey;
+  border-radius: 50%;
+  box-shadow: 0 0 4px 0.8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+}
+
+/* Active State for Toggle (ON) */
+.uiverse-toggle-checkbox:checked + .uiverse-switch .uiverse-toggle {
+  left: 26px;
+  background: linear-gradient(145deg, #cfcfcf, #a9a9a9);
+  box-shadow:
+    -1.6px -1.6px 3.2px #ffffff,
+    1.6px 1.6px 3.2px #8a8a8a;
+}
+
+.uiverse-toggle-checkbox:checked + .uiverse-switch .uiverse-led {
+  background: yellow;
+  box-shadow: 0 0 6px 1.6px yellow;
+}
+
+/* Hover Effect */
+.uiverse-switch:hover .uiverse-toggle {
+  box-shadow:
+    -1.6px -1.6px 4.8px #ffffff,
+    1.6px 1.6px 4.8px #9b9b9b;
 }
 
 .time-tracker {
@@ -98,7 +170,7 @@ h1 {
 .step {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     padding: 0.5rem;
     border-bottom: 1px solid #eee;
     animation: fadeIn 0.5s ease-in-out;
@@ -124,9 +196,101 @@ h1 {
     border-bottom: none;
 }
 
-.step input[type="checkbox"] {
-    margin-right: 1rem;
-    transform: scale(1.2);
+
+.ios-checkbox {
+  --checkbox-size: 20px;
+  --checkbox-color: #3b82f6;
+  --checkbox-bg: #dbeafe;
+  --checkbox-border: #93c5fd;
+
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  margin-right: 1rem;
+}
+
+.ios-checkbox input {
+  display: none;
+}
+
+.checkbox-wrapper {
+  position: relative;
+  width: var(--checkbox-size);
+  height: var(--checkbox-size);
+  border-radius: 8px;
+  transition: transform 0.2s ease;
+}
+
+.checkbox-bg {
+  position: absolute;
+  inset: 0;
+  border-radius: 8px;
+  border: 2px solid var(--checkbox-border);
+  background: white;
+  transition: all 0.2s ease;
+}
+
+.checkbox-icon {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 80%;
+  height: 80%;
+  color: white;
+  transform: scale(0);
+  transition: all 0.2s ease;
+}
+
+.check-path {
+  stroke-dasharray: 40;
+  stroke-dashoffset: 40;
+  transition: stroke-dashoffset 0.3s ease 0.1s;
+}
+
+/* Checked State */
+.ios-checkbox input:checked + .checkbox-wrapper .checkbox-bg {
+  background: var(--checkbox-color);
+  border-color: var(--checkbox-color);
+}
+
+.ios-checkbox input:checked + .checkbox-wrapper .checkbox-icon {
+  transform: scale(1);
+}
+
+.ios-checkbox input:checked + .checkbox-wrapper .check-path {
+  stroke-dashoffset: 0;
+}
+
+/* Hover Effects */
+.ios-checkbox:hover .checkbox-wrapper {
+  transform: scale(1.05);
+}
+
+/* Active Animation */
+.ios-checkbox:active .checkbox-wrapper {
+  transform: scale(0.95);
+}
+
+/* Focus Styles */
+.ios-checkbox input:focus + .checkbox-wrapper .checkbox-bg {
+  box-shadow: 0 0 0 4px var(--checkbox-bg);
+}
+
+/* Animation */
+ @keyframes bounce {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.ios-checkbox input:checked + .checkbox-wrapper {
+  animation: bounce 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .step-number {
@@ -186,12 +350,26 @@ h1 {
 .badge {
     background-color: #ff9933;
     color: white;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
+    padding: 0.5rem;
+    border-radius: 50%;
     font-size: 0.9rem;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 0.5rem;
+    justify-content: center;
+    gap: 0.2rem;
+    width: 80px;
+    height: 80px;
+    text-align: center;
+    transition: transform 0.2s;
+}
+
+.badge:hover {
+    transform: scale(1.1);
+}
+
+.badge-icon {
+    font-size: 1.5rem;
 }
 
 .badge.locked {
@@ -279,60 +457,46 @@ body.dark-mode ::selection {
     font-size: 0.9rem;
 }
 
-.switch {
-    position: relative;
-    display: inline-block;
-    width: 60px;
-    height: 34px;
+.dashboard {
+    display: flex;
+    flex-direction: column;
 }
 
-.switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
+.card {
+    background: #fff;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
 }
 
-.slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    transition: .4s;
+.card:hover {
+    transform: translateY(-5px);
 }
 
-.slider:before {
-    position: absolute;
-    content: "";
-    height: 26px;
-    width: 26px;
-    left: 4px;
-    bottom: 4px;
-    background-color: white;
-    transition: .4s;
+body.dark-mode .card {
+    background: #2a2a2a;
 }
 
-input:checked + .slider {
-    background-color: #ff9933;
-}
+@media (min-width: 1024px) {
+    .container {
+        max-width: 1200px;
+    }
 
-input:focus + .slider {
-    box-shadow: 0 0 1px #ff9933;
-}
+    .dashboard {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 2rem;
+    }
 
-input:checked + .slider:before {
-    transform: translateX(26px);
-}
+    aside {
+        padding: 0;
+    }
 
-/* Rounded sliders */
-.slider.round {
-    border-radius: 34px;
-}
-
-.slider.round:before {
-    border-radius: 50%;
+    body.dark-mode aside {
+        background-color: transparent;
+    }
 }
 
 @media (max-width: 768px) {
