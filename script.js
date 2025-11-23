@@ -1,223 +1,223 @@
 const saranaGhosha = [
-    "om svaamiye sharanamayyappa",
-    "om hariharasutane sharanamayyappa",
-    "om aapadbhaandavane sharanamayyappa",
-    "om anaadharakshakane sharanamayyappa",
-    "om akhilaandakoti brahmaanda naayakane sharanamayyappa",
-    "om annadaana prabhuve sharanamayyappa",
-    "om ayyappane sharanamayyappa",
-    "om ariyangaavu ayyaave sharanamayyappa",
-    "om achchan kovil arase sharanamayyappa",
-    "om kulattapulai baalakane sharanamayyappa",
-    "om erumeli dharmashaastraave sharanamayyappa",
-    "om vaavar svaamiye sharanamayyappa",
-    "om kannimoola mahaaganapatiye sharanamayyappa",
-    "om naagaraajaave sharanamayyappa",
-    "om maalikaapurattadu, lokadevimaataave sharanamayyappa",
-    "om karuppasvaamiye sharanamayyappa",
-    "om sevippavar kaanandamoortiye sharanamayyappa",
-    "om kaasheevaasiye sharanamayyappa",
-    "om haridvaar nivaasiye sharanamayyappa",
-    "om shreeranga pattanavaasiye sharanamayyappa",
-    "om karuppattoor vaasiye sharanamayyappa",
-    "om gollapoodi dharmashaastraave sharanamayyappa",
-    "om sadgurunaathane sharanamayyappa",
-    "om villaaliveerane sharanamayyappa",
-    "om veeramanikanthane sharanamayyappa",
-    "om dharmashaastaave sharanamayyappa",
-    "om sharanughosha priyane sharanamayyappa",
-    "om kaantamalai vaasane sharanamayyappa",
-    "om ponnambalavaasane sharanamayyappa",
-    "om pambaashishuve sharanamayyappa",
-    "om pandala raajakumaarane sharanamayyappa",
-    "om vaavarin tolane sharanamayyappa",
-    "om mohineesutane sharanamayyappa",
-    "om kan kand daivame sharanamayyappa",
-    "om kaliyuga varadane sharanamayyappa",
-    "om sarvaroga nivaarana dhanvantamoortiye sharanamayyappa",
-    "om mahishi mardhanane sharanamayyappa",
-    "om poornapushkalanaathane sharanamayyappa",
-    "om van pulivaahanane sharanamayyappa",
-    "om bhaktavatsalane sharanamayyappa",
-    "om bhoolokanaadhane sharanamayyappa",
-    "om ayindumalai vaasare sharanamayyappa",
-    "om shabarigireeshane sharanamayyappa",
-    "om irumudi priyane sharanamayyappa",
-    "om abhisheka priyane sharanamayyappa",
-    "om vedapporule sharanamayyappa",
-    "om nitya brahmachaariye sharanamayyappa",
-    "om sarvamangaladaayakane sharanamayyappa",
-    "om veeraadhi veerane sharanamayyappa",
-    "om omkaara pporule sharanamayyappa",
-    "om aananda roopane sharanamayyappa",
-    "om bhaktachittaadivaasane sharanamayyappa",
-    "om aashrita vatsalane sharanamayyappa",
-    "om bhootaganaadhipatiye sharanamayyappa",
-    "om shaktiroopane sharanamayyappa",
-    "om shaantimoortiye sharanamayyappa",
-    "om padunettaambadikki adhipatiye sharanamayyappa",
-    "om rishikula rakshakane sharanamayyappa",
-    "om vedapriyane sharanamayyappa",
-    "om uttara nakshatra jaatakane sharanamayyappa",
-    "om tapodhanane sharanamayyappa",
-    "om yengal kuladaivame sharanamayyappa",
-    "om jaganmohanane sharanamayyappa",
-    "om mohanaroopane sharanamayyappa",
-    "om maadhavasutane sharanamayyappa",
-    "om yadukula veerane sharanamayyappa",
-    "om maamalai vaasane sharanamayyappa",
-    "om shanmuga sodarane sharanamayyappa",
-    "om vedaanta roopane sharanamayyappa",
-    "om shankarasutane sharanamayyappa",
-    "om shatrisamhaarane sharanamayyappa",
-    "om sadgunamoortiye sharanamayyappa",
-    "om paraashaktiye sharanamayyappa",
-    "om paraatparane sharanamayyappa",
-    "om paranjyotiye sharanamayyappa",
-    "om homapriyane sharanamayyappa",
-    "om ganapati sodarane sharanamayyappa",
-    "om kattaalavisharaaramene  sharanamayyappa",
-    "om vishnusutane sharanamayyappa",
-    "om sakala kalaavallabhane sharanamayyappa",
-    "om lokarakshakune sharanamayyappa",
-    "om amita gunaakarane sharanamayyappa",
-    "om alankaara priyane sharanamayyappa",
-    "om kannimaarai kaarpavane sharanamayyappa",
-    "om bhuvaneshvarane sharanamayyappa",
-    "om maataapitagurudaivame sharanamayyappa",
-    "om svaamiyun pungaavanaye sharanamayyappa",
-    "om aludaanadiye sharanamayyappa",
-    "om aludaamede sharanamayyappa",
-    "om kallidam kundrame sharanamayyappa",
-    "om karimalai etrame sharanamayyappa",
-    "om karimalai erakkame sharanamayyappa",
-    "om periyaana vattame sharanamayyappa",
-    "om siriyaana vattame sharanamayyappa",
-    "om pambaanadiye sharanamayyappa",
-    "om pambayal vilakke sharanamayyappa",
-    "om neelimalai etrame sharanamayyappa",
-    "om appaachimede sharanamayyappa",
-    "om shabaripeethame sharanamayyappa",
-    "om sharangutti aale sharanamayyappa",
-    "om bhasmakulame sharanamayyappa",
-    "om padunettaambadiye sharanamayyappa",
-    "om neyyabhisheka priyane sharanamayyappa",
-    "om karpoorajyotiye sharanamayyappa",
-    "om jyoti svaroopane sharanamayyappa",
-    "om makarajyotiye sharanamayyappa",
-    "om shabarimalaivaasaye sharanamayyappa",
-    "om shreehariharasutan, aananda chittan, ayyan, ayyappasvaamiye sharanamayyappa."
+    "Swamiye… Sharanam Ayyappa",
+    "Harihara Suthane… Sharanam Ayyappa",
+    "Aparabhayadane… Sharanam Ayyappa",
+    "Anadha Rakshane… Sharanam Ayyappa",
+    "Akhilanda Koti Brahmanda Nayakane… Sharanam Ayyappa",
+    "Annadhana Bhujane… Sharanam Ayyappa",
+    "Abhaya Pradhane… Sharanam Ayyappa",
+    "Ayyappaku Ayyanoye… Sharanam Ayyappa",
+    "Aiyan Kovil Aiyyane… Sharanam Ayyappa",
+    "Katta ShiveLi Baalane… Sharanam Ayyappa",
+    "Eddumuli Swamiye… Sharanam Ayyappa",
+    "Vani Swamiye… Sharanam Ayyappa",
+    "Kannimoola Marth Ganapathine… Sharanam Ayyappa",
+    "Nayarabhaasa… Sharanam Ayyappa",
+    "Marila Putthu Lokadevi Maatha… Sharanam Ayyappa",
+    "Kadarashna Swamiye… Sharanam Ayyappa",
+    "Sevipparanda Mooliye… Sharanam Ayyappa",
+    "Kaashi Maaliye… Sharanam Ayyappa",
+    "Palivaathar Nivaasiye… Sharanam Ayyappa",
+    "Sree Gangavattana Nivaasiye… Sharanam Ayyappa",
+    "Kurooppatur Vaasiye… Sharanam Ayyappa",
+    "Shastri Nagar Vaasiye… Sharanam Ayyappa",
+    "Sadguru Vadhane… Sharanam Ayyappa",
+    "Vilakku Theerane… Sharanam Ayyappa",
+    "Veera Muttu Kattane… Sharanam Ayyappa",
+    "Dharma Shastre Priyane… Sharanam Ayyappa",
+    "Sharanabhavashana Priyane… Sharanam Ayyappa",
+    "Kaamatheevila Vaasaney… Sharanam Ayyappa",
+    "Paandala Vaasaney… Sharanam Ayyappa",
+    "Pandara Shiva… Sharanam Ayyappa",
+    "Pandal Raja Kumaarane… Sharanam Ayyappa",
+    "Vaanin Koyithe… Sharanam Ayyappa",
+    "Mohini Suthane… Sharanam Ayyappa",
+    "Kadika Kanda Dwaivame… Sharanam Ayyappa",
+    "Kaliyuga Varadane… Sharanam Ayyappa",
+    "Sarva Roga Nivaarana Dhanvantari Mooliye… Sharanam Ayyappa",
+    "Mahisha Mardhanane… Sharanam Ayyappa",
+    "Purna Pallari Nayakane… Sharanam Ayyappa",
+    "Vana Muli Vaasaney… Sharanam Ayyappa",
+    "Bhakta Vatsalane… Sharanam Ayyappa",
+    "Bhaulika Naayakane… Sharanam Ayyappa",
+    "Amayura Mudrasaney… Sharanam Ayyappa",
+    "Sharana Gireedane… Sharanam Ayyappa",
+    "Irumudi Priyane… Sharanam Ayyappa",
+    "Ashwesha Priyane… Sharanam Ayyappa",
+    "Vedaverake… Sharanam Ayyappa",
+    "Shuddha Sthaapana Chariye… Sharanam Ayyappa",
+    "Sarva Ranga Kalaa Dharakane… Sharanam Ayyappa",
+    "Veeradhi Veerane… Sharanam Ayyappa",
+    "Omkaara Pathurake… Sharanam Ayyappa",
+    "Aananda Roopane… Sharanam Ayyappa",
+    "Bhakta Krishnaananda Vaasaney… Sharanam Ayyappa",
+    "Aaklitha Vallaneye… Sharanam Ayyappa",
+    "Bhootha Bhagavaan Bhavatheeye… Sharanam Ayyappa",
+    "Shakti Roopane… Sharanam Ayyappa",
+    "Shaanta Moorttiye… Sharanam Ayyappa",
+    "Padunetta Andikkadha Adhipatiye… Sharanam Ayyappa",
+    "Utthara Purushane… Sharanam Ayyappa",
+    "Buddhi Moola Rakshakane… Sharanam Ayyappa",
+    "Veda Vidyane… Sharanam Ayyappa",
+    "Utpathi Shakthula Jaathane… Sharanam Ayyappa",
+    "Shankha Saney… Sharanam Ayyappa",
+    "Yogaga Kalai Daivane… Sharanam Ayyappa",
+    "Jagannivaasaney… Sharanam Ayyappa",
+    "Mohana Roopane… Sharanam Ayyappa",
+    "Sharada Suthane… Sharanam Ayyappa",
+    "Yuddha Veerane… Sharanam Ayyappa",
+    "Manasai Vaasaney… Sharanam Ayyappa",
+    "Shambhuji Naakidaraney… Sharanam Ayyappa",
+    "Shankara Suthane… Sharanam Ayyappa",
+    "Vedantha Roopane… Sharanam Ayyappa",
+    "Shatru Samharane… Sharanam Ayyappa",
+    "Sadgune Mooliye… Sharanam Ayyappa",
+    "Para Shaktiye… Sharanam Ayyappa",
+    "Paramathmane… Sharanam Ayyappa",
+    "Paramajyothiye… Sharanam Ayyappa",
+    "Hemamba Priyane… Sharanam Ayyappa",
+    "Ganapathi Sodharane… Sharanam Ayyappa",
+    "Bhakta Bilochanane… Sharanam Ayyappa",
+    "Apramaththane… Sharanam Ayyappa",
+    "Sakala Kalaa Bhajanane… Sharanam Ayyappa",
+    "Loka Naayakane… Sharanam Ayyappa",
+    "Amitha Gunaa Karaney… Sharanam Ayyappa",
+    "Alankaara Priyane… Sharanam Ayyappa",
+    "Kshamamayi Kaarunyane… Sharanam Ayyappa",
+    "Bhuvaneshwarane… Sharanam Ayyappa",
+    "Maatha Pitha Guru Daivame… Sharanam Ayyappa",
+    "Swamiyin Pungaavane… Sharanam Ayyappa",
+    "Akhila Anadheeye… Sharanam Ayyappa",
+    "Akhila Namadheeye… Sharanam Ayyappa",
+    "Kattidam Pakundree… Sharanam Ayyappa",
+    "Kalamlayi Ettame… Sharanam Ayyappa",
+    "Kalamlayi Ettikame… Sharanam Ayyappa",
+    "Periyana Vattame… Sharanam Ayyappa",
+    "Chinnayana Vattame… Sharanam Ayyappa",
+    "Pamba Nadhiye… Sharanam Ayyappa",
+    "Pambayal Vikatta… Sharanam Ayyappa",
+    "Neelamalai Ettaye… Sharanam Ayyappa",
+    "Aswapiye… Sharanam Ayyappa",
+    "Shalava Veerane… Sharanam Ayyappa",
+    "Sharanagathi Aaley… Sharanam Ayyappa",
+    "Bhasma Kulame… Sharanam Ayyappa",
+    "Padunetta Ambadiye… Sharanam Ayyappa",
+    "Neyyabhishega Priyane… Sharanam Ayyappa",
+    "Karkara Jyothiye… Sharanam Ayyappa",
+    "Jyothi Swaroopane… Sharanam Ayyappa",
+    "Makara Jyothiye… Sharanam Ayyappa",
+    "Om Sri Paalihara Suthan Aananda Vithan Ayyan Ayyappa… Sharanam Ayyappa"
 ];
 
 const saranaGhoshaTelugu = [
-    "ఓం స్వామియే శరణమయ్యప్ప",
-    "ఓం హరిహరసుతనే శరణమయ్యప్ప",
-    "ఓం ఆపద్భాందవనే శరణమయ్యప్ప",
-    "ఓం అనాధరక్షకనే శరణమయ్యప్ప",
-    "ఓం అఖిలాండకోటి బ్రహ్మాండ నాయకనే శరణమయ్యప్ప",
-    "ఓం అన్నదాన ప్రభువే శరణమయ్యప్ప",
-    "ఓం అయ్యప్పనే శరణమయ్యప్ప",
-    "ఓం అరియంగావు అయ్యావే శరణమయ్యప్ప",
-    "ఓం అచ్చన్ కోవిల్ అరసే శరణమయ్యప్ప",
-    "ఓం కుళత్తపుళై బాలకనే శరణమయ్యప్ప",
-    "ఓం ఎరుమేలి ధర్మశాస్త్రావే శరణమయ్యప్ప",
-    "ఓం వావర్ స్వామియే శరణమయ్యప్ప",
-    "ఓం కన్నిమూల మహాగణపతియే శరణమయ్యప్ప",
-    "ఓం నాగరాజావే శరణమయ్యప్ప",
-    "ఓం మాలికాపురత్తదు, లోకదేవిమాతావే శరణమయ్యప్ప",
-    "ఓం కరుప్పస్వామియే శరణమయ్యప్ప",
-    "ఓం సేవిప్పవర్ కానందమూర్తియే శరణమయ్యప్ప",
-    "ఓం కాశీవాసియే శరణమయ్యప్ప",
-    "ఓం హరిద్వార్ నివాసియే శరణమయ్యప్ప",
-    "ఓం శ్రీరంగ పట్టణవాసియే శరణమయ్యప్ప",
-    "ఓం కరుప్పత్తూర్ వాసియే శరణమయ్యప్ప",
-    "ఓం గొల్లపూడి ధర్మశాస్త్రావే శరణమయ్యప్ప",
-    "ఓం సద్గురునాథనే శరణమయ్యప్ప",
-    "ఓం విల్లాళివీరనే శరణమయ్యప్ప",
-    "ఓం వీరమణికంఠనే శరణమయ్యప్ప",
-    "ఓం ధర్మశాస్తావే శరణమయ్యప్ప",
-    "ఓం శరణుఘోష ప్రియనే శరణమయ్యప్ప",
-    "ఓం కాంతమలై వాసనే శరణమయ్యప్ప",
-    "ఓం పొన్నంబలవాసనే శరణమయ్యప్ప",
-    "ఓం పంబాశిశువే శరణమయ్యప్ప",
-    "ఓం పందళ రాజకుమారనే శరణమయ్యప్ప",
-    "ఓం వావరిన్ తోళనే శరణమయ్యప్ప",
-    "ఓం మోహినీసుతనే శరణమయ్యప్ప",
-    "ఓం కణ్ కండ్ దైవమే శరణమయ్యప్ప",
-    "ఓం కలియుగ వరదనే శరణమయ్యప్ప",
-    "ఓం సర్వరోగ నివారణ ధన్వంతమూర్తియే శరణమయ్యప్ప",
-    "ఓం మహిషి మర్ధననే శరణమయ్యప్ప",
-    "ఓం పూర్ణపుష్కలనాథనే శరణమయ్యప్ప",
-    "ఓం వన్ పులివాహననే శరణమయ్యప్ప",
-    "ఓం భక్తవత్సలనే శరణమయ్యప్ప",
-    "ఓం భూలోకనాధనే శరణమయ్యప్ప",
-    "ఓం అయిందుమలై వాసరే శరణమయ్యప్ప",
-    "ఓం శబరిగిరీశనే శరణమయ్యప్ప",
-    "ఓం ఇరుముడి ప్రియనే శరణమయ్యప్ప",
-    "ఓం అభిషేక ప్రియనే శరణమయ్యప్ప",
-    "ఓం వేదప్పొరుళే శరణమయ్యప్ప",
-    "ఓం నిత్య బ్రహ్మచారియే శరణమయ్యప్ప",
-    "ఓం సర్వమంగళదాయకనే శరణమయ్యప్ప",
-    "ఓం వీరాధి వీరనే శరణమయ్యప్ప",
-    "ఓం ఓంకార ప్పొరుళే శరణమయ్యప్ప",
-    "ఓం ఆనంద రూపనే శరణమయ్యప్ప",
-    "ఓం భక్తచిత్తాదివాసనే శరణమయ్యప్ప",
-    "ఓం ఆశ్రిత వత్సలనే శరణమయ్యప్ప",
-    "ఓం భూతగణాధిపతియే శరణమయ్యప్ప",
-    "ఓం శక్తిరూపనే శరణమయ్యప్ప",
-    "ఓం శాంతిమూర్తియే శరణమయ్యప్ప",
-    "ఓం పదునెట్టాంబడిక్కి అధిపతియే శరణమయ్యప్ప",
-    "ఓం ఋషికుల రక్షకనే శరణమయ్యప్ప",
-    "ఓం వేదప్రియనే శరణమయ్యప్ప",
-    "ఓం ఉత్తర నక్షత్ర జాతకనే శరణమయ్యప్ప",
-    "ఓం తపోధననే శరణమయ్యప్ప",
-    "ఓం యెంగళ్ కులదైవమే శరణమయ్యప్ప",
-    "ఓం జగన్మోహననే శరణమయ్యప్ప",
-    "ఓం మోహనరూపనే శరణమయ్యప్ప",
-    "ఓం మాధవసుతనే శరణమయ్యప్ప",
-    "ఓం యదుకుల వీరనే శరణమయ్యప్ప",
-    "ఓం మామలై వాసనే శరణమయ్యప్ప",
-    "ఓం షణ్ముగ సోదరనే శరణమయ్యప్ప",
-    "ఓం వేదాంత రూపనే శరణమయ్యప్ప",
-    "ఓం శంకరసుతనే శరణమయ్యప్ప",
-    "ఓం శతృసంహారనే శరణమయ్యప్ప",
-    "ఓం సద్గుణమూర్తియే శరణమయ్యప్ప",
-    "ఓం పరాశక్తియే శరణమయ్యప్ప",
-    "ఓం పరాత్పరనే శరణమయ్యప్ప",
-    "ఓం పరంజ్యోతియే శరణమయ్యప్ప",
-    "ఓం హోమప్రియనే శరణమయ్యప్ప",
-    "ఓం గణపతి సోదరనే శరణమయ్యప్ప",
-    "ఓం కట్టాళవిషరారమేనే  శరణమయ్యప్ప",
-    "ఓం విష్ణుసుతనే శరణమయ్యప్ప",
-    "ఓం సకల కళావల్లభనే శరణమయ్యప్ప",
-    "ఓం లోకరక్షకునే శరణమయ్యప్ప",
-    "ఓం అమిత గుణాకరనే శరణమయ్యప్ప",
-    "ఓం అలంకార ప్రియనే శరణమయ్యప్ప",
-    "ఓం కన్నిమారై కార్పవనే శరణమయ్యప్ప",
-    "ఓం భువనేశ్వరనే శరణమయ్యప్ప",
-    "ఓం మాతాపితగురుదైవమే శరణమయ్యప్ప",
-    "ఓం స్వామియున్ పుంగావనయే శరణమయ్యప్ప",
-    "ఓం అళుదానదియే శరణమయ్యప్ప",
-    "ఓం అళుదామేడే శరణమయ్యప్ప",
-    "ఓం కళ్ళిడం కుండ్రమే శరణమయ్యప్ప",
-    "ఓం కరిమలై ఏట్రమే శరణమయ్యప్ప",
-    "ఓం కరిమలై ఎరక్కమే శరణమయ్యప్ప",
-    "ఓం పెరియాన వట్టమే శరణమయ్యప్ప",
-    "ఓం సిరియాన వట్టమే శరణమయ్యప్ప",
-    "ఓం పంబానదియే శరణమయ్యప్ప",
-    "ఓం పంబయల్ విళక్కే శరణమయ్యప్ప",
-    "ఓం నీలిమలై ఏట్రమే శరణమయ్యప్ప",
-    "ఓం అప్పాచిమేడే శరణమయ్యప్ప",
-    "ఓం శబరిపీఠమే శరణమయ్యప్ప",
-    "ఓం శరంగుత్తి ఆలే శరణమయ్యప్ప",
-    "ఓం భస్మకుళమే శరణమయ్యప్ప",
-    "ఓం పదునెట్టాంబడియే శరణమయ్యప్ప",
-    "ఓం నెయ్యభిషేక ప్రియనే శరణమయ్యప్ప",
-    "ఓం కర్పూరజ్యోతియే శరణమయ్యప్ప",
-    "ఓం జ్యోతి స్వరూపనే శరణమయ్యప్ప",
-    "ఓం మకరజ్యోతియే శరణమయ్యప్ప",
-    "ఓం శబరిమలైవాసయే శరణమయ్యప్ప",
-    "ఓం శ్రీహరిహరసుతన్, ఆనంద చిత్తన్, అయ్యన్, అయ్యప్పస్వామియే శరణమయ్యప్ప."
+    "స్వామియే – శరణం అయ్యప్ప",
+    "హరిహరసుతనే – శరణం అయ్యప్ప",
+    "అపరాభయదనే – శరణం అయ్యప్ప",
+    "ఆనాధరక్షనే – శరణం అయ్యప్ప",
+    "అఖిలాండకోటీ బ్రహ్మాండనాయకనే – శరణం అయ్యప్ప",
+    "అన్నదాన భుజనే – శరణం అయ్యప్ప",
+    "అభయప్రదనే – శరణం అయ్యప్ప",
+    "అయ్యప్పకు అయ్యనోయే – శరణం అయ్యప్ప",
+    "ఐయన్ కోయిల్ అయ్యనే – శరణం అయ్యప్ప",
+    "కట్టశివేలీ బాలనే – శరణం అయ్యప్ప",
+    "ఎద్దుముళి స్వామియే – శరణం అయ్యప్ప",
+    "వాణీ స్వామియే – శరణం అయ్యప్ప",
+    "కన్నిమూల మర్ద్గనపతినే – శరణం అయ్యప్ప",
+    "నాయరభాస – శరణం అయ్యప్ప",
+    "మారిలాపుత్తు లోకదేవి మాతా – శరణం అయ్యప్ప",
+    "కదరష్ణ స్వామియే – శరణం అయ్యప్ప",
+    "సేవిప్పవరందా మూలియే – శరణం అయ్యప్ప",
+    "కాశీమాలియే – శరణం అయ్యప్ప",
+    "పళివాధార్ నివాసియే – శరణం అయ్యప్ప",
+    "శ్రీగంగవత్తణ నివాసియే – శరణం అయ్యప్ప",
+    "కురూప్పతూర్ వాసియే – శరణం అయ్యప్ప",
+    "శాస్త్రినగర్ వాసియే – శరణం అయ్యప్ప",
+    "సద్గురువధనే – శరణం అయ్యప్ప",
+    "విలక్కు తీరనే – శరణం అయ్యప్ప",
+    "వీరముత్తుకటనే – శరణం అయ్యప్ప",
+    "ధర్మశాస్త్రే ప్రియనే – శరణం అయ్యప్ప",
+    "శరణభవషణ ప్రియనే – శరణం అయ్యప్ప",
+    "కామతివల వాసనే – శరణం అయ్యప్ప",
+    "పాండల వాసనే – శరణం అయ్యప్ప",
+    "పండారశివ – శరణం అయ్యప్ప",
+    "పండాల రాజకుమారనే – శరణం అయ్యప్ప",
+    "వాణీన్ కోయితే – శరణం అయ్యప్ప",
+    "మోహిని సుతనే – శరణం అయ్యప్ప",
+    "కటికకండ ద్వైవమే – శరణం అయ్యప్ప",
+    "కరియుగ వరదనే – శరణం అయ్యప్ప",
+    "సర్వరోగ నివారణ ధన్వంతర మూలియే – శరణం అయ్యప్ప",
+    "మహిష మార్దననే – శరణం అయ్యప్ప",
+    "పూర్ణపల్లరి నాయకనే – శరణం అయ్యప్ప",
+    "వనములి వాసనే – శరణం అయ్యప్ప",
+    "భక్తవత్సలనే – శరణం అయ్యప్ప",
+    "భౌలిక నాయనే – శరణం అయ్యప్ప",
+    "అమయురముద్రాసనే – శరణం అయ్యప్ప",
+    "శారణగిరీదనే – శరణం అయ్యప్ప",
+    "యిరుముడి ప్రియనే – శరణం అయ్యప్ప",
+    "అశ్వేష ప్రియనే – శరణం అయ్యప్ప",
+    "వేదవేరకే – శరణం అయ్యప్ప",
+    "శుద్ధస్థాపన చారియే – శరణం అయ్యప్ప",
+    "సర్వరంగకళాధరకనే – శరణం అయ్యప్ప",
+    "వీరాధివీరనే – శరణం అయ్యప్ప",
+    "ఓంకారపథురకే – శరణం అయ్యప్ప",
+    "ఆనంద రూపనే – శరణం అయ్యప్ప",
+    "భక్తకృష్ణానందవాసనే – శరణం అయ్యప్ప",
+    "ఆక్లితవల్లనే – శరణం అయ్యప్ప",
+    "భూతభగవానభవతియే – శరణం అయ్యప్ప",
+    "శక్తిరూపనే – శరణం అయ్యప్ప",
+    "శాంతమూర్తియే – శరణం అయ్యప్ప",
+    "పడునెట్టాండిక్కి అధిపతియే – శరణం అయ్యప్ప",
+    "ఉత్రమ పురుషనే – శరణం అయ్యప్ప",
+    "బుద్ధిముల రక్షకనే – శరణం అయ్యప్ప",
+    "వేదవిద్యనే – శరణం అయ్యప్ప",
+    "ఉత్పత్తి శక్తుల జాతనే – శరణం అయ్యప్ప",
+    "శంఖసనే – శరణం అయ్యప్ప",
+    "యోగగ కళైదైవనే – శరణం అయ్యప్ప",
+    "జగన్నివాసనే – శరణం అయ్యప్ప",
+    "మోహన్ రూపనే – శరణం అయ్యప్ప",
+    "శరద సుతనే – శరణం అయ్యప్ప",
+    "యుద్ధ వీరనే – శరణం అయ్యప్ప",
+    "మానసై వాసనే – శరణం అయ్యప్ప",
+    "శంభుజి నాకిదరనే – శరణం అయ్యప్ప",
+    "శంకర సుతనే – శరణం అయ్యప్ప",
+    "వేదాంత రూపనే – శరణం అయ్యప్ప",
+    "శత్రు సంహరనే – శరణం అయ్యప్ప",
+    "సద్గుణమూలియే – శరణం అయ్యప్ప",
+    "పరాశక్తియే – శరణం అయ్యప్ప",
+    "పరమాత్మనే – శరణం అయ్యప్ప",
+    "పరమజ్యోతియే – శరణం అయ్యప్ప",
+    "హేమామబ్రియనే – శరణం అయ్యప్ప",
+    "గణపతి సోదరనే – శరణం అయ్యప్ప",
+    "భక్త బిలోచనే – శరణం అయ్యప్ప",
+    "అప్రమత్తనే – శరణం అయ్యప్ప",
+    "సకలకళాభజననే – శరణం అయ్యప్ప",
+    "లోకనాయకనే – శరణం అయ్యప్ప",
+    "అమితి గుణాకరనే – శరణం అయ్యప్ప",
+    "అలంకార ప్రియనే – శరణం అయ్యప్ప",
+    "క్షమమై కారుణ్యనే – శరణం అయ్యప్ప",
+    "భువనేశ్వరనే – శరణం అయ్యప్ప",
+    "మాత–పిత–గురు–దైవమే – శరణం అయ్యప్ప",
+    "స్వామియిన్ పుంగావనే – శరణం అయ్యప్ప",
+    "అఖిలానదియే – శరణం అయ్యప్ప",
+    "అఖిలానమేదే – శరణం అయ్యప్ప",
+    "కట్టిడంపకుండ్రీ – శరణం అయ్యప్ప",
+    "కలమ్లై ఎట్టమే – శరణం అయ్యప్ప",
+    "కలమ్లై ఎటికమే – శరణం అయ్యప్ప",
+    "పెరియాన వట్టమే – శరణం అయ్యప్ప",
+    "చిన్నాయన వట్టమే – శరణం అయ్యప్ప",
+    "పంబానదియే – శరణం అయ్యప్ప",
+    "పంబాయల్ వికట్ట – శరణం అయ్యప్ప",
+    "నీలమ్లై యెట్టయే – శరణం అయ్యప్ప",
+    "అస్వాపియే – శరణం అయ్యప్ప",
+    "శలవ వీరనే – శరణం అయ్యప్ప",
+    "శరణగతి ఆలే – శరణం అయ్యప్ప",
+    "భస్మకుళమే – శరణం అయ్యప్ప",
+    "పడునెట్టాంబడియే – శరణం అయ్యప్ప",
+    "నెయ్యాభిషేక ప్రియనే – శరణం అయ్యప్ప",
+    "కర్కార జ్యోతియే – శరణం అయ్యప్ప",
+    "జ్యోతిస్వరూపనే – శరణం అయ్యప్ప",
+    "మకరజ్యోతియే – శరణం అయ్యప్ప",
+    "ఓం శ్రీపాలిహారసుతన్ ఆనందవిథ్తన్ అయ్యన్ అయ్యప్ప – శరణం అయ్యప్ప"
 ];
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -228,29 +228,50 @@ document.addEventListener('DOMContentLoaded', () => {
     const endTimeElement = document.getElementById('end-time');
     const themeSwitcher = document.getElementById('theme-switcher');
     const languageToggle = document.getElementById('language-toggle');
-    const historyList = document.getElementById('history-list');
     const body = document.body;
     const totalSteps = 108;
+    const historyList = document.getElementById('history-list');
+    const clearHistoryButton = document.getElementById('clear-history');
+    const streakCountElement = document.getElementById('streak-count');
+    const badgesListElement = document.getElementById('badges-list');
+    const leaderboardListElement = document.getElementById('leaderboard-list');
+
+    const badges = [
+        { name: 'First Pradakshina', completions: 1 },
+        { name: '5 Pradakshinas', completions: 5 },
+        { name: '10 Pradakshinas', completions: 10 },
+        { name: '25 Pradakshinas', completions: 25 },
+        { name: '50 Pradakshinas', completions: 50 },
+        { name: '108 Pradakshinas', completions: 108 },
+    ];
 
     let startTime = null;
     let endTime = null;
-    let currentlyPlayingAudio = null;
     let currentLanguage = localStorage.getItem('language') || 'english';
 
-    // Theme switching
+    // Theme switching logic
     const currentTheme = localStorage.getItem('theme');
     if (currentTheme) {
         body.classList.add(currentTheme);
-        themeSwitcher.textContent = currentTheme === 'dark-mode' ? '☀️' : '🌙';
+        if (currentTheme === 'dark-mode') {
+            themeSwitcher.textContent = '☀️';
+        } else {
+            themeSwitcher.textContent = '🌙';
+        }
     } else {
         themeSwitcher.textContent = '🌙';
     }
 
     themeSwitcher.addEventListener('click', () => {
-        body.classList.toggle('dark-mode');
-        const newTheme = body.classList.contains('dark-mode') ? 'dark-mode' : 'light-mode';
-        localStorage.setItem('theme', newTheme);
-        themeSwitcher.textContent = newTheme === 'dark-mode' ? '☀️' : '🌙';
+        if (body.classList.contains('dark-mode')) {
+            body.classList.remove('dark-mode');
+            localStorage.setItem('theme', 'light-mode');
+            themeSwitcher.textContent = '🌙';
+        } else {
+            body.classList.add('dark-mode');
+            localStorage.setItem('theme', 'dark-mode');
+            themeSwitcher.textContent = '☀️';
+        }
     });
 
     // Language switching
@@ -266,15 +287,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function formatTime(date) {
         if (!date) return '-';
-        return date.toLocaleTimeString();
-    }
-
-    function formatDuration(start, end) {
-        const diff = Math.floor((end - start) / 1000);
-        const hours = Math.floor(diff / 3600);
-        const minutes = Math.floor((diff % 3600) / 60);
-        const seconds = diff % 60;
-        return `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        let hours = date.getHours();
+        let minutes = date.getMinutes();
+        let ampm = hours >= 12 ? 'PM' : 'AM';
+        hours = hours % 12;
+        hours = hours ? hours : 12; // the hour '0' should be '12'
+        minutes = minutes < 10 ? '0' + minutes : minutes;
+        let strTime = hours + ':' + minutes + ' ' + ampm;
+        return strTime;
     }
 
     function updateProgress() {
@@ -284,7 +304,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         progressBar.style.width = `${percentage}%`;
         progressLabel.textContent = `${Math.round(percentage)}%`;
+        progressBar.setAttribute('aria-valuenow', Math.round(percentage));
 
+        // Handle start time
         if (checkedCount > 0 && !startTime) {
             startTime = new Date();
             startTimeElement.textContent = formatTime(startTime);
@@ -293,50 +315,15 @@ document.addEventListener('DOMContentLoaded', () => {
             startTimeElement.textContent = '-';
         }
 
+        // Handle end time
         if (checkedCount === totalSteps && !endTime) {
             endTime = new Date();
             endTimeElement.textContent = formatTime(endTime);
-            saveHistory();
-            alert('Congratulations on completing your pradakshina! The tracker will now reset.');
-            resetTracker();
+            saveHistory(endTime);
         } else if (checkedCount < totalSteps) {
             endTime = null;
             endTimeElement.textContent = '-';
         }
-    }
-
-    function saveHistory() {
-        const history = JSON.parse(localStorage.getItem('pradakshinaHistory')) || [];
-        const newEntry = {
-            date: new Date().toLocaleDateString(),
-            startTime: startTime.toISOString(),
-            endTime: endTime.toISOString()
-        };
-        history.push(newEntry);
-        localStorage.setItem('pradakshinaHistory', JSON.stringify(history));
-        renderHistory();
-    }
-
-    function renderHistory() {
-        historyList.innerHTML = '';
-        const history = JSON.parse(localStorage.getItem('pradakshinaHistory')) || [];
-        history.forEach(entry => {
-            const li = document.createElement('li');
-            const startDate = new Date(entry.startTime);
-            const endDate = new Date(entry.endTime);
-            li.textContent = `Completed on: ${new Date(entry.date).toLocaleDateString()} | Duration: ${formatDuration(startDate, endDate)}`;
-            historyList.appendChild(li);
-        });
-    }
-
-    function resetTracker() {
-        startTime = null;
-        endTime = null;
-        startTimeElement.textContent = '-';
-        endTimeElement.textContent = '-';
-        const checkboxes = document.querySelectorAll('.step input[type="checkbox"]');
-        checkboxes.forEach(cb => cb.checked = false);
-        updateProgress();
     }
 
     function generateSteps() {
@@ -360,72 +347,123 @@ document.addEventListener('DOMContentLoaded', () => {
             title.classList.add('step-title');
             title.textContent = ghosha[i - 1] || `Step ${i}`;
 
-            const audio = document.createElement('audio');
-            audio.src = `audio/${i}_audio.mp3`;
-
-            const playButton = document.createElement('button');
-            playButton.classList.add('play-button');
-            playButton.textContent = '▶';
-
-            const pauseButton = document.createElement('button');
-            pauseButton.classList.add('pause-button');
-            pauseButton.textContent = '⏸';
-            pauseButton.style.display = 'none';
-
-            const currentTimeSpan = document.createElement('span');
-            currentTimeSpan.classList.add('current-time');
-            currentTimeSpan.textContent = '0s';
-
-            playButton.addEventListener('click', () => {
-                if (currentlyPlayingAudio && currentlyPlayingAudio !== audio) {
-                    currentlyPlayingAudio.pause();
-                    const prevPauseButton = currentlyPlayingAudio.parentElement.querySelector('.pause-button');
-                    const prevPlayButton = currentlyPlayingAudio.parentElement.querySelector('.play-button');
-                    if (prevPauseButton) prevPauseButton.style.display = 'none';
-                    if (prevPlayButton) prevPlayButton.style.display = 'inline-block';
-                }
-                audio.play();
-                playButton.style.display = 'none';
-                pauseButton.style.display = 'inline-block';
-                currentlyPlayingAudio = audio;
-            });
-
-            pauseButton.addEventListener('click', () => {
-                audio.pause();
-                playButton.style.display = 'inline-block';
-                pauseButton.style.display = 'none';
-                currentlyPlayingAudio = null;
-            });
-
-            audio.addEventListener('timeupdate', () => {
-                currentTimeSpan.textContent = `${Math.floor(audio.currentTime)}s`;
-            });
-
-            audio.addEventListener('ended', () => {
-                playButton.style.display = 'inline-block';
-                pauseButton.style.display = 'none';
-                currentlyPlayingAudio = null;
-                currentTimeSpan.textContent = '0s';
-            });
-
-            const audioControlsDiv = document.createElement('div');
-            audioControlsDiv.classList.add('audio-controls');
-            audioControlsDiv.appendChild(playButton);
-            audioControlsDiv.appendChild(pauseButton);
-            audioControlsDiv.appendChild(currentTimeSpan);
-
             stepElement.appendChild(checkbox);
             stepElement.appendChild(stepNumber);
             stepElement.appendChild(title);
-            stepElement.appendChild(audioControlsDiv);
-            stepElement.appendChild(audio);
 
             stepsContainer.appendChild(stepElement);
         }
         updateProgress();
     }
 
+    function loadHistory() {
+        const history = JSON.parse(localStorage.getItem('pradakshinaHistory')) || [];
+        historyList.innerHTML = '';
+        for (const item of history) {
+            const li = document.createElement('li');
+            li.textContent = item;
+            historyList.appendChild(li);
+        }
+    }
+
+    function saveHistory(completionTime) {
+        const history = JSON.parse(localStorage.getItem('pradakshinaHistory')) || [];
+        const completionString = `${completionTime.toLocaleDateString()} ${formatTime(completionTime)}`;
+        history.push(completionString);
+        localStorage.setItem('pradakshinaHistory', JSON.stringify(history));
+        loadHistory();
+        updateStreak(completionTime);
+        updateBadges();
+        updateLeaderboard();
+    }
+
+    function clearHistory() {
+        localStorage.removeItem('pradakshinaHistory');
+        localStorage.removeItem('streak');
+        localStorage.removeItem('earnedBadges');
+        loadHistory();
+        updateStreak();
+        updateBadges();
+        updateLeaderboard();
+    }
+
+    function updateStreak(completionTime) {
+        let streak = JSON.parse(localStorage.getItem('streak')) || {
+            count: 0,
+            lastCompletionDate: null,
+        };
+
+        if (completionTime) {
+            const today = new Date(completionTime).setHours(0, 0, 0, 0);
+            const lastCompletionDate = streak.lastCompletionDate ? new Date(streak.lastCompletionDate).setHours(0, 0, 0, 0) : null;
+
+            if (lastCompletionDate) {
+                const differenceInDays = (today - lastCompletionDate) / (1000 * 60 * 60 * 24);
+                if (differenceInDays === 1) {
+                    streak.count++;
+                } else if (differenceInDays > 1) {
+                    streak.count = 1;
+                }
+            } else {
+                streak.count = 1;
+            }
+            streak.lastCompletionDate = completionTime.toISOString();
+        } else {
+            const today = new Date().setHours(0, 0, 0, 0);
+            const lastCompletionDate = streak.lastCompletionDate ? new Date(streak.lastCompletionDate).setHours(0, 0, 0, 0) : null;
+            if (lastCompletionDate) {
+                const differenceInDays = (today - lastCompletionDate) / (1000 * 60 * 60 * 24);
+                if (differenceInDays > 1) {
+                    streak.count = 0;
+                }
+            }
+        }
+
+        localStorage.setItem('streak', JSON.stringify(streak));
+        streakCountElement.textContent = streak.count;
+    }
+
+    function updateBadges() {
+        const history = JSON.parse(localStorage.getItem('pradakshinaHistory')) || [];
+        const earnedBadges = JSON.parse(localStorage.getItem('earnedBadges')) || [];
+        const completions = history.length;
+
+        badgesListElement.innerHTML = '';
+
+        for (const badge of badges) {
+            const badgeElement = document.createElement('div');
+            badgeElement.classList.add('badge');
+            if (completions >= badge.completions) {
+                if (!earnedBadges.includes(badge.name)) {
+                    earnedBadges.push(badge.name);
+                }
+                badgeElement.innerHTML = `<span>${badge.name}</span>`;
+            } else {
+                badgeElement.classList.add('locked');
+                badgeElement.innerHTML = `<span>${badge.name} (Locked)</span>`;
+            }
+            badgesListElement.appendChild(badgeElement);
+        }
+        localStorage.setItem('earnedBadges', JSON.stringify(earnedBadges));
+    }
+
+    function updateLeaderboard() {
+        const history = JSON.parse(localStorage.getItem('pradakshinaHistory')) || [];
+        const completions = history.length;
+
+        leaderboardListElement.innerHTML = '';
+
+        const li = document.createElement('li');
+        li.innerHTML = `<span>You</span> <span>${completions} completions</span>`;
+        leaderboardListElement.appendChild(li);
+    }
+
+    clearHistoryButton.addEventListener('click', clearHistory);
+
     // Initial generation
     generateSteps();
-    renderHistory();
+    loadHistory();
+    updateStreak();
+    updateBadges();
+    updateLeaderboard();
 });

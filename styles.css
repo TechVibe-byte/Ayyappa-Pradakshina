@@ -3,11 +3,10 @@ body {
     background-color: #f4f4f4;
     color: #333;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    margin: 2rem 0;
+    margin: 0;
     transition: background-color 0.3s, color 0.3s;
 }
 
@@ -34,14 +33,11 @@ body {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 1rem;
-    flex-wrap: wrap;
-    gap: 1rem;
 }
 
 h1 {
     color: #ff9933;
     margin: 0;
-    font-size: 1.5rem;
 }
 
 #theme-switcher {
@@ -64,6 +60,11 @@ h1 {
     margin-bottom: 1rem;
     font-size: 0.9rem;
     color: #555;
+}
+
+#streak-count {
+    font-weight: bold;
+    color: #ff9933;
 }
 
 #progress-container {
@@ -97,8 +98,26 @@ h1 {
 .step {
     display: flex;
     align-items: center;
+    justify-content: center;
     padding: 0.5rem;
     border-bottom: 1px solid #eee;
+    animation: fadeIn 0.5s ease-in-out;
+    transition: background-color 0.3s;
+}
+
+.step:hover {
+    background-color: #f0f0f0;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .step:last-child {
@@ -121,55 +140,85 @@ h1 {
     margin-right: 1rem;
 }
 
-.step audio {
-    display: none; /* Hide the default audio element */
+#history-container {
+    margin-top: 2rem;
+    text-align: center;
 }
 
-.audio-controls {
-    display: flex;
-    align-items: center;
-    gap: 5px;
+#history-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 1rem;
 }
 
-.play-button, .pause-button {
-    background-color: #ff9933;
+#history-list li {
+    background: #f9f9f9;
+    padding: 0.5rem;
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+}
+
+#clear-history {
+    background-color: #ff4d4d;
     color: white;
     border: none;
     border-radius: 4px;
-    padding: 5px 10px;
+    padding: 0.5rem 1rem;
     cursor: pointer;
-    font-size: 1rem;
-    line-height: 1;
 }
 
-.play-button:hover, .pause-button:hover {
-    background-color: #e68a2e;
+#clear-history:hover {
+    background-color: #e60000;
 }
 
-.pause-button {
-    display: none; /* Initially hidden */
+#badges-container {
+    margin-top: 2rem;
+    text-align: center;
 }
 
-.current-time {
+#badges-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.badge {
+    background-color: #ff9933;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
     font-size: 0.9rem;
-    min-width: 30px;
-    text-align: right;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
-/* Dark Mode for audio controls */
-body.dark-mode .play-button,
-body.dark-mode .pause-button {
-    background-color: #ffb74d;
+.badge.locked {
+    background-color: #ccc;
+    color: #888;
 }
 
-body.dark-mode .play-button:hover,
-body.dark-mode .pause-button:hover {
-    background-color: #e68a2e;
+#leaderboard-container {
+    margin-top: 2rem;
+    text-align: center;
 }
 
-body.dark-mode .current-time {
-    color: #e0e0e0;
+#leaderboard-list {
+    list-style: none;
+    padding: 0;
 }
+
+#leaderboard-list li {
+    background: #f9f9f9;
+    padding: 0.5rem;
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+
 
 /* Dark Mode */
 body.dark-mode {
@@ -206,26 +255,35 @@ body.dark-mode .step {
     border-bottom-color: #424242;
 }
 
+body.dark-mode .step:hover {
+    background-color: #333;
+}
+
 body.dark-mode .step-title {
     color: #e0e0e0;
 }
 
+body.dark-mode ::selection {
+    background-color: #ff9933;
+    color: white;
+}
+
+/* Language Switcher */
 .language-switcher {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 10px;
 }
 
 .lang-label {
     font-size: 0.9rem;
 }
 
-/* The switch - a checkbox with a custom slider */
 .switch {
     position: relative;
     display: inline-block;
-    width: 50px;
-    height: 24px;
+    width: 60px;
+    height: 34px;
 }
 
 .switch input {
@@ -248,10 +306,10 @@ body.dark-mode .step-title {
 .slider:before {
     position: absolute;
     content: "";
-    height: 18px;
-    width: 18px;
-    left: 3px;
-    bottom: 3px;
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
     background-color: white;
     transition: .4s;
 }
@@ -270,55 +328,71 @@ input:checked + .slider:before {
 
 /* Rounded sliders */
 .slider.round {
-    border-radius: 24px;
+    border-radius: 34px;
 }
 
 .slider.round:before {
     border-radius: 50%;
 }
 
-body.dark-mode .lang-label {
-    color: #e0e0e0;
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .header {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .step {
+        padding: 0.5rem 0;
+    }
+
+    .step-title {
+        font-size: 0.9rem;
+    }
+
+    .play-button, .pause-button {
+        padding: 4px 8px;
+        font-size: 0.9rem;
+    }
 }
 
-.history-container {
-    background: white;
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 90%;
-    max-width: 800px;
-    margin-top: 2rem;
-}
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.2rem;
+    }
 
-.history-container h2 {
-    color: #ff9933;
-    margin-top: 0;
-}
+    .step-title {
+        font-size: 0.8rem;
+    }
 
-#history-list {
-    list-style: none;
-    padding: 0;
-}
+    .time-tracker {
+        font-size: 0.8rem;
+    }
 
-#history-list li {
-    background: #f9f9f9;
-    padding: 1rem;
-    border-radius: 5px;
-    margin-bottom: 0.5rem;
-    border: 1px solid #eee;
-}
+    .lang-label {
+        font-size: 0.8rem;
+    }
 
-body.dark-mode .history-container {
-    background-color: #1e1e1e;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
-}
+    .switch {
+        width: 50px;
+        height: 28px;
+    }
 
-body.dark-mode .history-container h2 {
-    color: #ffb74d;
-}
+    .slider:before {
+        height: 20px;
+        width: 20px;
+        left: 4px;
+        bottom: 4px;
+    }
 
-body.dark-mode #history-list li {
-    background: #2a2a2a;
-    border-color: #424242;
+    input:checked + .slider:before {
+        transform: translateX(22px);
+    }
 }

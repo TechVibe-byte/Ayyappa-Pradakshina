@@ -10,12 +10,12 @@
     <div class="container">
         <img src="images/banner2.png" alt="Ayyappa Swamy Banner" class="banner">
         <div class="header">
-            <h1>Ayyappa Pradakshina Tracker</h1>
-            <button id="theme-switcher">🌙</button>
+            <h1>Ayyappa Pradakshina</h1>
+            <button id="theme-switcher" aria-label="Switch between dark and light mode">🌙</button>
             <div class="language-switcher">
                 <span class="lang-label">English</span>
                 <label class="switch">
-                    <input type="checkbox" id="language-toggle">
+                    <input type="checkbox" id="language-toggle" aria-label="Switch between English and Telugu language">
                     <span class="slider round"></span>
                 </label>
                 <span class="lang-label">Telugu</span>
@@ -24,16 +24,29 @@
         <div class="time-tracker">
             <div>Start Time: <span id="start-time">-</span></div>
             <div>End Time: <span id="end-time">-</span></div>
+            <div>Streak: <span id="streak-count">0</span> days</div>
         </div>
         <div id="progress-container">
-            <div id="progress-bar"></div>
+            <div id="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
             <div id="progress-label">0%</div>
         </div>
         <div id="steps-container"></div>
-    </div>
-    <div class="history-container">
-        <h2>Completion History</h2>
-        <ul id="history-list"></ul>
+
+        <div id="history-container">
+            <h2>Completion History</h2>
+            <ul id="history-list" role="list"></ul>
+            <button id="clear-history" aria-label="Clear completion history">Clear History</button>
+        </div>
+
+        <div id="badges-container">
+            <h2>Badges</h2>
+            <div id="badges-list"></div>
+        </div>
+
+        <div id="leaderboard-container">
+            <h2>Leaderboard</h2>
+            <ul id="leaderboard-list"></ul>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
