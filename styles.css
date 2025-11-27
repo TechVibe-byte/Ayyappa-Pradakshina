@@ -44,86 +44,161 @@ h1 {
     margin: 0;
 }
 
-
-/* From Uiverse.io by chase2k25 */
-/* Switch Container */
-.uiverse-switch-container {
+/* From Uiverse.io by andrew-demchenk0 */ 
+.switch {
+  font-size: 14px;
   position: relative;
-  width: 60px;
-  height: 24px;
-  background: #d6d6d6;
-  border-radius: 20px;
-  box-shadow:
-    inset -3.2px -3.2px 6.4px #ffffff,
-    inset 3.2px 3.2px 6.4px #b0b0b0;
+  display: inline-block;
+  width: 50px;
+  height: 28px;
 }
 
-/* Hidden Checkbox */
-.uiverse-toggle-checkbox {
-  display: none;
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
 }
 
-/* Switch Label (Interactive Area) */
-.uiverse-switch {
+.slider {
   position: absolute;
-  top: 50%;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  transform: translateY(-50%);
-  border-radius: 20px;
-  overflow: hidden;
   cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #73C0FC;
+  transition: .4s;
+  border-radius: 30px;
 }
 
-/* Toggle Button */
-.uiverse-toggle {
+.slider:before {
   position: absolute;
-  width: 32px;
-  height: 20px;
-  background: linear-gradient(145deg, #d9d9d9, #bfbfbf);
+  content: "";
+  height: 24px;
+  width: 24px;
   border-radius: 20px;
-  top: 2px;
   left: 2px;
-  box-shadow:
-    -1.6px -1.6px 3.2px #ffffff,
-    1.6px 1.6px 3.2px #b0b0b0;
-  transition: all 0.3s ease-in-out;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  padding-left: 4px;
+  bottom: 2px;
+  z-index: 2;
+  background-color: #e8e8e8;
+  transition: .4s;
 }
 
-/* LED Light */
-.uiverse-led {
-  width: 4px;
-  height: 4px;
-  background: grey;
-  border-radius: 50%;
-  box-shadow: 0 0 4px 0.8px rgba(0, 0, 0, 0.2);
-  transition: all 0.3s ease-in-out;
+.sun svg {
+  position: absolute;
+  top: 4px;
+  left: 28px;
+  z-index: 1;
+  width: 20px;
+  height: 20px;
 }
 
-/* Active State for Toggle (ON) */
-.uiverse-toggle-checkbox:checked + .uiverse-switch .uiverse-toggle {
-  left: 26px;
-  background: linear-gradient(145deg, #cfcfcf, #a9a9a9);
-  box-shadow:
-    -1.6px -1.6px 3.2px #ffffff,
-    1.6px 1.6px 3.2px #8a8a8a;
+.moon svg {
+  fill: #73C0FC;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  z-index: 1;
+  width: 20px;
+  height: 20px;
 }
 
-.uiverse-toggle-checkbox:checked + .uiverse-switch .uiverse-led {
-  background: yellow;
-  box-shadow: 0 0 6px 1.6px yellow;
+/* .switch:hover */.sun svg {
+  animation: rotate 15s linear infinite;
 }
 
-/* Hover Effect */
-.uiverse-switch:hover .uiverse-toggle {
-  box-shadow:
-    -1.6px -1.6px 4.8px #ffffff,
-    1.6px 1.6px 4.8px #9b9b9b;
+ @keyframes rotate {
+ 
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* .switch:hover */.moon svg {
+  animation: tilt 5s linear infinite;
+}
+
+ @keyframes tilt {
+ 
+  0% {
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: rotate(-10deg);
+  }
+
+  75% {
+    transform: rotate(10deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.input:checked + .slider {
+  background-color: #183153;
+}
+
+.input:focus + .slider {
+  box-shadow: 0 0 1px #183153;
+}
+
+.header-controls {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* From Uiverse.io by vikiWayne */ 
+.button {
+  padding: 0.5em 0.8em;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  color: #2c9caf;
+  transition: all 1000ms;
+  font-size: 12px;
+  position: relative;
+  overflow: hidden;
+  outline: 2px solid #2c9caf;
+  text-decoration: none;
+}
+
+.button:hover {
+  color: #ffffff;
+  transform: scale(1.1);
+  outline: 2px solid #70bdca;
+  box-shadow: 4px 5px 17px -4px #268391;
+}
+
+.button::before {
+  content: "";
+  position: absolute;
+  left: -50px;
+  top: 0;
+  width: 0;
+  height: 100%;
+  background-color: #2c9caf;
+  transform: skewX(45deg);
+  z-index: -1;
+  transition: width 1000ms;
+}
+
+.button:hover::before {
+  width: 250%;
+}
+
+.input:checked + .slider:before {
+  transform: translateX(22px);
 }
 
 .time-tracker {
@@ -396,7 +471,61 @@ h1 {
     justify-content: space-between;
 }
 
+/* From Uiverse.io by bbaginuk */ 
+/*------ Settings ------*/
+.audio-player-container {
+  --color: #333;
+  --size: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  font-size: var(--size);
+  user-select: none;
+  fill: var(--color);
+}
 
+.audio-player-container .play {
+  position: absolute;
+  animation: keyframes-fill 0.3s;
+}
+
+.audio-player-container .pause {
+  position: absolute;
+  display: none;
+  animation: keyframes-fill 0.3s;
+}
+
+/* ------ On check event ------ */
+.audio-player-container input:checked ~ .play {
+  display: none;
+}
+
+.audio-player-container input:checked ~ .pause {
+  display: block;
+}
+
+/* ------ Hide the default checkbox ------ */
+.audio-player-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* ------ Animation ------ */
+ @keyframes keyframes-fill {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+}
 
 /* Dark Mode */
 body.dark-mode {
@@ -453,6 +582,43 @@ body.dark-mode ::selection {
     gap: 10px;
 }
 
+.language-toggle-switch {
+  font-size: 12px;
+  width: 40px;
+  height: 22px;
+}
+
+.language-toggle-switch .slider:before {
+  height: 18px;
+  width: 18px;
+}
+
+.language-toggle-switch .input:checked + .slider:before {
+  transform: translateX(18px);
+}
+
+/* Mode Switcher */
+.mode-switcher {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.mode-toggle-switch {
+    font-size: 12px;
+    width: 40px;
+    height: 22px;
+}
+
+.mode-toggle-switch .slider:before {
+    height: 18px;
+    width: 18px;
+}
+
+.mode-toggle-switch .input:checked + .slider:before {
+    transform: translateX(18px);
+}
+
 .lang-label {
     font-size: 0.9rem;
 }
@@ -478,6 +644,11 @@ body.dark-mode ::selection {
 body.dark-mode .card {
     background: #2a2a2a;
 }
+
+body.dark-mode .audio-player-container {
+    --color: #e0e0e0;
+}
+
 
 @media (min-width: 1024px) {
     .container {
@@ -518,11 +689,6 @@ body.dark-mode .card {
     }
 
     .step-title {
-        font-size: 0.9rem;
-    }
-
-    .play-button, .pause-button {
-        padding: 4px 8px;
         font-size: 0.9rem;
     }
 }

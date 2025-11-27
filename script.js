@@ -220,6 +220,8 @@ const saranaGhoshaTelugu = [
     "ఓం శ్రీహరిహరసుతన్- ఆనందచిత్తన్ - అయ్యన్ అయ్యప్ప - స్వామియే – శరణం అయ్యప్ప"
 ];
 
+const naamaJapam = Array(108).fill("Om Sri Swamiye Saranam Ayyappa");
+
 document.addEventListener('DOMContentLoaded', () => {
     const stepsContainer = document.getElementById('steps-container');
     const progressBar = document.getElementById('progress-bar');
@@ -228,6 +230,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const endTimeElement = document.getElementById('end-time');
     const themeToggle = document.getElementById('theme-toggle');
     const languageToggle = document.getElementById('language-toggle');
+    const modeToggle = document.getElementById('mode-toggle');
+    const languageSwitcher = document.querySelector('.language-switcher');
     const body = document.body;
     const totalSteps = 108;
     const historyList = document.getElementById('history-list');
@@ -235,6 +239,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const streakCountElement = document.getElementById('streak-count');
     const badgesListElement = document.getElementById('badges-list');
     const leaderboardListElement = document.getElementById('leaderboard-list');
+    const audioCheckbox = document.getElementById('audio-checkbox');
+    const audio = document.getElementById('background-music');
+
+    audioCheckbox.addEventListener('change', () => {
+        if (audioCheckbox.checked) {
+            audio.play();
+        } else {
+            audio.pause();
+        }
+    });
+
 
     const badges = [
         { name: 'First Pradakshina', completions: 1 },
@@ -248,6 +263,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let startTime = null;
     let endTime = null;
     let currentLanguage = localStorage.getItem('language') || 'english';
+    let currentMode = localStorage.getItem('mode') || 'ghosha';
 
     // Theme switching logic
     const currentTheme = localStorage.getItem('theme');
@@ -276,6 +292,23 @@ document.addEventListener('DOMContentLoaded', () => {
     languageToggle.addEventListener('change', () => {
         currentLanguage = languageToggle.checked ? 'telugu' : 'english';
         localStorage.setItem('language', currentLanguage);
+        generateSteps();
+    });
+
+    // Mode switching
+    if (currentMode === 'japam') {
+        modeToggle.checked = true;
+        languageSwitcher.style.display = 'none';
+    }
+
+    modeToggle.addEventListener('change', () => {
+        currentMode = modeToggle.checked ? 'japam' : 'ghosha';
+        localStorage.setItem('mode', currentMode);
+        if (currentMode === 'japam') {
+            languageSwitcher.style.display = 'none';
+        } else {
+            languageSwitcher.style.display = 'flex';
+        }
         generateSteps();
     });
 
@@ -322,7 +355,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function generateSteps() {
         stepsContainer.innerHTML = '';
-        const ghosha = currentLanguage === 'telugu' ? saranaGhoshaTelugu : saranaGhosha;
+        let ghosha;
+
+        if (currentMode === 'japam') {
+            ghosha = naamaJapam;
+        } else {
+            ghosha = currentLanguage === 'telugu' ? saranaGhoshaTelugu : saranaGhosha;
+        }
 
         for (let i = 1; i <= totalSteps; i++) {
             const stepElement = document.createElement('div');
