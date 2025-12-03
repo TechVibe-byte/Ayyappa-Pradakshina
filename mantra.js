@@ -1,10 +1,44 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const hamburgerMenu = document.querySelector('.hamburger-menu');
+    const hamburgerInput = document.querySelector('.hamburger-input');
+    const headerControls = document.querySelector('.header-controls');
+
+    hamburgerMenu.addEventListener('click', (e) => {
+        // This allows clicking the whole button area, not just the checkbox
+        if (e.target !== hamburgerInput) {
+            hamburgerInput.checked = !hamburgerInput.checked;
+        }
+        headerControls.classList.toggle('nav-active');
+    });
+
     const mantraCardsContainer = document.getElementById('mantra-cards-container');
     const focusOverlay = document.getElementById('focus-overlay');
     const focusContent = document.getElementById('focus-content');
     const focusCloseButton = document.getElementById('focus-close-button');
+    const themeToggle = document.getElementById('theme-toggle');
+    const body = document.body;
     
     let currentPlaying = null;
+
+    // Theme switching
+    let currentTheme = localStorage.getItem('theme') || 'dark-mode';
+    if (currentTheme === 'light-mode') {
+        themeToggle.checked = false;
+        body.classList.remove('dark-mode');
+    } else {
+        themeToggle.checked = true;
+        body.classList.add('dark-mode');
+    }
+
+    themeToggle.addEventListener('change', () => {
+        if (themeToggle.checked) {
+            body.classList.add('dark-mode');
+            localStorage.setItem('theme', 'dark-mode');
+        } else {
+            body.classList.remove('dark-mode');
+            localStorage.setItem('theme', 'light-mode');
+        }
+    });
 
     const mantras = [
         {
@@ -26,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
             image: 'images/Hanuman.jpeg',
             mantraEnglish: 'Om Aim Hrīm Hanumate Śrī Rāmdūtāya Namaḥ',
             mantraTelugu: 'ఓం ఐమ్ హ్రీమ్ హనుమతే శ్రీ రామదూతాయ నమః',
-            audio: 'audio/Hanuman_mantras.png.mpeg'
+            audio: 'audio/Hanuman_mantras.mpeg'
         }
     ];
 

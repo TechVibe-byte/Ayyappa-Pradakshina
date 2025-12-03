@@ -33,60 +33,6 @@ body {
     position: relative;
 }
 
-.toggleSwitch {
-  width: 40px;
-  height: 40px;
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: green;
-  border-radius: 50%;
-  cursor: pointer;
-  transition-duration: 0.3s;
-  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.13);
-  overflow: hidden;
-}
-
-.toggleSwitch input {
-  display: none;
-}
-
-.speaker, .mute-speaker {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 2;
-  transition-duration: 0.3s;
-}
-
-.speaker svg, .mute-speaker svg {
-  width: 16px;
-}
-
-.mute-speaker {
-  position: absolute;
-  opacity: 0;
-  z-index: 3;
-}
-
-.toggleSwitch input:checked ~ .speaker {
-  opacity: 0;
-}
-
-.toggleSwitch input:checked ~ .mute-speaker {
-  opacity: 1;
-  background-color: black;
-}
-
-.toggleSwitch:hover {
-  background-color: rgb(61, 61, 61);
-}
-
 .mantra-content {
     padding: 1.5rem;
 }
@@ -142,11 +88,6 @@ body.dark-mode .mantra-text-english {
 
 body.dark-mode .mantra-text-telugu {
     color: #e0e0e0;
-}
-
-body.dark-mode .toggleSwitch {
-    background-color: #2a2a2a;
-    border: 1px solid #555;
 }
 
 body.dark-mode .focus-button {
