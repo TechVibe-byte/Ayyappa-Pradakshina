@@ -1,43 +1,55 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const hamburgerMenu = document.querySelector('.hamburger-menu');
-    const hamburgerInput = document.querySelector('.hamburger-input');
+    const hamburgerBtn = document.querySelector('.hamburger-btn');
     const headerControls = document.querySelector('.header-controls');
 
-    hamburgerMenu.addEventListener('click', (e) => {
-        // This allows clicking the whole button area, not just the checkbox
-        if (e.target !== hamburgerInput) {
-            hamburgerInput.checked = !hamburgerInput.checked;
-        }
+    hamburgerBtn.addEventListener('click', () => {
+        hamburgerBtn.classList.toggle('is-active');
         headerControls.classList.toggle('nav-active');
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (headerControls.classList.contains('nav-active') &&
+            !headerControls.contains(e.target) &&
+            !hamburgerBtn.contains(e.target)) {
+
+            hamburgerBtn.classList.remove('is-active');
+            headerControls.classList.remove('nav-active');
+        }
     });
 
     const mantraCardsContainer = document.getElementById('mantra-cards-container');
     const focusOverlay = document.getElementById('focus-overlay');
     const focusContent = document.getElementById('focus-content');
     const focusCloseButton = document.getElementById('focus-close-button');
-    const themeToggle = document.getElementById('theme-toggle');
+    const themeBtn = document.getElementById('theme-btn');
+    const sunIcon = document.getElementById('sun-icon');
+    const moonIcon = document.getElementById('moon-icon');
     const body = document.body;
-    
+
     let currentPlaying = null;
 
     // Theme switching
-    let currentTheme = localStorage.getItem('theme') || 'dark-mode';
-    if (currentTheme === 'light-mode') {
-        themeToggle.checked = false;
-        body.classList.remove('dark-mode');
-    } else {
-        themeToggle.checked = true;
-        body.classList.add('dark-mode');
-    }
-
-    themeToggle.addEventListener('change', () => {
-        if (themeToggle.checked) {
+    function updateThemeUI(theme) {
+        if (theme === 'dark-mode') {
             body.classList.add('dark-mode');
-            localStorage.setItem('theme', 'dark-mode');
+            sunIcon.style.display = 'block';
+            moonIcon.style.display = 'none';
         } else {
             body.classList.remove('dark-mode');
-            localStorage.setItem('theme', 'light-mode');
+            sunIcon.style.display = 'none';
+            moonIcon.style.display = 'block';
         }
+        localStorage.setItem('theme', theme);
+    }
+
+    // Initial Theme Check
+    const currentTheme = localStorage.getItem('theme') || 'dark-mode';
+    updateThemeUI(currentTheme);
+
+    themeBtn.addEventListener('click', () => {
+        const newTheme = body.classList.contains('dark-mode') ? 'light-mode' : 'dark-mode';
+        updateThemeUI(newTheme);
     });
 
     const mantras = [
@@ -61,6 +73,20 @@ document.addEventListener('DOMContentLoaded', () => {
             mantraEnglish: 'Om Aim Hrīm Hanumate Śrī Rāmdūtāya Namaḥ',
             mantraTelugu: 'ఓం ఐమ్ హ్రీమ్ హనుమతే శ్రీ రామదూతాయ నమః',
             audio: 'audio/Hanuman_mantras.mpeg'
+        },
+        {
+            deity: 'Ananta Shesha',
+            image: 'images/Ananta Shesha.jpg',
+            mantraEnglish: 'Om Sarparajaya Vidmahe Nagarajaya Dhimahi Tanno Anantah Prachodayat',
+            mantraTelugu: 'ఓం సర్పరాజాయ విద్మహే నాగరాజాయ ధీమహి తన్నో అనంతః ప్రచోదయాత్',
+            audio: 'audio/Ananta_Shesha_mantra.mpeg'
+        },
+        {
+            deity: 'Durga Matha',
+            image: 'images/Durga_matha_mantra.jpeg',
+            mantraEnglish: 'Om Katyayanaya Vidmahe\nKanyakumari Dhimahi\nTanno Durgah Prachodayat',
+            mantraTelugu: 'ఓం కాత్యాయనాయ విద్మహే కన్యాకుమారి ధీమహీ తన్నో దుర్గ: ప్రచోదయాత్',
+            audio: 'audio/Durga_matha_mantra.mpeg'
         }
     ];
 
@@ -75,11 +101,21 @@ document.addEventListener('DOMContentLoaded', () => {
         image.src = mantra.image;
         image.alt = mantra.deity;
 
-        const audio = new Audio(mantra.audio);
-        audio.loop = true;
+        let audio = null;
+        if (mantra.audio) {
+            audio = new Audio(mantra.audio);
+            audio.loop = true;
+        }
 
         const playPauseButton = document.createElement('label');
         playPauseButton.classList.add('toggleSwitch');
+
+        // Hide/Disable if no audio
+        if (!mantra.audio) {
+            playPauseButton.style.opacity = '0.5';
+            playPauseButton.style.pointerEvents = 'none';
+        }
+
         playPauseButton.innerHTML = `
             <input type="checkbox" class="audio-checkbox">
             <div class="speaker">
@@ -104,6 +140,10 @@ document.addEventListener('DOMContentLoaded', () => {
         };
 
         checkbox.addEventListener('change', () => {
+            if (!audio) {
+                checkbox.checked = false;
+                return;
+            }
             if (checkbox.checked) {
                 if (currentPlaying && currentPlaying !== mantraAudioControls) {
                     currentPlaying.audio.pause();
@@ -116,7 +156,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 currentPlaying = null;
             }
         });
-        
+
         imageContainer.appendChild(image);
         imageContainer.appendChild(playPauseButton);
 
@@ -142,7 +182,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const focusImage = document.createElement('img');
             focusImage.src = mantra.image;
-            
+
             const focusMantraEnglish = document.createElement('p');
             focusMantraEnglish.classList.add('mantra-text-english');
             focusMantraEnglish.textContent = mantra.mantraEnglish;

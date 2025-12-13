@@ -220,7 +220,8 @@ const saranaGhoshaTelugu = [
     "ఓం హరిహర సుతనే ఆనందచిత్తన్ అయ్యప్ప స్వామినే శరణమయ్యప్ప"
 ];
 
-const naamaJapam = Array(108).fill("Om Sri Swamiye Saranam Ayyappa");
+const naamaJapamEnglish = Array(108).fill("Om Sri Swamiye Saranam Ayyappa");
+const naamaJapamTelugu = Array(108).fill("ఓం శ్రీ స్వామియే శరణం అయ్యప్ప");
 
 const englishSlogans = [
     "svāmi śaraṇaṃ – ayyappa śaraṇaṃ",
@@ -315,16 +316,23 @@ const teluguSlogans = [
 ];
 
 document.addEventListener('DOMContentLoaded', () => {
-    const hamburgerMenu = document.querySelector('.hamburger-menu');
-    const hamburgerInput = document.querySelector('.hamburger-input');
+    const hamburgerBtn = document.querySelector('.hamburger-btn');
     const headerControls = document.querySelector('.header-controls');
 
-    hamburgerMenu.addEventListener('click', (e) => {
-        // This allows clicking the whole button area, not just the checkbox
-        if (e.target !== hamburgerInput) {
-            hamburgerInput.checked = !hamburgerInput.checked;
-        }
+    hamburgerBtn.addEventListener('click', () => {
+        hamburgerBtn.classList.toggle('is-active');
         headerControls.classList.toggle('nav-active');
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (headerControls.classList.contains('nav-active') &&
+            !headerControls.contains(e.target) &&
+            !hamburgerBtn.contains(e.target)) {
+
+            hamburgerBtn.classList.remove('is-active');
+            headerControls.classList.remove('nav-active');
+        }
     });
 
     const stepsContainer = document.getElementById('steps-container');
@@ -334,8 +342,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const endTimeElement = document.getElementById('end-time');
     const languageToggle = document.getElementById('language-toggle');
     const modeToggle = document.getElementById('mode-toggle');
-    const themeToggle = document.getElementById('theme-toggle');
-    const languageSwitcher = document.querySelector('.language-switcher');
     const body = document.body;
     const totalSteps = 108;
     const historyList = document.getElementById('history-list');
@@ -349,7 +355,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     slogansButton.addEventListener('click', () => {
         const slogans = currentLanguage === 'telugu' ? teluguSlogans : englishSlogans;
-        slogansContainer.innerHTML = slogans.map(s => `<p>${s}</p>`).join('');
+        slogansContainer.innerHTML = slogans.map(s => `<div class="slogan-card"><p>${s}</p></div>`).join('');
         slogansModal.style.display = 'flex';
     });
 
@@ -374,57 +380,83 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let startTime = null;
     let endTime = null;
-    let currentLanguage = localStorage.getItem('language') || 'english';
+    let currentLanguage = localStorage.getItem('language') || 'telugu';
     let currentMode = localStorage.getItem('mode') || 'ghosha';
     let currentTheme = localStorage.getItem('theme') || 'dark-mode';
 
-    // Language switching
-    if (currentLanguage === 'telugu') {
-        languageToggle.checked = true;
-    }
-    document.documentElement.lang = currentLanguage === 'telugu' ? 'te' : 'en';
+    const btnLangEn = document.getElementById('btn-lang-en');
+    const btnLangTe = document.getElementById('btn-lang-te');
+    const languageControl = document.querySelector('.segment-control-container');
 
-    languageToggle.addEventListener('change', () => {
-        currentLanguage = languageToggle.checked ? 'telugu' : 'english';
-        localStorage.setItem('language', currentLanguage);
-        document.documentElement.lang = currentLanguage === 'telugu' ? 'te' : 'en';
+    // Language switching
+    function updateLanguageUI(lang) {
+        if (lang === 'telugu') {
+            btnLangTe.classList.add('active');
+            btnLangEn.classList.remove('active');
+            document.documentElement.lang = 'te';
+        } else {
+            btnLangEn.classList.add('active');
+            btnLangTe.classList.remove('active');
+            document.documentElement.lang = 'en';
+        }
+        localStorage.setItem('language', lang);
+        currentLanguage = lang;
         generateSteps();
-    });
+    }
+
+    // Initialize UI
+    updateLanguageUI(currentLanguage);
+
+    btnLangEn.addEventListener('click', () => updateLanguageUI('english'));
+    btnLangTe.addEventListener('click', () => updateLanguageUI('telugu'));
+
+    const btnModeGhosha = document.getElementById('btn-mode-ghosha');
+    const btnModeJapam = document.getElementById('btn-mode-japam');
 
     // Mode switching
-    if (currentMode === 'japam') {
-        modeToggle.checked = true;
-        languageSwitcher.style.display = 'none';
+    function updateModeUI(mode) {
+        if (mode === 'japam') {
+            btnModeJapam.classList.add('active');
+            btnModeGhosha.classList.remove('active');
+        } else {
+            btnModeGhosha.classList.add('active');
+            btnModeJapam.classList.remove('active');
+        }
+        localStorage.setItem('mode', mode);
+        currentMode = mode;
+        generateSteps();
     }
 
-    modeToggle.addEventListener('change', () => {
-        currentMode = modeToggle.checked ? 'japam' : 'ghosha';
-        localStorage.setItem('mode', currentMode);
-        if (currentMode === 'japam') {
-            languageSwitcher.style.display = 'none';
-        } else {
-            languageSwitcher.style.display = 'flex';
-        }
-        generateSteps();
-    });
+    // Initialize UI
+    updateModeUI(currentMode);
+
+    btnModeGhosha.addEventListener('click', () => updateModeUI('ghosha'));
+    btnModeJapam.addEventListener('click', () => updateModeUI('japam'));
 
     // Theme switching
-    if (currentTheme === 'light-mode') {
-        themeToggle.checked = false;
-        body.classList.remove('dark-mode');
-    } else {
-        themeToggle.checked = true;
-        body.classList.add('dark-mode');
-    }
+    const themeBtn = document.getElementById('theme-btn');
+    const sunIcon = document.getElementById('sun-icon');
+    const moonIcon = document.getElementById('moon-icon');
 
-    themeToggle.addEventListener('change', () => {
-        if (themeToggle.checked) {
+    function updateThemeUI(theme) {
+        if (theme === 'dark-mode') {
             body.classList.add('dark-mode');
-            localStorage.setItem('theme', 'dark-mode');
+            sunIcon.style.display = 'block';
+            moonIcon.style.display = 'none';
         } else {
             body.classList.remove('dark-mode');
-            localStorage.setItem('theme', 'light-mode');
+            sunIcon.style.display = 'none';
+            moonIcon.style.display = 'block';
         }
+        localStorage.setItem('theme', theme);
+        currentTheme = theme;
+    }
+
+    updateThemeUI(currentTheme);
+
+    themeBtn.addEventListener('click', () => {
+        const newTheme = body.classList.contains('dark-mode') ? 'light-mode' : 'dark-mode';
+        updateThemeUI(newTheme);
     });
 
     function formatTime(date) {
@@ -473,7 +505,7 @@ document.addEventListener('DOMContentLoaded', () => {
         let ghosha;
 
         if (currentMode === 'japam') {
-            ghosha = naamaJapam;
+            ghosha = currentLanguage === 'telugu' ? naamaJapamTelugu : naamaJapamEnglish;
         } else {
             ghosha = currentLanguage === 'telugu' ? saranaGhoshaTelugu : saranaGhosha;
         }
@@ -488,7 +520,13 @@ document.addEventListener('DOMContentLoaded', () => {
             const checkbox = document.createElement('input');
             checkbox.type = 'checkbox';
             checkbox.id = `step-${i}`;
-            checkbox.addEventListener('change', updateProgress);
+            checkbox.addEventListener('change', () => {
+                updateProgress();
+                // Haptic Feedback
+                if (navigator.vibrate) {
+                    navigator.vibrate(20);
+                }
+            });
 
             const checkboxWrapper = document.createElement('div');
             checkboxWrapper.classList.add('checkbox-wrapper');
@@ -513,6 +551,17 @@ document.addEventListener('DOMContentLoaded', () => {
             stepElement.appendChild(label);
             stepElement.appendChild(stepNumber);
             stepElement.appendChild(title);
+
+            // Touch-friendly: Toggle checkbox when clicking anywhere in the row
+            stepElement.addEventListener('click', (e) => {
+                // Determine if we clicked specifically on the interaction elements
+                // The label (and its children) handles the click natively, so ignore those
+                if (!label.contains(e.target)) {
+                    // Checkbox state toggle is handled by the click, but we need to trigger it
+                    // safely. Direct assignment doesn't fire 'change', click() does.
+                    checkbox.click();
+                }
+            });
 
             stepsContainer.appendChild(stepElement);
         }
