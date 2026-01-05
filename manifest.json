@@ -1,0 +1,15 @@
+{
+  "name": "Ayyappa Pradakshina",
+  "short_name": "Pradakshina",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#121212",
+  "theme_color": "#ffb74d",
+  "icons": [
+    {
+      "src": "images/app_icon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
