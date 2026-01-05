@@ -898,10 +898,19 @@ body:not(.dark-mode) .sai-mantra-border {
 .sai-banner {
     max-height: 400px;
     /* Increased height to show more image */
-    object-position: top center;
-    /* Aligns to top to ensure face is visible */
+    object-position: center 30%;
+    /* Moves image up slightly from top alignment */
     object-fit: cover;
 }
+
+/* Hanuman Banner Adjustment */
+.hanuman-banner {
+    max-height: 400px;
+    object-position: center 20%;
+    /* Likely needs top adjustment similar to Sai Baba */
+    object-fit: cover;
+}
+
 /* Mobile Fixes & Missing Classes */
 .sai-mantra-border {
     border: 2px dashed #FFD700;
@@ -913,7 +922,20 @@ body:not(.dark-mode) .sai-mantra-border {
 }
 
 @media (max-width: 768px) {
-    .header { flex-wrap: wrap; gap: 10px; }
-    .header-controls.no-drawer { width: 100%; justify-content: space-between; margin-top: 5px; }
-    .sai-mantra-border { display: block; width: 100%; box-sizing: border-box; }
+    .header {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .header-controls.no-drawer {
+        width: 100%;
+        justify-content: space-between;
+        margin-top: 5px;
+    }
+
+    .sai-mantra-border {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+    }
 }

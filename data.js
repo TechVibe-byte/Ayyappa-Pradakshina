@@ -5,6 +5,13 @@ const saiBabaMantra = Array(108).fill(saiBabaMantraText);
 const saiBabaMantraTextTelugu = "<div class='sai-mantra-border'><span class='sai-line-1'>ఓం సాయై నమో నమః</span> <br> <span class='sai-line-2'>శ్రీ సాయి నమో నమః</span> <br> <span class='sai-line-3'>జై జై సాయి నమో నమః</span> <br> <span class='sai-line-4'>సద్గురు సాయి నమో నమః</span></div>";
 const saiBabaMantraTelugu = Array(108).fill(saiBabaMantraTextTelugu);
 
+// Data for Hanuman Pradakshina
+const hanumanMantraText = "<div class='sai-mantra-border'><span class='sai-line-1'>Anjaneyam Mahaviram</span> <br> <span class='sai-line-2'>Brahma Vishnu Shivatmakam</span> <br> <span class='sai-line-3'>Tarunarka Prabham Shantam</span> <br> <span class='sai-line-4'>Anjaneyam Namamyaham</span></div>";
+const hanumanMantra = Array(108).fill(hanumanMantraText);
+
+const hanumanMantraTextTelugu = "<div class='sai-mantra-border'><span class='sai-line-1'>ఆంజనేయం మహావీరం</span> <br> <span class='sai-line-2'>బ్రహ్మ విష్ణు శివాత్మకం</span> <br> <span class='sai-line-3'>తరుణార్క ప్రభం శాంతం</span> <br> <span class='sai-line-4'>ఆంజనేయం నమామ్యహమ్</span></div>";
+const hanumanMantraTelugu = Array(108).fill(hanumanMantraTextTelugu);
+
 // Data for Sarana Ghosha and Naama Japam
 const saranaGhosha = [
     "ōṃ śrī svāminē śaraṇamayyappa",
