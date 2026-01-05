@@ -1,3 +1,10 @@
+// Data for Sai Baba Pradakshina
+const saiBabaMantraText = "<div class='sai-mantra-border'><span class='sai-line-1'>Om Sai Namo Namah</span> <br> <span class='sai-line-2'>Shri Sai Namo Namah</span> <br> <span class='sai-line-3'>Jai Jai Sai Namo Namah</span> <br> <span class='sai-line-4'>Sadguru Sai Namo Namah</span></div>";
+const saiBabaMantra = Array(108).fill(saiBabaMantraText);
+
+const saiBabaMantraTextTelugu = "<div class='sai-mantra-border'><span class='sai-line-1'>ఓం సాయై నమో నమః</span> <br> <span class='sai-line-2'>శ్రీ సాయి నమో నమః</span> <br> <span class='sai-line-3'>జై జై సాయి నమో నమః</span> <br> <span class='sai-line-4'>సద్గురు సాయి నమో నమః</span></div>";
+const saiBabaMantraTelugu = Array(108).fill(saiBabaMantraTextTelugu);
+
 // Data for Sarana Ghosha and Naama Japam
 const saranaGhosha = [
     "ōṃ śrī svāminē śaraṇamayyappa",

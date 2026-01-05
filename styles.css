@@ -644,6 +644,21 @@ body:not(.dark-mode) .card {
         border-left: 1px solid rgba(0, 0, 0, 0.05);
     }
 
+    /* Override for pages without drawer */
+    .header-controls.no-drawer {
+        position: static;
+        width: auto;
+        height: auto;
+        background: transparent;
+        padding: 0;
+        box-shadow: none;
+        flex-direction: row;
+        gap: 10px;
+        right: auto;
+        border-left: none;
+        backdrop-filter: none;
+    }
+
     .header-controls.nav-active {
         right: 0;
         /* Slide in */
@@ -805,4 +820,85 @@ body:not(.dark-mode) .slogan-card:hover {
 
 body:not(.dark-mode) .slogan-card p::before {
     color: #d2691e;
+}
+
+/* Sai Baba Mantra Colors */
+.sai-line-1 {
+    color: #FF9933;
+    /* Deep Saffron */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    font-weight: bold;
+}
+
+.sai-line-2 {
+    color: #FFD700;
+    /* Gold */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    font-weight: bold;
+}
+
+.sai-line-3 {
+    color: #FF4500;
+    /* Orange Red */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    font-weight: bold;
+}
+
+.sai-line-4 {
+    color: #FFFFE0;
+    /* Light Yellow */
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5), 1px 1px 2px rgba(0, 0, 0, 0.8);
+    font-weight: bold;
+}
+
+/* Light Mode Overrides for Sai Baba Mantra */
+body:not(.dark-mode) .sai-line-1 {
+    color: #D35400;
+    /* Darker Saffron/Pumpkin */
+    text-shadow: none;
+}
+
+body:not(.dark-mode) .sai-line-2 {
+    color: #B7950B;
+    /* Dark Goldenrod */
+    text-shadow: none;
+}
+
+body:not(.dark-mode) .sai-line-3 {
+    color: #C0392B;
+    /* Deep Orange Red */
+    text-shadow: none;
+}
+
+body:not(.dark-mode) .sai-line-4 {
+    color: #7D6608;
+    /* Dark Bronze/Olive */
+    text-shadow: none;
+}
+
+/* Sai Baba Mantra Border */
+.sai-mantra-border {
+    border: 2px dashed #FFD700;
+    /* Gold dashed border */
+    padding: 8px 15px;
+    border-radius: 10px;
+    display: inline-block;
+    margin-top: 5px;
+    background-color: rgba(255, 215, 0, 0.05);
+    /* Very subtle gold tint */
+}
+
+body:not(.dark-mode) .sai-mantra-border {
+    border-color: #B7950B;
+    /* Darker Gold for Light Mode */
+    background-color: rgba(183, 149, 11, 0.05);
+}
+
+/* Sai Baba Banner Adjustment */
+.sai-banner {
+    max-height: 400px;
+    /* Increased height to show more image */
+    object-position: top center;
+    /* Aligns to top to ensure face is visible */
+    object-fit: cover;
 }
