@@ -58,3 +58,48 @@ function initHamburgerMenu() {
         });
     }
 }
+
+function initDivineAtmosphere() {
+    const particlesContainer = document.createElement('div');
+    particlesContainer.id = 'divine-particles';
+    document.body.appendChild(particlesContainer);
+
+    function createParticle() {
+        const particle = document.createElement('div');
+        particle.classList.add('particle');
+
+        // Random size
+        const size = Math.random() * 20 + 5; // 5px to 25px
+        particle.style.width = `${size}px`;
+        particle.style.height = `${size}px`;
+
+        // Random position
+        particle.style.left = `${Math.random() * 100}vw`;
+
+        // Random duration
+        const duration = Math.random() * 10 + 10; // 10s to 20s
+        particle.style.animationDuration = `${duration}s`;
+
+        particlesContainer.appendChild(particle);
+
+        // Cleanup
+        setTimeout(() => {
+            particle.remove();
+        }, duration * 1000);
+    }
+
+    // Create particles periodically
+    setInterval(createParticle, 2000); // One particle every 2 seconds
+
+    // Initial batch
+    for (let i = 0; i < 5; i++) {
+        setTimeout(createParticle, i * 500);
+    }
+}
+
+// Auto-initialize when file is loaded
+document.addEventListener('DOMContentLoaded', () => {
+    initDivineAtmosphere();
+    initHamburgerMenu(); // Ensure this is called globally too
+});
+

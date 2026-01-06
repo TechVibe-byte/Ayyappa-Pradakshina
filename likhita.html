@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Likhita Pradakshina</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&family=Roboto:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="common.css">
+    <style>
+        body {
+            overflow: hidden;
+            /* Prevent scrolling */
+            touch-action: none;
+            /* Prevent default touch actions like pull-to-refresh */
+        }
+
+        .likhita-container {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            position: relative;
+        }
+
+        .likhita-header {
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(30, 30, 30, 0.8);
+            z-index: 10;
+        }
+
+        .canvas-container {
+            flex-grow: 1;
+            position: relative;
+            background-color: #000;
+        }
+
+        canvas {
+            display: block;
+            cursor: crosshair;
+        }
+
+        .overlay-info {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            pointer-events: none;
+            /* Let clicks pass through to canvas */
+            color: rgba(255, 255, 255, 0.3);
+            user-select: none;
+        }
+
+        .counter-large {
+            font-size: 6rem;
+            font-weight: bold;
+            color: rgba(255, 183, 77, 0.5);
+        }
+
+        .instruction-text {
+            font-size: 1.2rem;
+            margin-top: 1rem;
+        }
+
+        .mantra-display {
+            position: absolute;
+            bottom: 2rem;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            padding: 1rem;
+            background: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            pointer-events: none;
+            font-family: 'Roboto Slab', serif;
+            font-size: 1.2rem;
+        }
+
+        #nav-back {
+            background: none;
+            border: 1px solid #fff;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+
+<body class="dark-mode">
+    <div class="likhita-container">
+        <div class="likhita-header">
+            <div>
+                <span id="header-title">Likhita Pradakshina</span>
+            </div>
+            <a href="index.html" id="nav-back">Back</a>
+        </div>
+
+        <div class="canvas-container" id="canvas-wrapper">
+            <canvas id="write-canvas"></canvas>
+
+            <div class="overlay-info">
+                <div class="counter-large" id="counter-display">0</div>
+                <div class="instruction-text">Write "Om" or Trace to Count</div>
+            </div>
+
+            <div class="mantra-display" id="current-mantra">
+                Swamiye Saranam Ayyappa
+            </div>
+        </div>
+    </div>
+
+    <!-- Re-using data.js for mantras -->
+    <script src="data.js"></script>
+    <script src="likhita_script.js"></script>
+</body>
+
+</html>

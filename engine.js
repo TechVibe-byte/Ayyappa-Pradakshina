@@ -9,6 +9,10 @@ class PradakshinaEngine {
         this.language = localStorage.getItem(config.langKey || 'language') || 'telugu';
         this.mode = localStorage.getItem('mode') || (config.defaultMode || 'ghosha');
 
+        // Timing logic
+        this.stepTimestamps = {}; // Store timestamp for each step
+        this.lastActionTime = null; // Track last check time
+
         // Cache DOM elements
         this.elements = {
             stepsContainer: document.getElementById('steps-container'),
@@ -84,6 +88,19 @@ class PradakshinaEngine {
         return hours + ':' + minutes + ' ' + ampm;
     }
 
+
+
+    // Auto-scroll to the active step
+    scrollToActiveStep() {
+        const firstUnchecked = document.querySelector('.step input[type="checkbox"]:not(:checked)');
+        if (firstUnchecked) {
+            const stepElement = firstUnchecked.closest('.step');
+            if (stepElement) {
+                stepElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        }
+    }
+
     updateProgress() {
         const checkedBoxes = document.querySelectorAll('.step input[type="checkbox"]:checked');
         const checkedCount = checkedBoxes.length;
@@ -115,6 +132,9 @@ class PradakshinaEngine {
             this.endTime = null;
             this.elements.endTime.textContent = '-';
         }
+
+        // Trigger auto-scroll
+        this.scrollToActiveStep();
     }
 
     render() {
@@ -135,10 +155,40 @@ class PradakshinaEngine {
             const label = document.createElement('label');
             label.classList.add('ios-checkbox');
 
+            const badge = document.createElement('span');
+            badge.classList.add('step-time-badge');
+            badge.style.display = 'none'; // Hidden by default
+            stepElement.appendChild(badge);
+
             const checkbox = document.createElement('input');
             checkbox.type = 'checkbox';
             checkbox.id = `step-${i}`;
             checkbox.addEventListener('change', () => {
+                const now = new Date();
+
+                if (checkbox.checked) {
+                    // Start timer if this is the first step checked
+                    if (!this.lastActionTime) {
+                        this.lastActionTime = this.startTime || now;
+                    }
+
+                    // Calculate split
+                    const diffMs = now - this.lastActionTime;
+                    const diffSec = Math.round(diffMs / 1000);
+
+                    // Show badge
+                    badge.textContent = `${diffSec}s`;
+                    badge.style.display = 'inline';
+
+                    // Update last action time for the NEXT step
+                    this.lastActionTime = now;
+                } else {
+                    // If unchecked, hide badge
+                    badge.style.display = 'none';
+                    // We don't necessarily reset lastActionTime on uncheck to avoid complex recalculations,
+                    // but simple usage flow implies sequential forward progress.
+                }
+
                 this.updateProgress();
                 if (navigator.vibrate) navigator.vibrate(20);
             });
