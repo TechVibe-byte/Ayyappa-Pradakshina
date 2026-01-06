@@ -192,12 +192,62 @@
                 transform: scale(0.98);
             }
         }
+
+        /* Theme Toggle Adjustments for Landing Page */
+        #theme-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 100;
+        }
+
+        /* Light Mode Styling for Toggle */
+        body:not(.dark-mode) #theme-btn {
+            background-color: rgba(255, 255, 255, 0.8);
+            border-color: rgba(0, 0, 0, 0.2);
+            color: #333;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        body:not(.dark-mode) #theme-btn:hover {
+            background-color: #fff;
+            color: #d2691e;
+            border-color: #d2691e;
+        }
+
+        .contact-footer {
+            margin-top: 3rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #888;
+        }
+
+        .contact-footer a {
+            color: #e0e0e0;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            transition: color 0.3s;
+        }
+
+        .contact-footer a:hover {
+            color: #ffb74d;
+        }
+
+        body:not(.dark-mode) .contact-footer a {
+            color: #555;
+        }
+
+        body:not(.dark-mode) .contact-footer a:hover {
+            color: #d2691e;
+        }
     </style>
 </head>
 
 <body class="dark-mode">
-    <button id="theme-btn" class="banner-icon-btn" aria-label="Toggle Theme"
-        style="position: absolute; top: 20px; right: 20px; left: auto; z-index: 100;">
+    <button id="theme-btn" class="banner-icon-btn" aria-label="Toggle Theme">
         <svg id="sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
             style="display: none;">
@@ -224,34 +274,46 @@
     <div class="card-grid">
         <a href="ayyappa.html" class="nav-card">
             <!-- Placeholder/Fallback image or SVGs can be used. Using pure CSS styled elements if image fails -->
-            <img src="images/app_icon.png" alt="Ayyappa" onerror="this.style.display='none'">
+            <img src="images/logo/ayyappa_logo.png" alt="Ayyappa" onerror="this.style.display='none'">
             <h2>Ayyappa</h2>
             <p>Om Sri Swamiye Saranam Ayyappa</p>
         </a>
 
         <a href="hanuman.html" class="nav-card">
-            <img src="images/hanuman_icon.png" alt="Hanuman" onerror="this.style.display='none'">
+            <img src="images/logo/Hanuman_logo.png" alt="Hanuman" onerror="this.style.display='none'">
             <h2>Hanuman</h2>
             <p>Jai Bajrangbali</p>
         </a>
 
         <a href="sai_baba.html" class="nav-card">
-            <img src="images/sai_icon.png" alt="Sai Baba" onerror="this.style.display='none'">
+            <img src="images/logo/SaiBaba_logo.png" alt="Sai Baba" onerror="this.style.display='none'">
             <h2>Sai Baba</h2>
             <p>Om Sai Ram</p>
         </a>
 
         <a href="mantra.html" class="nav-card">
-            <div style="font-size: 3.5rem; color: #e0e0e0; margin-bottom: 20px;">🕉️</div>
+            <img src="images/logo/om_logo.png" alt="Mantra Room" onerror="this.style.display='none'">
             <h2>Mantra Room</h2>
             <p>Divine Chants</p>
         </a>
 
         <a href="likhita.html" class="nav-card" style="border-color: rgba(255, 183, 77, 0.4);">
-            <div style="font-size: 4rem; color: #ffb74d; margin-bottom: 20px;">✍️</div>
+            <img src="images/logo/Likhita_logo.png" alt="Likhita" onerror="this.style.display='none'">
             <h2>Likhita</h2>
             <p>Writing Pradakshina (Beta)</p>
         </a>
+    </div>
+
+    <div class="contact-footer">
+        <p>Developed by <a href="https://instagram.com/saichand.nomula" target="_blank" rel="noopener">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+                saichand.nomula
+            </a></p>
     </div>
 
     <script src="utils.js"></script>

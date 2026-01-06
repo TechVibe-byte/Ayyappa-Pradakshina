@@ -17,7 +17,12 @@ const ASSETS_TO_CACHE = [
     './data.js',
     './images/app_icon.png',
     './images/banner2.png',
-    './images/sai_baba_banner.png'
+    './images/sai_baba_banner.png',
+    './images/logo/ayyappa_logo.png',
+    './images/logo/Hanuman_logo.png',
+    './images/logo/SaiBaba_logo.png',
+    './images/logo/Likhita_logo.png',
+    './images/logo/om_logo.png'
 ];
 
 self.addEventListener('install', (event) => {

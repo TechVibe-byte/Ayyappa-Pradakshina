@@ -41,6 +41,10 @@ function initHamburgerMenu() {
     const headerControls = document.querySelector('.header-controls');
 
     if (hamburgerBtn && headerControls) {
+        // Prevent double initialization
+        if (hamburgerBtn.dataset.init === 'true') return;
+        hamburgerBtn.dataset.init = 'true';
+
         hamburgerBtn.addEventListener('click', () => {
             hamburgerBtn.classList.toggle('is-active');
             headerControls.classList.toggle('nav-active');

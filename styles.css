@@ -159,8 +159,8 @@ body:not(.dark-mode) .hamburger-inner::after {
     position: fixed;
     top: 25px;
     right: 20px;
-    z-index: 2000;
-    /* Highest priority */
+    z-index: 2001;
+    /* Highest priority, above drawer (1000) and modals (2000) */
 }
 
 .hamburger-btn.is-active .hamburger-inner {
@@ -953,6 +953,8 @@ body:not(.dark-mode) .sai-mantra-border {
         width: 100%;
         justify-content: space-between;
         margin-top: 5px;
+        flex-wrap: wrap;
+        gap: 10px;
     }
 
     .sai-mantra-border {
