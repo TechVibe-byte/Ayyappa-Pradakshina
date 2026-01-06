@@ -1,12 +1,17 @@
-const CACHE_NAME = 'ayyappa-pradakshina-v1';
+const CACHE_NAME = 'ayyappa-pradakshina-v2';
 const ASSETS_TO_CACHE = [
     './',
     './index.html',
+    './ayyappa.html',
+    './hanuman.html',
     './sai_baba.html',
+    './mantra.html',
+    './likhita.html',
     './styles.css',
     './common.css',
-    './script.js',
-    './sai_script.js',
+    './mantra.css',
+    './ayyappa_script.js',
+    './likhita_script.js',
     './engine.js',
     './utils.js',
     './data.js',

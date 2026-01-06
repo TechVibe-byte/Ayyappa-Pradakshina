@@ -1,123 +1,272 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ayyappa Pradakshina</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&family=Roboto:wght@400;700&display=swap"
-    rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="common.css">
-  <link rel="manifest" href="manifest.json">
-  <script>
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('service-worker.js')
-        .then(req => console.log('Service Worker Registered!'));
-    }
-  </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pradakshina Tracker</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&family=Roboto:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+    <style>
+        /* Specific Landing Page Styles */
+        body {
+            background-color: #121212;
+            color: #e0e0e0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .landing-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            animation: fadeInDown 1s ease-out;
+        }
+
+        .landing-header h1 {
+            color: #ffb74d;
+            font-family: 'Roboto Slab', serif;
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 4px 10px rgba(255, 183, 77, 0.3);
+        }
+
+        .landing-header p {
+            color: #aaa;
+            font-size: 1.2rem;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            width: 90%;
+            max-width: 1200px;
+            padding: 1rem;
+        }
+
+        .nav-card {
+            background: rgba(30, 30, 30, 0.6);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            text-decoration: none;
+            color: #fff;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 250px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .nav-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            background: rgba(40, 40, 40, 0.8);
+            border-color: #ffb74d;
+            box-shadow: 0 20px 40px rgba(255, 183, 77, 0.2);
+        }
+
+        .nav-card img {
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+            margin-bottom: 1.5rem;
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.5));
+            transition: transform 0.4s ease;
+        }
+
+        .nav-card:hover img {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .nav-card h2 {
+            font-family: 'Roboto Slab', serif;
+            font-size: 1.8rem;
+            margin: 0;
+            color: #e0e0e0;
+            transition: color 0.3s;
+        }
+
+        .nav-card:hover h2 {
+            color: #ffb74d;
+        }
+
+        .nav-card p {
+            font-size: 0.9rem;
+            color: #888;
+            margin-top: 0.5rem;
+        }
+
+        /* Staggered Animation */
+        .nav-card:nth-child(1) {
+            animation: fadeInUp 0.8s ease-out 0.1s backwards;
+        }
+
+        .nav-card:nth-child(2) {
+            animation: fadeInUp 0.8s ease-out 0.2s backwards;
+        }
+
+        .nav-card:nth-child(3) {
+            animation: fadeInUp 0.8s ease-out 0.3s backwards;
+        }
+
+        .nav-card:nth-child(4) {
+            animation: fadeInUp 0.8s ease-out 0.4s backwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .landing-header {
+                margin-bottom: 2rem;
+            }
+
+            .landing-header h1 {
+                font-size: 2rem;
+            }
+
+            .card-grid {
+                gap: 1rem;
+                /* Reduced gap for mobile */
+                width: 95%;
+                /* More width usage */
+                padding: 0.5rem;
+            }
+
+            .nav-card {
+                height: 180px;
+                /* Slightly more compact */
+                padding: 1rem;
+            }
+
+            .nav-card img {
+                width: 70px;
+                height: 70px;
+                margin-bottom: 1rem;
+            }
+
+            .nav-card h2 {
+                font-size: 1.4rem;
+            }
+
+            /* Better touch targets */
+            .nav-card:active {
+                transform: scale(0.98);
+            }
+        }
+    </style>
 </head>
 
 <body class="dark-mode">
-  <div class="container">
-    <div class="banner-container">
-      <img src="images/banner2.png" alt="Ayyappa Swamy Banner" class="banner">
-      <button id="theme-btn" class="banner-icon-btn" aria-label="Toggle Theme">
+    <button id="theme-btn" class="banner-icon-btn" aria-label="Toggle Theme"
+        style="position: absolute; top: 20px; right: 20px; left: auto; z-index: 100;">
         <svg id="sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
-          <circle cx="12" cy="12" r="5"></circle>
-          <line x1="12" y1="1" x2="12" y2="3"></line>
-          <line x1="12" y1="21" x2="12" y2="23"></line>
-          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-          <line x1="1" y1="12" x2="3" y2="12"></line>
-          <line x1="21" y1="12" x2="23" y2="12"></line>
-          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            style="display: none;">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
         </svg>
         <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
         </svg>
-      </button>
-      <input type="checkbox" id="audio-checkbox" />
-      <label for="audio-checkbox" class="toggleSwitch">
-        <div class="speaker">
-          <svg xmlns="http://www.w3.org/2000/svg" version="1.0" viewBox="0 0 75 75">
-            <path d="M39.389,13.769 L22.235,28.606 L6,28.606 L6,47.699 L21.989,47.699 L39.389,62.75 L39.389,13.769z"
-              style="stroke:#fff;stroke-width:5;stroke-linejoin:round;fill:#fff;"></path>
-            <path d="M48,27.6a19.5,19.5 0 0 1 0,21.4M55.1,20.5a30,30 0 0 1 0,35.6M61.6,14a38.8,38.8 0 0 1 0,48.6"
-              style="fill:none;stroke:#fff;stroke-width:5;stroke-linecap:round"></path>
-          </svg>
-        </div>
+    </button>
+    <div class="landing-header">
+        <h1>Pradakshina Tracker</h1>
+        <p>Select your path of devotion</p>
+    </div>
 
-        <div class="mute-speaker">
-          <svg version="1.0" viewBox="0 0 75 75" stroke="#fff" stroke-width="5">
-            <path d="m39,14-17,15H6V48H22l17,15z" fill="#fff" stroke-linejoin="round"></path>
-            <path d="m49,26 20,24m0-24-20,24" fill="#fff" stroke-linecap="round"></path>
-          </svg>
-        </div>
-      </label>
-    </div>
-    <div class="header">
-      <h1>Ayyappa Pradakshina</h1>
-      <button class="hamburger-btn" aria-label="Open navigation menu">
-        <span class="hamburger-box">
-          <span class="hamburger-inner"></span>
-        </span>
-      </button>
-      <div class="header-controls">
-        <div class="segment-control-container">
-          <button id="btn-lang-en" class="segment-btn">English</button>
-          <button id="btn-lang-te" class="segment-btn">Telugu</button>
-        </div>
-        <div class="segment-control-container">
-          <button id="btn-mode-ghosha" class="segment-btn">Sarana Ghosha</button>
-          <button id="btn-mode-japam" class="segment-btn">Naama Japam</button>
-        </div>
+    <div class="card-grid">
+        <a href="ayyappa.html" class="nav-card">
+            <!-- Placeholder/Fallback image or SVGs can be used. Using pure CSS styled elements if image fails -->
+            <img src="images/app_icon.png" alt="Ayyappa" onerror="this.style.display='none'">
+            <h2>Ayyappa</h2>
+            <p>Om Sri Swamiye Saranam Ayyappa</p>
+        </a>
 
-        <a href="mantra.html" class="button">Mantra Room</a>
-        <a href="sai_baba.html" class="button">Sai Baba</a>
-        <a href="hanuman.html" class="button">Hanuman</a>
-        <a href="likhita.html" class="button">Likhita (Beta)</a>
-        <button id="slogans-button" class="button">Slogans</button>
-      </div>
+        <a href="hanuman.html" class="nav-card">
+            <img src="images/hanuman_icon.png" alt="Hanuman" onerror="this.style.display='none'">
+            <h2>Hanuman</h2>
+            <p>Jai Bajrangbali</p>
+        </a>
+
+        <a href="sai_baba.html" class="nav-card">
+            <img src="images/sai_icon.png" alt="Sai Baba" onerror="this.style.display='none'">
+            <h2>Sai Baba</h2>
+            <p>Om Sai Ram</p>
+        </a>
+
+        <a href="mantra.html" class="nav-card">
+            <div style="font-size: 3.5rem; color: #e0e0e0; margin-bottom: 20px;">🕉️</div>
+            <h2>Mantra Room</h2>
+            <p>Divine Chants</p>
+        </a>
+
+        <a href="likhita.html" class="nav-card" style="border-color: rgba(255, 183, 77, 0.4);">
+            <div style="font-size: 4rem; color: #ffb74d; margin-bottom: 20px;">✍️</div>
+            <h2>Likhita</h2>
+            <p>Writing Pradakshina (Beta)</p>
+        </a>
     </div>
-    <div class="time-tracker">
-      <div>Start Time: <span id="start-time">-</span></div>
-      <div>End Time: <span id="end-time">-</span></div>
-    </div>
-    <div class="dashboard">
-      <main>
-        <div id="progress-container">
-          <div id="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
-          <div id="progress-label">0%</div>
-        </div>
-        <div id="steps-container"></div>
-      </main>
-      <aside>
-        <div id="history-container" class="card">
-          <h2>Completion History</h2>
-          <ul id="history-list" role="list"></ul>
-          <button id="clear-history" aria-label="Clear completion history">Clear History</button>
-        </div>
-      </aside>
-    </div>
-  </div>
-  <audio id="background-music" loop src="audio/ayyappa songs.mpeg"></audio>
-  <div id="slogans-modal" class="modal-overlay" style="display: none;">
-    <div class="modal-content">
-      <button id="modal-close-button" class="modal-close-button">&times;</button>
-      <h2>Slogans</h2>
-      <div id="slogans-container"></div>
-    </div>
-  </div>
-  <script src="data.js"></script>
-  <script src="utils.js"></script>
-  <script src="engine.js"></script>
-  <script src="script.js" charset="UTF-8"></script>
+
+    <script src="utils.js"></script>
+    <script>
+        // Init particles from utils
+        document.addEventListener('DOMContentLoaded', () => {
+            // Re-use divine atmosphere if desired, providing a subtle background
+            if (typeof initDivineAtmosphere === 'function') {
+                initDivineAtmosphere();
+            }
+            if (typeof initTheme === 'function') {
+                initTheme();
+            }
+        });
+    </script>
 </body>
 
 </html>

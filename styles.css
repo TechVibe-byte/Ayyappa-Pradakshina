@@ -327,7 +327,7 @@ body:not(.dark-mode) .segment-btn.active {
 
 #steps-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
     gap: 1rem;
     margin-top: 1rem;
 }
@@ -729,12 +729,17 @@ body:not(.dark-mode) .card {
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
 
-    /* Compact Segmented Controls */
+    /* Safe Area for modern mobile browsers */
+    .container {
+        padding-bottom: calc(1rem + env(safe-area-inset-bottom));
+    }
+
+    /* Compact Segmented Controls with larger touch area */
     .segment-btn {
-        padding: 4px 8px;
+        padding: 8px 12px;
+        /* Increased vertical padding for touch */
         font-size: 0.8rem;
         min-width: 60px;
-        /* Reduced min-width */
     }
 }
 
