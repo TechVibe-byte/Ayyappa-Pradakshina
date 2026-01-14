@@ -1,75 +1,74 @@
-# Ayyappa Pradakshina Tracker
+# SADHANA - Spiritual Companion
 
-A spiritual companion web application designed to help devotees track their Ayyappa Pradakshinas, specifically focusing on the 108 steps (Sarana Ghosha). This application combines traditional practices with modern gamification to keep devotees motivated and focused.
+**SADHANA** is a comprehensive spiritual web application designed to aid devotees in their daily prayers, pradakshinas, and meditation practices. It serves as a digital companion for various deities including Ayyappa Swamy, Hanuman, and Sai Baba, providing tools for tracking chants (Sarana Ghosha), reading stories, and following puja procedures.
 
-![Ayyappa Pradakshina Banner](images/banner2.png)
+![SADHANA Application Banner](images/banner2.png)
 
 ## 🌟 Features
 
-### Core Tracking
-*   **108 Steps Checklist:** Interactive tracking of the 108 Sarana Ghoshas.
-*   **Dual Modes:**
-    *   **Sarana Ghosha:** Displays the traditional 108 Ayyappa Saranams.
-    *   **Naama Japam:** A repetitive chant mode ("Om Sri Swamiye Saranam Ayyappa") for focused meditation.
-*   **Progress Tracking:** Visual progress bar showing completion percentage.
-*   **Time Monitoring:** Automatically records start and end times for each session.
+### 🕉️ Multi-Deity Pradakshina Tracking
+Dedicated tracking modules for:
+*   **Ayyappa Pradakshina:** Track the 108 Sarana Ghoshas or engage in Naama Japam.
+*   **Hanuman Pradakshina:** Focused chanting and tracking for Hanuman devotees.
+*   **Sai Baba Pradakshina:** Meditative tools for Sai Baba devotees.
 
-### Personalization & Accessibility
-*   **Multi-Language Support:** Full support for **English** and **Telugu**.
-*   **Theme Switching:** Toggle between **Light** and **Dark** modes for comfortable viewing.
-*   **Audio Integration:** Background devotional music ("Ayyappa songs") with a mute/play toggle.
+**Core Tracking Features:**
+*   **Interactive Checklist:** Tap to mark steps as complete.
+*   **Progress Bar:** Visual indicator of your session's completion.
+*   **Time Monitoring:** Automatically records start and end times.
+*   **History:** Saves completed sessions to local storage for personal tracking.
 
-### Motivation & Gamification
-*   **Completion History:** Local storage-based history of all completed Pradakshina sessions.
-*   **Clear History:** Option to reset your progress data.
+### 📿 Mantra Japa
+A dedicated space for focused meditation:
+*   **Audio Integration:** Looping chants and devotional music.
+*   **Focus Mode:** Distraction-free interface for deep meditation.
 
-### 🕉️ Mantra Room
-A dedicated space for focused meditation on specific deities.
-*   **Deity Cards:** Includes Ganesh, Kartikeya, and Hanuman.
-*   **Audio Mantras:** Specific mantras for each deity with looping audio.
-*   **Focus Mode:** A distraction-free overlay to meditate on a specific deity image and mantra.
+### 🥥 Pooja Vidhanam
+Comprehensive guides for performing rituals:
+*   **Ganesha Chaturthi Pooja:** Complete procedure and Vrata Kalpam available in Telugu.
+*   **Step-by-Step Instructions:** Clear, readable format for performing pujas at home.
 
-### 📜 Slogans Repository
-*   Quick access to a collection of common Ayyappa slogans in both English and Telugu.
+### 🌐 Personalization & Accessibility
+*   **Bilingual Support:** Full interface support for **English** and **Telugu** (default).
+*   **Theme Switching:** Toggle between **Light** and **Dark** modes for comfortable viewing in any lighting.
+*   **Responsive Design:** Optimized for both Desktop and Mobile devices, with a dedicated mobile-friendly layout.
 
 ## 🛠️ Technologies Used
-
-*   **HTML5:** Semantic structure.
-*   **CSS3:** Styling, responsive design, animations, and theming (Variables).
-*   **JavaScript (ES6+):** Application logic, DOM manipulation, local storage management.
+*   **HTML5 & CSS3:** Semantic structure and modern, responsive styling.
+*   **JavaScript (ES6+):** Core application logic, state management, and local storage.
+*   **PWA Features:** Manifest file for installability.
 
 ## 📂 Project Structure
 
 ```
-Ayyappa-Pradakshina/
-├── audio/              # Audio files for background music and mantras
-├── images/             # Images for deities and banners
-├── common.css          # Shared styles across pages
-├── index.html          # Main tracker page
-├── mantra.html         # Mantra Room page
-├── mantra.js           # Logic for Mantra Room
-├── mantra.css          # Styles specific to Mantra Room
-├── script.js           # Core logic for the main tracker
-├── styles.css          # Main stylesheet
+SADHANA/
+├── audio/              # Devotional audio files
+├── images/             # Deity logos and banners
+├── common.css          # Shared global styles
+├── styles.css          # Main application styles
+├── data.js             # Content data (translations, mantras, pooja text)
+├── utils.js            # Utility functions (themes, atmosphere)
+├── engine.js           # Core logic for tracking and history
+├── index.html          # Landing page (Home)
+├── ayyappa.html        # Ayyappa module
+├── hanuman.html        # Hanuman module
+├── sai_baba.html       # Sai Baba module
+├── mantra.html         # Mantra Japa module
+├── pooja.html          # Pooja selection page
+└── ganesh_pooja.html   # Ganesha Pooja details page
 ```
 
 ## 🚀 How to Use
-
-1.  **Open the Application:** Open `index.html` in any modern web browser.
-2.  **Choose Your Settings:**
-    *   Select your preferred language (English/Telugu).
-    *   Choose your mode (Sarana Ghosha / Naama Japam).
-    *   Set the theme (Light/Dark).
-    *   Toggle background music if desired.
-3.  **Start Tracking:** Click the checkbox for each step as you complete it.
-4.  **Monitor Progress:** Watch the progress bar fill up. Your start time is recorded automatically.
-5.  **Complete Session:** Upon reaching 108 steps, your end time is recorded, and the session is saved to your history.
-6.  **Explore:** Visit the "Mantra Room" or "Slogans" section for additional spiritual resources.
+1.  **Select Your Path:** Choose a deity or activity from the Home page.
+2.  **Customize:** Use the toggle at the top-right to switch themes (Light/Dark). Use the language toggle on the Home/Pooja pages to switch between English and Telugu.
+3.  **Start Practice:**
+    *   For **Pradakshina**, click the steps as you chant.
+    *   For **Mantra Japa**, play the audio and focus on the chant.
+    *   For **Pooja**, follow the on-screen text instructions.
+4.  **Track Progress:** Your sessions are automatically saved to the History tab within each module.
 
 ## 🤝 Contribution
-
-Feel free to fork this repository and submit pull requests for any improvements or bug fixes.
+Feel free to fork this repository and submit pull requests for improvements, new mantras, or additional puja guides.
 
 ## 📄 License
-
 This project is open for personal and spiritual use.
