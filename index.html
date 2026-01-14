@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pradakshina Tracker</title>
+    <title>SADHANA</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&family=Roboto:wght@400;700&display=swap"
@@ -71,7 +71,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            height: 250px;
+            height: 380px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
 
@@ -83,8 +83,8 @@
         }
 
         .nav-card img {
-            width: 100px;
-            height: 100px;
+            width: 200px;
+            height: 200px;
             object-fit: contain;
             margin-bottom: 1.5rem;
             filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.5));
@@ -174,14 +174,14 @@
             }
 
             .nav-card {
-                height: 180px;
+                height: 280px;
                 /* Slightly more compact */
                 padding: 1rem;
             }
 
             .nav-card img {
-                width: 70px;
-                height: 70px;
+                width: 130px;
+                height: 130px;
                 margin-bottom: 1rem;
             }
 
@@ -269,55 +269,64 @@
         </svg>
     </button>
     <div class="landing-header">
-        <h1>Pradakshina Tracker</h1>
-        <p>Select your path of devotion</p>
+        <h1 id="home-app-title">SADHANA</h1>
+        <p id="home-subtitle">Select your path of devotion</p>
+        <div class="header-controls no-drawer" style="justify-content: center; margin-top: 1rem;">
+            <div class="segment-control-container">
+                <button id="btn-lang-en" class="segment-btn">English</button>
+                <button id="btn-lang-te" class="segment-btn active"> తెలుగు </button>
+            </div>
+        </div>
     </div>
 
     <div class="card-grid">
         <a href="ayyappa.html" class="nav-card">
             <!-- Placeholder/Fallback image or SVGs can be used. Using pure CSS styled elements if image fails -->
             <img src="images/logo/ayyappa_logo.png" alt="Ayyappa" onerror="this.style.display='none'">
-            <h2>Ayyappa</h2>
-            <p>Om Sri Swamiye Saranam Ayyappa</p>
+            <h2 id="ayyappa-title">AYYAPPA PRADAKSHINA</h2>
+            <p id="ayyappa-desc">Om Sri Swamiye Saranam Ayyappa</p>
         </a>
 
         <a href="hanuman.html" class="nav-card">
             <img src="images/logo/Hanuman_logo.png" alt="Hanuman" onerror="this.style.display='none'">
-            <h2>Hanuman</h2>
-            <p>Jai Bajrangbali</p>
+            <h2 id="hanuman-title">HANUMAN PRADAKSHINA</h2>
+            <p id="hanuman-desc">Jai Bajrangbali</p>
         </a>
 
         <a href="sai_baba.html" class="nav-card">
             <img src="images/logo/SaiBaba_logo.png" alt="Sai Baba" onerror="this.style.display='none'">
-            <h2>Sai Baba</h2>
-            <p>Om Sai Ram</p>
+            <h2 id="sai-title">SAI BABA PRADAKSHINA</h2>
+            <p id="sai-desc">Om Sai Ram</p>
         </a>
 
         <a href="mantra.html" class="nav-card">
             <img src="images/logo/om_logo.png" alt="Mantra Room" onerror="this.style.display='none'">
-            <h2>Mantra Room</h2>
-            <p>Divine Chants</p>
+            <h2 id="mantra-title">MANTRA JAPA</h2>
+            <p id="mantra-desc">Divine Chants</p>
         </a>
 
-        <a href="likhita.html" class="nav-card" style="border-color: rgba(255, 183, 77, 0.4);">
-            <img src="images/logo/Likhita_logo.png" alt="Likhita" onerror="this.style.display='none'">
-            <h2>Likhita</h2>
-            <p>Writing Pradakshina (Beta)</p>
+        <a href="pooja.html" class="nav-card">
+            <img src="images/logo/pooja_logo.png" alt="Pooja" onerror="this.style.display='none'">
+            <h2 id="pooja-title">POOJA</h2>
+            <p id="pooja-desc">Worship Procedures</p>
         </a>
+
+
     </div>
 
     <div class="contact-footer">
-        <p>Developed by <a href="https://instagram.com/saichand.nomula" target="_blank" rel="noopener">
+        <p>Developed by <a href="https://in.linkedin.com/in/saichand-nomula-9926b5117" target="_blank" rel="noopener">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                    <rect x="2" y="9" width="4" height="12"></rect>
+                    <circle cx="4" cy="4" r="2"></circle>
                 </svg>
-                saichand.nomula
+                Saichand Nomula
             </a></p>
     </div>
 
+    <script src="data.js"></script>
     <script src="utils.js"></script>
     <script>
         // Init particles from utils
@@ -329,6 +338,64 @@
             if (typeof initTheme === 'function') {
                 initTheme();
             }
+
+            // Language Handling
+            const btnLangEn = document.getElementById('btn-lang-en');
+            const btnLangTe = document.getElementById('btn-lang-te');
+
+            // Elements to translate
+            const els = {
+                appTitle: document.getElementById('home-app-title'),
+                subtitle: document.getElementById('home-subtitle'),
+                ayyappaCardTitle: document.getElementById('ayyappa-title'),
+                ayyappaCardDesc: document.getElementById('ayyappa-desc'),
+                hanumanCardTitle: document.getElementById('hanuman-title'),
+                hanumanCardDesc: document.getElementById('hanuman-desc'),
+                saiCardTitle: document.getElementById('sai-title'),
+                saiCardDesc: document.getElementById('sai-desc'),
+                mantraCardTitle: document.getElementById('mantra-title'),
+                mantraCardDesc: document.getElementById('mantra-desc'),
+                poojaCardTitle: document.getElementById('pooja-title'),
+                poojaCardDesc: document.getElementById('pooja-desc')
+            };
+
+            function updateLanguage(lang) {
+                const text = homeTranslations[lang];
+                if (!text) return;
+
+                // Update text content
+                els.appTitle.textContent = text.appTitle;
+                els.subtitle.textContent = text.subtitle;
+                els.ayyappaCardTitle.textContent = text.ayyappaCardTitle;
+                els.ayyappaCardDesc.textContent = text.ayyappaCardDesc;
+                els.hanumanCardTitle.textContent = text.hanumanCardTitle;
+                els.hanumanCardDesc.textContent = text.hanumanCardDesc;
+                els.saiCardTitle.textContent = text.saiCardTitle;
+                els.saiCardDesc.textContent = text.saiCardDesc;
+                els.mantraCardTitle.textContent = text.mantraCardTitle;
+                els.mantraCardDesc.textContent = text.mantraCardDesc;
+                els.poojaCardTitle.textContent = text.poojaCardTitle;
+                els.poojaCardDesc.textContent = text.poojaCardDesc;
+
+                // Update buttons
+                if (lang === 'telugu') {
+                    btnLangTe.classList.add('active');
+                    btnLangEn.classList.remove('active');
+                } else {
+                    btnLangEn.classList.add('active');
+                    btnLangTe.classList.remove('active');
+                }
+
+                localStorage.setItem('language', lang);
+                document.documentElement.lang = lang === 'telugu' ? 'te' : 'en';
+            }
+
+            // Default to Telugu if not set
+            const storedLang = localStorage.getItem('language') || 'telugu';
+            updateLanguage(storedLang);
+
+            btnLangEn.addEventListener('click', () => updateLanguage('english'));
+            btnLangTe.addEventListener('click', () => updateLanguage('telugu'));
         });
     </script>
 </body>

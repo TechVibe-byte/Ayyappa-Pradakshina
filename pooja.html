@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SADHANA - Pooja</title>
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&family=Roboto:wght@400;700&display=swap"
+        rel="stylesheet">
+    <style>
+        /* Specific Landing Page Styles copied from index.html */
+        body {
+            background-color: #121212;
+            color: #e0e0e0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .landing-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            animation: fadeInDown 1s ease-out;
+        }
+
+        .landing-header h1 {
+            color: #ffb74d;
+            font-family: 'Roboto Slab', serif;
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 4px 10px rgba(255, 183, 77, 0.3);
+        }
+
+        .landing-header p {
+            color: #aaa;
+            font-size: 1.2rem;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            width: 90%;
+            max-width: 1200px;
+            padding: 1rem;
+        }
+
+        .nav-card {
+            background: rgba(30, 30, 30, 0.6);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            text-decoration: none;
+            color: #fff;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 380px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .nav-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            background: rgba(40, 40, 40, 0.8);
+            border-color: #ffb74d;
+            box-shadow: 0 20px 40px rgba(255, 183, 77, 0.2);
+        }
+
+        .nav-card img {
+            width: 250px;
+            height: 250px;
+            object-fit: contain;
+            margin-bottom: 1.5rem;
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.5));
+            transition: transform 0.4s ease;
+        }
+
+        .nav-card:hover img {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .nav-card h2 {
+            font-family: 'Roboto Slab', serif;
+            font-size: 1.8rem;
+            margin: 0;
+            color: #e0e0e0;
+            transition: color 0.3s;
+        }
+
+        .nav-card:hover h2 {
+            color: #ffb74d;
+        }
+
+        .nav-card p {
+            font-size: 0.9rem;
+            color: #888;
+            margin-top: 0.5rem;
+        }
+
+        /* Staggered Animation */
+        .nav-card:nth-child(1) {
+            animation: fadeInUp 0.8s ease-out 0.1s backwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .landing-header {
+                margin-bottom: 2rem;
+                margin-top: 4rem;
+            }
+
+            .landing-header h1 {
+                font-size: 2rem;
+            }
+
+            .card-grid {
+                gap: 1rem;
+                width: 95%;
+                padding: 0.5rem;
+            }
+
+            .nav-card {
+                height: 280px;
+                padding: 1rem;
+            }
+
+            .nav-card img {
+                width: 160px;
+                height: 160px;
+                margin-bottom: 1rem;
+            }
+
+            .nav-card h2 {
+                font-size: 1.4rem;
+            }
+
+            .nav-card:active {
+                transform: scale(0.98);
+            }
+        }
+
+        /* Theme Toggle Adjustments */
+        #theme-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            left: auto;
+            /* Fix collision with back button */
+            z-index: 100;
+        }
+
+        body:not(.dark-mode) #theme-btn {
+            background-color: rgba(255, 255, 255, 0.8);
+            border-color: rgba(0, 0, 0, 0.2);
+            color: #333;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        body:not(.dark-mode) #theme-btn:hover {
+            background-color: #fff;
+            color: #d2691e;
+            border-color: #d2691e;
+        }
+
+        .contact-footer {
+            margin-top: 3rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #888;
+        }
+
+        .contact-footer a {
+            color: #e0e0e0;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            transition: color 0.3s;
+        }
+
+        .contact-footer a:hover {
+            color: #ffb74d;
+        }
+
+        body:not(.dark-mode) .contact-footer a {
+            color: #555;
+        }
+
+        body:not(.dark-mode) .contact-footer a:hover {
+            color: #d2691e;
+        }
+
+        /* Back Button Styles */
+        .back-button-container {
+            position: absolute;
+            left: 20px;
+            top: 20px;
+            z-index: 100;
+        }
+
+        .back-button {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: #ffb74d;
+            font-weight: bold;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 8px 12px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 183, 77, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .back-button:hover {
+            background: rgba(0, 0, 0, 0.7);
+            transform: translateX(-5px);
+        }
+
+        .back-button svg {
+            margin-right: 5px;
+        }
+    </style>
+</head>
+
+<body class="dark-mode">
+    <div class="back-button-container">
+        <a href="index.html" class="back-button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M19 12H5M12 19l-7-7 7-7" />
+            </svg>
+            Back
+        </a>
+    </div>
+
+    <!-- Theme Toggle -->
+    <button id="theme-btn" class="banner-icon-btn" aria-label="Toggle Theme"
+        style="position: absolute; top: 20px; right: 20px;">
+        <svg id="sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            style="display: none;">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+        <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+    </button>
+
+    <div class="landing-header">
+        <h1 id="page-title">POOJA</h1>
+        <p id="page-subtitle">Worship Procedures</p>
+        <div class="header-controls no-drawer" style="justify-content: center; margin-top: 1rem;">
+            <div class="segment-control-container">
+                <button id="btn-lang-en" class="segment-btn">English</button>
+                <button id="btn-lang-te" class="segment-btn active"> తెలుగు </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="card-grid">
+        <a href="ganesh_pooja.html" class="nav-card">
+            <img src="images/logo/Ganesh_logo.png" alt="Ganesh Pooja" onerror="this.style.display='none'">
+            <h2 id="ganesh-title">Ganesha Chaturthi Pooja Vidhanam & Vrata Kalpam</h2>
+            <p id="ganesh-desc">Complete Pooja Procedure</p>
+        </a>
+    </div>
+
+    <div class="contact-footer">
+        <p>Developed by <a href="https://in.linkedin.com/in/saichand-nomula-9926b5117" target="_blank" rel="noopener">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                    <rect x="2" y="9" width="4" height="12"></rect>
+                    <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+                Saichand Nomula
+            </a></p>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="utils.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            initTheme();
+            initDivineAtmosphere();
+
+            const btnLangEn = document.getElementById('btn-lang-en');
+            const btnLangTe = document.getElementById('btn-lang-te');
+
+            const els = {
+                pageTitle: document.getElementById('page-title'),
+                pageSubtitle: document.getElementById('page-subtitle'),
+                ganeshTitle: document.getElementById('ganesh-title'),
+                ganeshDesc: document.getElementById('ganesh-desc')
+            };
+
+            function updateLanguage(lang) {
+                const text = homeTranslations[lang];
+                if (!text) return;
+
+                // Update text content
+                els.pageTitle.textContent = text.poojaCardTitle;
+                els.pageSubtitle.textContent = text.poojaCardDesc;
+                els.ganeshTitle.textContent = text.ganeshPoojaTitle;
+                els.ganeshDesc.textContent = text.ganeshPoojaDesc;
+
+                // Update buttons
+                if (lang === 'telugu') {
+                    btnLangTe.classList.add('active');
+                    btnLangEn.classList.remove('active');
+                } else {
+                    btnLangEn.classList.add('active');
+                    btnLangTe.classList.remove('active');
+                }
+
+                localStorage.setItem('language', lang);
+                document.documentElement.lang = lang === 'telugu' ? 'te' : 'en';
+            }
+
+            // Default to Telugu if not set
+            const storedLang = localStorage.getItem('language') || 'telugu';
+            updateLanguage(storedLang);
+
+            btnLangEn.addEventListener('click', () => updateLanguage('english'));
+            btnLangTe.addEventListener('click', () => updateLanguage('telugu'));
+        });
+    </script>
+</body>
+
+</html>

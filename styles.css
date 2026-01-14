@@ -1047,3 +1047,52 @@ body:not(.dark-mode) .sai-mantra-border {
         transform: translateY(0);
     }
 }
+
+/* Standardized Back Button */
+.back-button-container {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    z-index: 100;
+}
+
+.back-button {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #ffb74d;
+    font-weight: bold;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 8px 12px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 183, 77, 0.3);
+    transition: all 0.3s ease;
+}
+
+.back-button:hover {
+    background: rgba(0, 0, 0, 0.7);
+    transform: translateX(-5px);
+}
+
+.back-button svg {
+    margin-right: 5px;
+}
+
+/* Standardized Absolute Theme Button */
+.theme-btn-absolute {
+    position: absolute !important;
+    top: 20px !important;
+    right: 20px !important;
+    left: auto !important;
+    z-index: 100;
+}
+
+/* Adjust layout for standardized absolute buttons */
+@media (max-width: 600px) {
+
+    .banner-container,
+    .header,
+    .mantra-cards-container {
+        margin-top: 3rem;
+    }
+}

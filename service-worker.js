@@ -6,12 +6,12 @@ const ASSETS_TO_CACHE = [
     './hanuman.html',
     './sai_baba.html',
     './mantra.html',
-    './likhita.html',
+
     './styles.css',
     './common.css',
     './mantra.css',
     './ayyappa_script.js',
-    './likhita_script.js',
+
     './engine.js',
     './utils.js',
     './data.js',
@@ -21,7 +21,7 @@ const ASSETS_TO_CACHE = [
     './images/logo/ayyappa_logo.png',
     './images/logo/Hanuman_logo.png',
     './images/logo/SaiBaba_logo.png',
-    './images/logo/Likhita_logo.png',
+
     './images/logo/om_logo.png'
 ];
 
