@@ -1,4 +1,4 @@
-const CACHE_NAME = 'ayyappa-pradakshina-v2';
+const CACHE_NAME = 'sadhana-v1';
 const ASSETS_TO_CACHE = [
     './',
     './index.html',
@@ -6,11 +6,16 @@ const ASSETS_TO_CACHE = [
     './hanuman.html',
     './sai_baba.html',
     './mantra.html',
+    './pradakshina.html',
+    './pooja.html',
+    './ganesh_pooja.html',
 
     './styles.css',
     './common.css',
     './mantra.css',
     './ayyappa_script.js',
+    './hanuman_script.js',
+    './sai_script.js',
 
     './engine.js',
     './utils.js',
@@ -21,7 +26,8 @@ const ASSETS_TO_CACHE = [
     './images/logo/ayyappa_logo.png',
     './images/logo/Hanuman_logo.png',
     './images/logo/SaiBaba_logo.png',
-
+    './images/logo/PRADAKSHINA_LOGO.png',
+    './images/logo/pooja_logo.png',
     './images/logo/om_logo.png'
 ];
 
