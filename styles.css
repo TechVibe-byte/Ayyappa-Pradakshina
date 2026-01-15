@@ -389,7 +389,12 @@ body:not(.dark-mode) .segment-btn.active {
     --checkbox-size: 20px;
     --checkbox-color: #3b82f6;
     --checkbox-bg: #dbeafe;
-    --checkbox-border: #93c5fd;
+    --checkbox-border: #555;
+    /* Dark mode border default */
+    --checkbox-fill: rgba(255, 255, 255, 0.05);
+    /* Dark mode background default */
+    --checkbox-focus-ring: rgba(59, 130, 246, 0.5);
+    /* Dark mode focus ring */
 
     position: relative;
     display: inline-block;
@@ -399,8 +404,18 @@ body:not(.dark-mode) .segment-btn.active {
     margin-right: 1rem;
 }
 
+body:not(.dark-mode) .ios-checkbox {
+    --checkbox-border: #93c5fd;
+    --checkbox-fill: #fff;
+    --checkbox-focus-ring: #dbeafe;
+}
+
 .ios-checkbox input {
-    display: none;
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
 }
 
 .checkbox-wrapper {
@@ -416,7 +431,9 @@ body:not(.dark-mode) .segment-btn.active {
     inset: 0;
     border-radius: 8px;
     border: 2px solid var(--checkbox-border);
-    background: white;
+    background: transparent;
+    /* Fallback */
+    background: var(--checkbox-fill);
     transition: all 0.2s ease;
 }
 
@@ -463,7 +480,7 @@ body:not(.dark-mode) .segment-btn.active {
 
 /* Focus Styles */
 .ios-checkbox input:focus+.checkbox-wrapper .checkbox-bg {
-    box-shadow: 0 0 0 4px var(--checkbox-bg);
+    box-shadow: 0 0 0 4px var(--checkbox-focus-ring);
 }
 
 /* Animation */
@@ -615,6 +632,8 @@ body:not(.dark-mode) .card {
 @media (max-width: 768px) {
     .container {
         padding: 1rem;
+        /* Ensure content is not hidden behind bottom nav or safe area */
+        padding-bottom: calc(5rem + env(safe-area-inset-bottom));
     }
 
     h1 {
@@ -746,15 +765,45 @@ body:not(.dark-mode) .card {
 
     /* Safe Area for modern mobile browsers */
     .container {
-        padding-bottom: calc(1rem + env(safe-area-inset-bottom));
+        padding: 1rem;
+        padding-bottom: calc(5rem + env(safe-area-inset-bottom));
     }
 
     /* Compact Segmented Controls with larger touch area */
     .segment-btn {
-        padding: 8px 12px;
-        /* Increased vertical padding for touch */
-        font-size: 0.8rem;
-        min-width: 60px;
+        padding: 3px 6px;
+        /* Aggressive reduction */
+        font-size: 0.7rem;
+        /* Smaller font */
+        min-width: auto;
+        /* Allow natural shrinking */
+        line-height: 1.1;
+    }
+
+    .segment-control-container {
+        padding: 2px;
+        gap: 2px;
+    }
+
+    /* Optimized Banner for Mobile to save space */
+    .banner {
+        max-height: 160px;
+        /* Reduced from default */
+    }
+
+    /* Enhanced Touch Targets for Steps */
+    .step {
+        padding: 0.75rem 0.5rem;
+        /* Increased vertical padding */
+        margin-bottom: 0.5rem;
+        /* Better separation */
+    }
+
+    /* Ensure Checkbox has good hit area */
+    .ios-checkbox {
+        margin-right: 0.75rem;
+        /* Ensure it doesn't shrink */
+        flex-shrink: 0;
     }
 }
 
