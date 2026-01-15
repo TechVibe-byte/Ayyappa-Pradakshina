@@ -655,6 +655,21 @@ body:not(.dark-mode) .card {
         border-left: 1px solid rgba(255, 255, 255, 0.1);
     }
 
+    /* Mantra/Inner Page Specific Mobile Adjustment */
+    .header .header-controls.no-drawer {
+        padding-top: 0;
+        margin-top: 0;
+    }
+
+    /* Move Theme Switcher to Top-Right on Mobile for Header Layouts */
+    .header .theme-toggler-container {
+        position: absolute;
+        top: 20px;
+        right: 15px;
+        z-index: 1002;
+        /* Above other elements */
+    }
+
     body:not(.dark-mode) .header-controls {
         background-color: rgba(255, 255, 255, 0.95);
         box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
@@ -1048,43 +1063,76 @@ body:not(.dark-mode) .sai-mantra-border {
     }
 }
 
-/* Standardized Back Button */
-.back-button-container {
-    position: absolute;
-    left: 20px;
-    top: 20px;
-    z-index: 100;
-}
 
-.back-button {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    color: #ffb74d;
-    font-weight: bold;
-    background: rgba(0, 0, 0, 0.5);
-    padding: 8px 12px;
-    border-radius: 20px;
-    border: 1px solid rgba(255, 183, 77, 0.3);
-    transition: all 0.3s ease;
-}
 
-.back-button:hover {
-    background: rgba(0, 0, 0, 0.7);
-    transform: translateX(-5px);
-}
-
-.back-button svg {
-    margin-right: 5px;
-}
-
-/* Standardized Absolute Theme Button */
-.theme-btn-absolute {
+/* Standardized Absolute Theme Button - REMOVED absolute positioning for integration */
+/* .theme-btn-absolute {
     position: absolute !important;
     top: 20px !important;
     right: 20px !important;
     left: auto !important;
     z-index: 100;
+} */
+
+
+/* Theme Toggler Styles */
+.theme-toggler-container {
+    --color: #a5a5b0;
+    --size: 20px;
+    /* Small size as requested */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    font-size: var(--size);
+    user-select: none;
+    fill: var(--color);
+}
+
+.theme-toggler-container .moon {
+    position: absolute;
+    animation: keyframes-fill .5s;
+    width: 1em;
+    height: 1em;
+}
+
+.theme-toggler-container .sun {
+    position: absolute;
+    display: none;
+    animation: keyframes-fill .5s;
+    width: 1em;
+    height: 1em;
+}
+
+/* On check event */
+.theme-toggler-container input:checked~.moon {
+    display: none;
+}
+
+.theme-toggler-container input:checked~.sun {
+    display: block;
+}
+
+/* Hide the default checkbox */
+.theme-toggler-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* Animation */
+@keyframes keyframes-fill {
+    0% {
+        transform: rotate(-360deg) scale(0);
+        opacity: 0;
+    }
+
+    75% {
+        transform: rotate(25deg);
+    }
 }
 
 /* Adjust layout for standardized absolute buttons */
@@ -1095,4 +1143,99 @@ body:not(.dark-mode) .sai-mantra-border {
     .mantra-cards-container {
         margin-top: 3rem;
     }
+}
+
+/* =========================================
+   Segmented Control Styles (Language/Mode)
+   ========================================= */
+
+.segment-control-container {
+    display: flex;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 4px;
+    gap: 4px;
+    align-items: center;
+}
+
+.segment-btn {
+    background: transparent;
+    border: none;
+    color: #b0b0b0;
+    /* Light gray for inactive */
+    padding: 6px 12px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 16px;
+    transition: all 0.3s ease;
+    font-family: inherit;
+    outline: none;
+}
+
+.segment-btn:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.segment-btn.active {
+    background: #ffb74d;
+    /* Theme Orange */
+    color: #121212;
+    /* Dark Text */
+    font-weight: bold;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Light Mode Overrides for Segment Controls - Seamless Look */
+body:not(.dark-mode) .segment-control-container {
+    background: transparent !important;
+    /* Force remove background */
+    border: none !important;
+    /* Force remove border */
+    box-shadow: none !important;
+    padding: 0 !important;
+    gap: 8px;
+}
+
+body:not(.dark-mode) .segment-btn {
+    color: #555;
+    background: #f0f0f0;
+    border: 1px solid transparent !important;
+    /* Ensure transparent border */
+    box-shadow: none !important;
+    /* Remove any default shadow */
+}
+
+body:not(.dark-mode) .segment-btn:hover {
+    background: #e0e0e0;
+    color: #000;
+}
+
+body:not(.dark-mode) .segment-btn.active {
+    background: linear-gradient(135deg, #ffb74d, #ff9800);
+    color: #fff;
+    box-shadow: 0 2px 6px rgba(255, 152, 0, 0.3) !important;
+    /* Keep ONLY this shadow */
+    transform: translateY(-1px);
+    border: none !important;
+    /* Absolutely no border on active */
+}
+
+/* Ensure aligned vertically with theme toggler in light mode */
+body:not(.dark-mode) .header-controls {
+    align-items: center;
+}
+
+/* HIGH SPECIFICITY OVERRIDE to kill the mobile drawer border in light mode */
+body:not(.dark-mode) .header-controls.no-drawer {
+    border-left: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+}
+
+/* Ensure buttons have absolutely zero border artifacts */
+body:not(.dark-mode) .segment-btn {
+    border: 0 solid transparent !important;
+    /* Force 0 width */
 }

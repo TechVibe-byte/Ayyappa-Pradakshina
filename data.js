@@ -382,7 +382,9 @@ const homeTranslations = {
         poojaCardTitle: "POOJA",
         poojaCardDesc: "Worship Procedures",
         ganeshPoojaTitle: "Ganesha Chaturthi Pooja Vidhanam & Vrata Kalpam",
-        ganeshPoojaDesc: "Complete Pooja Procedure"
+        ganeshPoojaDesc: "Complete Pooja Procedure",
+        pradakshinaCardTitle: "PRADAKSHINA",
+        pradakshinaCardDesc: "Count Every Step, Chant Every Mantra"
     },
     telugu: {
         appTitle: "సాధన",
@@ -398,7 +400,9 @@ const homeTranslations = {
         poojaCardTitle: "పూజ",
         poojaCardDesc: "పూజా విధానాలు",
         ganeshPoojaTitle: "గణేశ చతుర్థి పూజా విధానం, వ్రత కల్పం",
-        ganeshPoojaDesc: "పూర్తి పూజా విధానం"
+        ganeshPoojaDesc: "పూర్తి పూజా విధానం",
+        pradakshinaCardTitle: "ప్రదక్షిణ",
+        pradakshinaCardDesc: "ప్రతి అడుగులో గణన - ప్రతి మంత్రంలో స్మరణ"
     }
 };
 

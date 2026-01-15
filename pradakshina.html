@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SADHANA</title>
+    <title>SADHANA - Pradakshina</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&family=Roboto:wght@400;700&display=swap"
@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="manifest" href="manifest.json">
     <style>
-        /* Specific Landing Page Styles */
+        /* Specific Landing Page Styles - Copied from index.html */
         body {
             background-color: #121212;
             color: #e0e0e0;
@@ -124,10 +124,6 @@
 
         .nav-card:nth-child(3) {
             animation: fadeInUp 0.8s ease-out 0.3s backwards;
-        }
-
-        .nav-card:nth-child(4) {
-            animation: fadeInUp 0.8s ease-out 0.4s backwards;
         }
 
         @keyframes fadeInUp {
@@ -249,9 +245,11 @@
 </head>
 
 <body class="dark-mode">
+
+
     <div class="landing-header">
-        <h1 id="home-app-title">SADHANA</h1>
-        <p id="home-subtitle">Select your path of devotion</p>
+        <h1 id="home-app-title">PRADAKSHINA</h1>
+        <p id="home-subtitle">Count Every Step, Chant Every Mantra</p>
         <div class="header-controls no-drawer"
             style="justify-content: center; margin-top: 1rem; align-items: center; gap: 1rem;">
             <div class="segment-control-container">
@@ -276,22 +274,23 @@
     </div>
 
     <div class="card-grid">
-        <a href="pradakshina.html" class="nav-card">
-            <img src="images/logo/PRADAKSHINA_LOGO.png" alt="PRADAKSHINA" onerror="this.style.display='none'">
-            <h2 id="pradakshina-title">PRADAKSHINA</h2>
-            <p id="pradakshina-desc">Count Every Step, Chant Every Mantra</p>
+        <a href="ayyappa.html" class="nav-card">
+            <!-- Placeholder/Fallback image or SVGs can be used. Using pure CSS styled elements if image fails -->
+            <img src="images/logo/ayyappa_logo.png" alt="Ayyappa" onerror="this.style.display='none'">
+            <h2 id="ayyappa-title">AYYAPPA PRADAKSHINA</h2>
+            <p id="ayyappa-desc">Om Sri Swamiye Saranam Ayyappa</p>
         </a>
 
-        <a href="mantra.html" class="nav-card">
-            <img src="images/logo/om_logo.png" alt="Mantra Room" onerror="this.style.display='none'">
-            <h2 id="mantra-title">MANTRA JAPA</h2>
-            <p id="mantra-desc">Divine Chants</p>
+        <a href="hanuman.html" class="nav-card">
+            <img src="images/logo/Hanuman_logo.png" alt="Hanuman" onerror="this.style.display='none'">
+            <h2 id="hanuman-title">HANUMAN PRADAKSHINA</h2>
+            <p id="hanuman-desc">Jai Bajrangbali</p>
         </a>
 
-        <a href="pooja.html" class="nav-card">
-            <img src="images/logo/pooja_logo.png" alt="Pooja" onerror="this.style.display='none'">
-            <h2 id="pooja-title">POOJA</h2>
-            <p id="pooja-desc">Worship Procedures</p>
+        <a href="sai_baba.html" class="nav-card">
+            <img src="images/logo/SaiBaba_logo.png" alt="Sai Baba" onerror="this.style.display='none'">
+            <h2 id="sai-title">SAI BABA PRADAKSHINA</h2>
+            <p id="sai-desc">Om Sai Ram</p>
         </a>
     </div>
 
@@ -328,27 +327,34 @@
             const els = {
                 appTitle: document.getElementById('home-app-title'),
                 subtitle: document.getElementById('home-subtitle'),
-                mantraCardTitle: document.getElementById('mantra-title'),
-                mantraCardDesc: document.getElementById('mantra-desc'),
-                poojaCardTitle: document.getElementById('pooja-title'),
-                poojaCardDesc: document.getElementById('pooja-desc'),
-                pradakshinaCardTitle: document.getElementById('pradakshina-title'),
-                pradakshinaCardDesc: document.getElementById('pradakshina-desc')
+                ayyappaCardTitle: document.getElementById('ayyappa-title'),
+                ayyappaCardDesc: document.getElementById('ayyappa-desc'),
+                hanumanCardTitle: document.getElementById('hanuman-title'),
+                hanumanCardDesc: document.getElementById('hanuman-desc'),
+                saiCardTitle: document.getElementById('sai-title'),
+                saiCardDesc: document.getElementById('sai-desc')
             };
 
             function updateLanguage(lang) {
                 const text = homeTranslations[lang];
                 if (!text) return;
 
-                // Update text content
-                els.appTitle.textContent = text.appTitle;
-                els.subtitle.textContent = text.subtitle;
-                els.mantraCardTitle.textContent = text.mantraCardTitle;
-                els.mantraCardDesc.textContent = text.mantraCardDesc;
-                els.poojaCardTitle.textContent = text.poojaCardTitle;
-                els.poojaCardDesc.textContent = text.poojaCardDesc;
-                els.pradakshinaCardTitle.textContent = text.pradakshinaCardTitle;
-                els.pradakshinaCardDesc.textContent = text.pradakshinaCardDesc;
+                // Specific override for page title in Pradakshina page
+                if (lang === 'telugu') {
+                    els.appTitle.textContent = "ప్రదక్షిణ";
+                    els.subtitle.textContent = "ప్రతి అడుగులో గణన - ప్రతి మంత్రంలో స్మరణ";
+                } else {
+                    els.appTitle.textContent = "PRADAKSHINA";
+                    els.subtitle.textContent = "Count Every Step, Chant Every Mantra";
+                }
+
+                // Update text content for cards
+                els.ayyappaCardTitle.textContent = text.ayyappaCardTitle;
+                els.ayyappaCardDesc.textContent = text.ayyappaCardDesc;
+                els.hanumanCardTitle.textContent = text.hanumanCardTitle;
+                els.hanumanCardDesc.textContent = text.hanumanCardDesc;
+                els.saiCardTitle.textContent = text.saiCardTitle;
+                els.saiCardDesc.textContent = text.saiCardDesc;
 
                 // Update buttons
                 if (lang === 'telugu') {

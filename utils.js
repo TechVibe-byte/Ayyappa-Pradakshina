@@ -2,29 +2,28 @@
 
 function initTheme() {
     const body = document.body;
-    const themeBtn = document.getElementById('theme-btn');
-    const sunIcon = document.getElementById('sun-icon');
-    const moonIcon = document.getElementById('moon-icon');
+    // New Checkbox based toggle
+    const themeCheckbox = document.getElementById('theme-toggle-checkbox');
 
     function updateThemeUI(theme) {
         if (theme === 'dark-mode') {
             body.classList.add('dark-mode');
-            if (sunIcon) sunIcon.style.display = 'block';
-            if (moonIcon) moonIcon.style.display = 'none';
+            if (themeCheckbox) themeCheckbox.checked = true; // Checked = Dark/Sun
         } else {
             body.classList.remove('dark-mode');
-            if (sunIcon) sunIcon.style.display = 'none';
-            if (moonIcon) moonIcon.style.display = 'block';
+            if (themeCheckbox) themeCheckbox.checked = false; // Unchecked = Light/Moon
         }
         localStorage.setItem('theme', theme);
     }
 
+    // Initialize state
     const currentTheme = localStorage.getItem('theme') || 'dark-mode';
     updateThemeUI(currentTheme);
 
-    if (themeBtn) {
-        themeBtn.addEventListener('click', () => {
-            const newTheme = body.classList.contains('dark-mode') ? 'light-mode' : 'dark-mode';
+    // Event Listener
+    if (themeCheckbox) {
+        themeCheckbox.addEventListener('change', () => {
+            const newTheme = themeCheckbox.checked ? 'dark-mode' : 'light-mode';
             updateThemeUI(newTheme);
         });
     }
