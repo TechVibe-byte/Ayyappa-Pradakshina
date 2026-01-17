@@ -192,13 +192,20 @@ function initSwipeGestures() {
     }
 }
 
-const triggerHaptic = (pattern = [50]) => {
+// Make triggerHaptic globally available
+window.triggerHaptic = (pattern = [50]) => {
     // Check if vibration API is supported
     if (navigator.vibrate) {
-        navigator.vibrate(pattern);
-        console.log('Haptic triggered');
+        try {
+            navigator.vibrate(pattern);
+            console.log('Haptic triggered:', pattern);
+        } catch (e) {
+            console.warn('Vibration failed:', e);
+        }
+    } else {
+        console.log('Vibration API not supported');
     }
-}
+};
 
 function initHaptics() {
     // Attach haptic feedback to all interactive elements

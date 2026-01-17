@@ -192,10 +192,8 @@ class PradakshinaEngine {
                 this.updateProgress();
 
                 // Restore Haptic Feedback (Regression Fix)
-                if (typeof triggerHaptic === 'function') {
-                    triggerHaptic([50]);
-                } else if (navigator.vibrate) {
-                    navigator.vibrate(50);
+                if (window.triggerHaptic) {
+                    window.triggerHaptic([50]);
                 }
             });
 
