@@ -1540,27 +1540,33 @@ body:not(.dark-mode) .bottom-nav-item.active {
     /* Force Reset Global Minimums */
     button,
     .segment-btn,
-    .slogans-btn-uiverse,
+    .slogans-btn-uiverse {
+        min-height: auto !important;
+        min-width: auto !important;
+        width: auto !important;
+        /* Allow buttons to expand */
+        height: auto !important;
+    }
+
     .theme-toggler-container {
         min-height: 24px !important;
         min-width: 24px !important;
         width: 24px !important;
         height: 24px !important;
         margin-left: 10px;
-        /* Ensure spacing if gap fails */
     }
 
     /* 1. Language & Mode Toggle Buttons */
     .segment-btn {
-        height: 28px !important;
-        /* Forced compact height */
-        padding: 0 10px !important;
-        /* Reduced padding */
+        height: 32px !important;
+        /* Slightly taller for touch */
+        padding: 0 6px !important;
+        /* Reduced padding to fit long text */
         font-size: 0.75rem !important;
-        /* Smaller text */
-        line-height: 28px !important;
-        /* Center text vertically */
-        min-width: 60px !important;
+        line-height: 32px !important;
+        min-width: auto !important;
+        /* Allow shrinking */
+        max-width: 100%;
     }
 
     /* Container adjustment to hug the smaller buttons */
@@ -1572,11 +1578,12 @@ body:not(.dark-mode) .bottom-nav-item.active {
 
     /* 2. Slogans / Action Button */
     .slogans-btn-uiverse {
-        height: 30px !important;
+        height: 32px !important;
         padding: 0 12px !important;
         font-size: 0.75rem !important;
-        line-height: 28px !important;
-        /* Account for border if any */
+        line-height: 30px !important;
+        width: auto !important;
+        /* Explicitly auto width */
         margin-top: 5px;
     }
 }

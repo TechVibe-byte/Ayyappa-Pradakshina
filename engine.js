@@ -190,7 +190,6 @@ class PradakshinaEngine {
                 }
 
                 this.updateProgress();
-                if (navigator.vibrate) navigator.vibrate(20);
             });
 
             const checkboxWrapper = document.createElement('div');

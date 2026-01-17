@@ -213,12 +213,12 @@ function initHaptics() {
                 mutation.addedNodes.forEach(node => {
                     if (node.nodeType === 1) { // Element node
                         // If the node itself is interactive
-                        if (node.matches && (node.matches('button, a, .card'))) {
+                        if (node.matches && (node.matches('button, a, .card, input[type="checkbox"]'))) {
                             node.addEventListener('click', () => triggerHaptic([15]));
                         }
                         // Find interactive children
                         if (node.querySelectorAll) {
-                            const newInteractive = node.querySelectorAll('button, a, .card');
+                            const newInteractive = node.querySelectorAll('button, a, .card, input[type="checkbox"]');
                             newInteractive.forEach(el => el.addEventListener('click', () => triggerHaptic([15])));
                         }
                     }
