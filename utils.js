@@ -230,6 +230,34 @@ function initHaptics() {
     observer.observe(document.body, { childList: true, subtree: true });
 }
 
+function initWakeLock() {
+    let wakeLock = null;
+
+    async function requestWakeLock() {
+        try {
+            if ('wakeLock' in navigator) {
+                wakeLock = await navigator.wakeLock.request('screen');
+                console.log('Wake Lock is active!');
+                wakeLock.addEventListener('release', () => {
+                    console.log('Wake Lock has been released');
+                });
+            }
+        } catch (err) {
+            console.error(`${err.name}, ${err.message}`);
+        }
+    }
+
+    // Request wake lock on page visibility change
+    document.addEventListener('visibilitychange', async () => {
+        if (wakeLock !== null && document.visibilityState === 'visible') {
+            await requestWakeLock();
+        }
+    });
+
+    // Request initial wake lock
+    requestWakeLock();
+}
+
 
 // Auto-initialize when file is loaded
 document.addEventListener('DOMContentLoaded', () => {
@@ -239,4 +267,5 @@ document.addEventListener('DOMContentLoaded', () => {
     initServiceWorker();
     initSwipeGestures();
     initHaptics();
+    initWakeLock();
 });
