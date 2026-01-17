@@ -192,10 +192,11 @@ function initSwipeGestures() {
     }
 }
 
-function triggerHaptic(pattern = [10]) {
+const triggerHaptic = (pattern = [50]) => {
     // Check if vibration API is supported
     if (navigator.vibrate) {
         navigator.vibrate(pattern);
+        console.log('Haptic triggered');
     }
 }
 
