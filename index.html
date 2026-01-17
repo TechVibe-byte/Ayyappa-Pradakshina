@@ -291,6 +291,12 @@
             <p id="mantra-desc">Divine Chants</p>
         </a>
 
+        <a href="stotram.html" class="nav-card">
+            <img src="images/stotram_logo.png" alt="Stotram">
+            <h2 id="stotram-title">STOTRAM</h2>
+            <p id="stotram-desc">స్తోత్రం</p>
+        </a>
+
         <a href="pooja.html" class="nav-card">
             <img src="images/logo/pooja_logo.png" alt="Pooja" onerror="this.style.display='none'">
             <h2 id="pooja-title">POOJA</h2>
@@ -336,7 +342,9 @@
                 poojaCardTitle: document.getElementById('pooja-title'),
                 poojaCardDesc: document.getElementById('pooja-desc'),
                 pradakshinaCardTitle: document.getElementById('pradakshina-title'),
-                pradakshinaCardDesc: document.getElementById('pradakshina-desc')
+                pradakshinaCardDesc: document.getElementById('pradakshina-desc'),
+                stotramCardTitle: document.getElementById('stotram-title'),
+                stotramCardDesc: document.getElementById('stotram-desc')
             };
 
             function updateLanguage(lang) {
@@ -352,6 +360,8 @@
                 els.poojaCardDesc.textContent = text.poojaCardDesc;
                 els.pradakshinaCardTitle.textContent = text.pradakshinaCardTitle;
                 els.pradakshinaCardDesc.textContent = text.pradakshinaCardDesc;
+                if (els.stotramCardTitle) els.stotramCardTitle.textContent = text.stotramCardTitle;
+                if (els.stotramCardDesc) els.stotramCardDesc.textContent = text.stotramCardDesc;
 
                 // Update buttons
                 if (lang === 'telugu') {

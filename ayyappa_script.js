@@ -31,9 +31,11 @@ document.addEventListener('DOMContentLoaded', () => {
         if (lang === 'telugu') {
             btnLangTe.classList.add('active');
             btnLangEn.classList.remove('active');
+            if (slogansButton) slogansButton.textContent = 'అయ్యప్ప స్తోత్రం';
         } else {
             btnLangEn.classList.add('active');
             btnLangTe.classList.remove('active');
+            if (slogansButton) slogansButton.textContent = 'Ayyappa Stotram';
         }
     }
     updateLangButtons(app.language);

@@ -128,6 +128,10 @@ function initBottomNav() {
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>
             <span>Mantra</span>
         </a>
+        <a href="stotram.html" class="bottom-nav-item ${window.location.pathname.includes('stotram.html') ? 'active' : ''}">
+           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16.5 4c-1.7 0-3 1.3-3 3 0 .4.1.7.2 1l-8 8c-.6-.4-1.3-.6-2-.6-2.2 0-4 1.8-4 4s1.8 4 4 4c2.2 0 4-1.8 4-4 0-.7-.2-1.4-.6-2l8-8c.3.1.6.2 1 .2 1.7 0 3-1.3 3-3s-1.3-3-3-3z"></path><path d="M8.5 13.5l5-5"></path></svg>
+            <span>Stotram</span>
+        </a>
         <a href="pooja.html" class="bottom-nav-item ${isPooja ? 'active' : ''}">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14h16c0 4.4-3.6 8-8 8s-8-3.6-8-8z"></path><path d="M12 2c0 0-4 4-4 8s4 5 4 5 4-5 4-5-4-8-4-8z"></path></svg>
             <span>Pooja</span>
