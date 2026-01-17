@@ -193,7 +193,7 @@ class PradakshinaEngine {
 
                 // Restore Haptic Feedback (Regression Fix)
                 if (window.triggerHaptic) {
-                    window.triggerHaptic([50]);
+                    window.triggerHaptic([20]);
                 }
             });
 

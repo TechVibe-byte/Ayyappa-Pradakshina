@@ -193,7 +193,7 @@ function initSwipeGestures() {
 }
 
 // Make triggerHaptic globally available
-window.triggerHaptic = (pattern = [50]) => {
+window.triggerHaptic = (pattern = [20]) => {
     // Check if vibration API is supported
     if (navigator.vibrate) {
         try {
@@ -208,15 +208,21 @@ window.triggerHaptic = (pattern = [50]) => {
 };
 
 function initHaptics() {
-    // Attach haptic feedback to all interactive elements
-    const interactiveElements = document.querySelectorAll('button, a, .card, .step-row, input[type="checkbox"]');
+    // Attach haptic feedback to interactive elements
+    // EXCLUDING the main step checkboxes because they are handled by engine.js
+    // We select all inputs but then filter out the ones inside .step
+    const interactiveElements = document.querySelectorAll('button, a, .card, .step-row, input[type="checkbox"]:not(.step input[type="checkbox"])');
 
-    interactiveElements.forEach(el => {
+    const addHapticListener = (el) => {
+        // Double check exclusion for dynamic elements just in case
+        if (el.matches && el.matches('.step input[type="checkbox"]')) return;
+
         el.addEventListener('click', () => {
-            // different feedback for different elements could be defined
-            triggerHaptic([15]);
+            triggerHaptic([20]);
         });
-    });
+    };
+
+    interactiveElements.forEach(addHapticListener);
 
     // Observe for new elements (like dynamically added cards)
     const observer = new MutationObserver((mutations) => {
@@ -226,12 +232,12 @@ function initHaptics() {
                     if (node.nodeType === 1) { // Element node
                         // If the node itself is interactive
                         if (node.matches && (node.matches('button, a, .card, input[type="checkbox"]'))) {
-                            node.addEventListener('click', () => triggerHaptic([15]));
+                            addHapticListener(node);
                         }
                         // Find interactive children
                         if (node.querySelectorAll) {
                             const newInteractive = node.querySelectorAll('button, a, .card, input[type="checkbox"]');
-                            newInteractive.forEach(el => el.addEventListener('click', () => triggerHaptic([15])));
+                            newInteractive.forEach(addHapticListener);
                         }
                     }
                 });
