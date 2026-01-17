@@ -190,6 +190,11 @@ class PradakshinaEngine {
                 }
 
                 this.updateProgress();
+
+                // Restore Haptic Feedback (Regression Fix)
+                if (navigator.vibrate) {
+                    navigator.vibrate(15);
+                }
             });
 
             const checkboxWrapper = document.createElement('div');
