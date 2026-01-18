@@ -13,12 +13,7 @@
     <link rel="stylesheet" href="common.css">
     <link rel="icon" type="image/png" href="images/app_icon.png">
     <link rel="manifest" href="manifest.json">
-    <script>
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('service-worker.js')
-                .then(req => console.log('Service Worker Registered!'));
-        }
-    </script>
+
 </head>
 
 <body class="dark-mode">
@@ -104,10 +99,10 @@
     </div>
     <audio id="background-music" loop src="audio/hanuman.mpeg"></audio>
 
-    <script src="data.js"></script>
-    <script src="utils.js"></script>
-    <script src="engine.js"></script>
-    <script src="hanuman_script.js" charset="UTF-8"></script>
+    <script src="data.js" defer></script>
+    <script src="utils.js" defer></script>
+    <script src="engine.js" defer></script>
+    <script src="hanuman_script.js" charset="UTF-8" defer></script>
 </body>
 
 </html>

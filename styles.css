@@ -1697,3 +1697,277 @@ body {
         padding-bottom: 0;
     }
 }
+
+/* =========================================
+   Landing Page Styles (Moved from index.html)
+   ========================================= */
+
+/* We will add a class 'home-body' to index.html's body and target that */
+body.home-body {
+    flex-direction: column;
+    overflow-x: hidden;
+    justify-content: center;
+}
+
+.landing-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    animation: fadeInDown 1s ease-out;
+}
+
+.landing-header h1 {
+    color: #ffb74d;
+    font-family: 'Roboto Slab', serif;
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 4px 10px rgba(255, 183, 77, 0.3);
+}
+
+.landing-header p {
+    color: #aaa;
+    font-size: 1.2rem;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    width: 90%;
+    max-width: 1200px;
+    padding: 1rem;
+}
+
+.nav-card {
+    background: rgba(30, 30, 30, 0.6);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 2rem;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 380px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.nav-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    background: rgba(40, 40, 40, 0.8);
+    border-color: #ffb74d;
+    box-shadow: 0 20px 40px rgba(255, 183, 77, 0.2);
+}
+
+.nav-card img {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+    margin-bottom: 1.5rem;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.5));
+    transition: transform 0.4s ease;
+}
+
+.nav-card:hover img {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.nav-card h2 {
+    font-family: 'Roboto Slab', serif;
+    font-size: 1.8rem;
+    margin: 0;
+    color: #e0e0e0;
+    transition: color 0.3s;
+}
+
+.nav-card:hover h2 {
+    color: #ffb74d;
+}
+
+.nav-card p {
+    font-size: 0.9rem;
+    color: #888;
+    margin-top: 0.5rem;
+}
+
+/* Staggered Animation */
+.nav-card:nth-child(1) {
+    animation: fadeInUp 0.8s ease-out 0.1s backwards;
+}
+
+.nav-card:nth-child(2) {
+    animation: fadeInUp 0.8s ease-out 0.2s backwards;
+}
+
+.nav-card:nth-child(3) {
+    animation: fadeInUp 0.8s ease-out 0.3s backwards;
+}
+
+.nav-card:nth-child(4) {
+    animation: fadeInUp 0.8s ease-out 0.4s backwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 600px) {
+    .landing-header {
+        margin-bottom: 2rem;
+        margin-top: 4rem;
+        /* Prevent overlap with absolute theme button */
+    }
+
+    .landing-header h1 {
+        font-size: 2rem;
+    }
+
+    .card-grid {
+        gap: 1rem;
+        /* Reduced gap for mobile */
+        width: 95%;
+        /* More width usage */
+        padding: 0.5rem;
+    }
+
+    .nav-card {
+        height: 280px;
+        /* Slightly more compact */
+        padding: 1rem;
+    }
+
+    .nav-card img {
+        width: 130px;
+        height: 130px;
+        margin-bottom: 1rem;
+    }
+
+    .nav-card h2 {
+        font-size: 1.4rem;
+    }
+
+    /* Better touch targets */
+    .nav-card:active {
+        transform: scale(0.98);
+    }
+}
+
+/* Theme Toggle Adjustments for Landing Page */
+#theme-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 100;
+}
+
+/* Light Mode Styling for Toggle */
+body:not(.dark-mode) #theme-btn {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-color: rgba(0, 0, 0, 0.2);
+    color: #333;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+body:not(.dark-mode) #theme-btn:hover {
+    background-color: #fff;
+    color: #d2691e;
+    border-color: #d2691e;
+}
+
+.contact-footer {
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #888;
+}
+
+.contact-footer a {
+    color: #e0e0e0;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    transition: color 0.3s;
+}
+
+.contact-footer a:hover {
+    color: #ffb74d;
+}
+
+body:not(.dark-mode) .contact-footer a {
+    color: #555;
+}
+
+
+body:not(.dark-mode) .contact-footer a:hover {
+    color: #d2691e;
+}
+
+/* =========================================
+   Ganesh Pooja Page Styles
+   ========================================= */
+.page-banner {
+    width: 100%;
+    max-width: 800px;
+    margin-top: 60px;
+    /* Space for top buttons */
+    margin-bottom: 2rem;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.page-banner img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.content-container {
+    width: 90%;
+    max-width: 800px;
+    background: rgba(30, 30, 30, 0.6);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 2rem;
+    margin-bottom: 3rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    white-space: pre-wrap;
+    /* Preserve formatting */
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+@media (max-width: 600px) {
+    .content-container {
+        padding: 1rem;
+        font-size: 1rem;
+    }
+}

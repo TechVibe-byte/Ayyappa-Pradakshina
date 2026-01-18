@@ -19,12 +19,14 @@
 
 </head>
 
-<body>
+<body class="home-body">
 
     <div class="container">
-        <div class="header">
+        <div class="landing-header">
             <h1 id="stotram-page-title">Stotram</h1>
-            <div class="header-controls no-drawer" style="align-items: center; gap: 1rem;">
+            <p id="stotram-page-subtitle">Divine Hymns</p>
+            <div class="header-controls no-drawer"
+                style="justify-content: center; margin-top: 1rem; align-items: center; gap: 1rem;">
                 <div class="segment-control-container">
                     <button id="btn-lang-en" class="segment-btn">English</button>
                     <button id="btn-lang-te" class="segment-btn">Telugu</button>
@@ -45,17 +47,27 @@
                 </label>
             </div>
         </div>
-        <div id="mantra-cards-container" class="mantra-cards-container">
-            <!-- Stotram content will go here -->
-            <div class="mantra-card" style="width: 100%; text-align: center; padding: 2rem; color: #888;">
-                <p>Coming Soon...</p>
+        <div class="card-grid">
+            <div id="card-ayyappa-stotram" class="nav-card" style="cursor: pointer;">
+                <img src="images/logo/ayyappa_logo.png" alt="Ayyappa Stotram">
+                <h2 id="ayyappa-stotram-title">Ayyappa Stotram</h2>
+                <p id="ayyappa-stotram-desc">Divine Chants</p>
             </div>
         </div>
     </div>
 
-    <script src="data.js"></script>
-    <script src="utils.js"></script>
-    <script src="stotram.js"></script>
+    <!-- Stotram Modal -->
+    <div id="stotram-modal" class="modal-overlay" style="display: none;">
+        <div class="modal-content">
+            <button id="modal-close-button" class="modal-close-button">&times;</button>
+            <h2 id="modal-title">Slogans</h2>
+            <div id="stotram-content" style="text-align: left; max-height: 60vh; overflow-y: auto; line-height: 1.8;">
+            </div>
+        </div>
+
+        <script src="data.js" defer></script>
+        <script src="utils.js" defer></script>
+        <script src="stotram.js" defer></script>
 </body>
 
 </html>

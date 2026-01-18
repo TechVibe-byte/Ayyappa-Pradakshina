@@ -8,7 +8,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Load initial language
     const storedLang = localStorage.getItem('language') || 'telugu';
-    updateLangButtons(storedLang);
+
+    setLanguage(storedLang);
 
     function updateLangButtons(lang) {
         if (lang === 'telugu') {
@@ -38,7 +39,56 @@ document.addEventListener('DOMContentLoaded', () => {
                 pageTitle.textContent = titleText;
             }
         }
+
+
+        // Update Subtitle
+        const pageSubtitle = document.getElementById('stotram-page-subtitle');
+        if (pageSubtitle) {
+            pageSubtitle.textContent = lang === 'telugu' ? 'దైవిక స్తోత్రాలు' : 'Divine Hymns';
+        }
+
+        // Update Card Content
+        const cardTitle = document.getElementById('ayyappa-stotram-title');
+        const cardDesc = document.getElementById('ayyappa-stotram-desc');
+        if (cardTitle) cardTitle.textContent = lang === 'telugu' ? 'అయ్యప్ప స్తోత్రం' : 'Ayyappa Stotram';
+        if (cardDesc) cardDesc.textContent = lang === 'telugu' ? 'స్తోత్రం' : 'Chants';
     }
+
+    // Modal Handling
+    const modal = document.getElementById('stotram-modal');
+    const modalCloseBtn = document.getElementById('modal-close-button');
+    const stotramContent = document.getElementById('stotram-content');
+    const cardAyyappa = document.getElementById('card-ayyappa-stotram');
+    const modalTitle = document.getElementById('modal-title');
+
+    if (cardAyyappa) {
+        cardAyyappa.addEventListener('click', () => {
+            const currentLang = localStorage.getItem('language') || 'telugu';
+            const slogans = currentLang === 'telugu' ? teluguSlogans : englishSlogans;
+
+            // Update Modal Title
+            if (modalTitle) modalTitle.textContent = currentLang === 'telugu' ? 'అయ్యప్ప స్తోత్రం' : 'Ayyappa Stotram';
+
+            // Populate Content
+            if (stotramContent && slogans) {
+                stotramContent.innerHTML = slogans.map(line => `<p>${line}</p>`).join('');
+            }
+            if (modal) modal.style.display = 'flex';
+        });
+    }
+
+    if (modalCloseBtn) {
+        modalCloseBtn.addEventListener('click', () => {
+            if (modal) modal.style.display = 'none';
+        });
+    }
+
+    // Close on outside click
+    window.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
 
     if (btnLangEn && btnLangTe) {
         btnLangEn.addEventListener('click', () => setLanguage('english'));

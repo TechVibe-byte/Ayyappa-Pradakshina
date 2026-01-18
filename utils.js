@@ -109,36 +109,84 @@ function initBottomNav() {
     nav.className = 'bottom-nav';
 
     const currentPath = window.location.pathname;
-    const isHome = currentPath.endsWith('index.html') || currentPath.endsWith('/') || currentPath.endsWith('Ayyappa-Pradakshina/'); // Adjusted for Github Pages/local
-    // More robust active check
+    const isHome = currentPath.endsWith('index.html') || currentPath.endsWith('/') || currentPath.endsWith('Ayyappa-Pradakshina/');
     const isPradakshina = currentPath.includes('pradakshina.html') || currentPath.includes('ayyappa.html') || currentPath.includes('hanuman.html') || currentPath.includes('sai_baba.html');
     const isMantra = currentPath.includes('mantra.html');
     const isPooja = currentPath.includes('pooja.html') || currentPath.includes('ganesh_pooja.html');
+    const isStotram = currentPath.includes('stotram.html');
+
+    // Language definitions
+    const navLabels = {
+        en: {
+            home: 'Home',
+            pradakshina: 'Pradakshina',
+            mantra: 'Mantra',
+            stotram: 'Stotram',
+            pooja: 'Pooja'
+        },
+        te: {
+            home: 'హోమ్',
+            pradakshina: 'ప్రదక్షిణ',
+            mantra: 'మంత్రం',
+            stotram: 'స్తోత్రం',
+            pooja: 'పూజ'
+        }
+    };
+
+    // Helper to get current lang code
+    const getLang = () => document.documentElement.lang === 'te' ? 'te' : 'en';
+
+    // Initial Lang
+    let lang = getLang();
 
     nav.innerHTML = `
-        <a href="index.html" class="bottom-nav-item ${isHome && !isPradakshina && !isMantra && !isPooja ? 'active' : ''}">
+        <a href="index.html" class="bottom-nav-item ${isHome && !isPradakshina && !isMantra && !isPooja && !isStotram ? 'active' : ''}" data-nav="home">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
-            <span>Home</span>
+            <span>${navLabels[lang].home}</span>
         </a>
-        <a href="pradakshina.html" class="bottom-nav-item ${isPradakshina ? 'active' : ''}">
+        <a href="pradakshina.html" class="bottom-nav-item ${isPradakshina ? 'active' : ''}" data-nav="pradakshina">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"></polyline><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path></svg>
-            <span>Pradakshina</span>
+            <span>${navLabels[lang].pradakshina}</span>
         </a>
-        <a href="mantra.html" class="bottom-nav-item ${isMantra ? 'active' : ''}">
+        <a href="mantra.html" class="bottom-nav-item ${isMantra ? 'active' : ''}" data-nav="mantra">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>
-            <span>Mantra</span>
+            <span>${navLabels[lang].mantra}</span>
         </a>
-        <a href="stotram.html" class="bottom-nav-item ${window.location.pathname.includes('stotram.html') ? 'active' : ''}">
+        <a href="stotram.html" class="bottom-nav-item ${isStotram ? 'active' : ''}" data-nav="stotram">
            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16.5 4c-1.7 0-3 1.3-3 3 0 .4.1.7.2 1l-8 8c-.6-.4-1.3-.6-2-.6-2.2 0-4 1.8-4 4s1.8 4 4 4c2.2 0 4-1.8 4-4 0-.7-.2-1.4-.6-2l8-8c.3.1.6.2 1 .2 1.7 0 3-1.3 3-3s-1.3-3-3-3z"></path><path d="M8.5 13.5l5-5"></path></svg>
-            <span>Stotram</span>
+            <span>${navLabels[lang].stotram}</span>
         </a>
-        <a href="pooja.html" class="bottom-nav-item ${isPooja ? 'active' : ''}">
+        <a href="pooja.html" class="bottom-nav-item ${isPooja ? 'active' : ''}" data-nav="pooja">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14h16c0 4.4-3.6 8-8 8s-8-3.6-8-8z"></path><path d="M12 2c0 0-4 4-4 8s4 5 4 5 4-5 4-5-4-8-4-8z"></path></svg>
-            <span>Pooja</span>
+            <span>${navLabels[lang].pooja}</span>
         </a>
     `;
 
     document.body.appendChild(nav);
+
+    // Watch for language changes
+    const observer = new MutationObserver((mutations) => {
+        mutations.forEach((mutation) => {
+            if (mutation.type === 'attributes' && mutation.attributeName === 'lang') {
+                const newLang = getLang();
+                updateNavText(newLang);
+            }
+        });
+    });
+
+    observer.observe(document.documentElement, { attributes: true });
+
+    // Function to update text
+    function updateNavText(currentLang) {
+        const labels = navLabels[currentLang];
+        nav.querySelectorAll('.bottom-nav-item').forEach(item => {
+            const key = item.dataset.nav;
+            const span = item.querySelector('span');
+            if (key && labels[key] && span) {
+                span.textContent = labels[key];
+            }
+        });
+    }
 }
 
 function initServiceWorker() {
