@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     currentPlaying.audio.pause();
                     currentPlaying.checkbox.checked = false;
                 }
-                audio.play();
+                audio.play().catch(() => {});
                 currentPlaying = mantraAudioControls;
             } else {
                 audio.pause();

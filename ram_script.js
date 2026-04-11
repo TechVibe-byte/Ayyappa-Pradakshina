@@ -7,10 +7,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const app = new PradakshinaEngine({
         historyKey: 'ramPradakshinaHistory',
-        langKey: 'ram_language', // Custom language key
+        deityName: 'Shri Ram Pradakshina',
         defaultMode: 'japam',
         getMantras: (lang, mode) => {
-            // ramMantra, etc are global from data.js
             return lang === 'telugu' ? ramMantraTelugu : ramMantra;
         }
     });
@@ -27,11 +26,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     updateLangButtons(app.language);
 
-    btnLangEn.addEventListener('click', () => {
+    if (btnLangEn) btnLangEn.addEventListener('click', () => {
         app.setLanguage('english');
         updateLangButtons('english');
     });
-    btnLangTe.addEventListener('click', () => {
+    if (btnLangTe) btnLangTe.addEventListener('click', () => {
         app.setLanguage('telugu');
         updateLangButtons('telugu');
     });

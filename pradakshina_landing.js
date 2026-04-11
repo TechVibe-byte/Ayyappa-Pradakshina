@@ -1,9 +1,4 @@
-// Init particles from utils
 document.addEventListener('DOMContentLoaded', () => {
-    // Re-use divine atmosphere if desired, providing a subtle background
-    if (typeof initDivineAtmosphere === 'function') {
-        initDivineAtmosphere();
-    }
     if (typeof initTheme === 'function') {
         initTheme();
     }

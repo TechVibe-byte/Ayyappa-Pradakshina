@@ -16,8 +16,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const app = new PradakshinaEngine({
         historyKey: 'pradakshinaHistory',
+        deityName: 'Ayyappa Pradakshina',
         getMantras: (lang, mode) => {
-            // saranaGhosha, etc are global from data.js
             if (mode === 'japam') {
                 return lang === 'telugu' ? naamaJapamTelugu : naamaJapamEnglish;
             } else {
@@ -40,11 +40,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     updateLangButtons(app.language);
 
-    btnLangEn.addEventListener('click', () => {
+    if (btnLangEn) btnLangEn.addEventListener('click', () => {
         app.setLanguage('english');
         updateLangButtons('english');
     });
-    btnLangTe.addEventListener('click', () => {
+    if (btnLangTe) btnLangTe.addEventListener('click', () => {
         app.setLanguage('telugu');
         updateLangButtons('telugu');
     });
@@ -61,11 +61,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     updateModeButtons(app.mode);
 
-    btnModeGhosha.addEventListener('click', () => {
+    if (btnModeGhosha) btnModeGhosha.addEventListener('click', () => {
         app.setMode('ghosha');
         updateModeButtons('ghosha');
     });
-    btnModeJapam.addEventListener('click', () => {
+    if (btnModeJapam) btnModeJapam.addEventListener('click', () => {
         app.setMode('japam');
         updateModeButtons('japam');
     });
