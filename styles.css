@@ -1971,3 +1971,90 @@ body:not(.dark-mode) .contact-footer a:hover {
         font-size: 1rem;
     }
 }
+
+/* Card Grid */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Nav Card */
+.nav-card {
+    display: flex;
+    flex-direction: column;
+    background: #1e1e1e;
+    border-radius: 16px;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    position: relative;
+    height: 100%;
+}
+
+.nav-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+    border-color: #ffb74d;
+}
+
+.nav-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.nav-card:hover img {
+    transform: scale(1.05);
+}
+
+.nav-card h2 {
+    margin: 1.25rem 1.25rem 0.5rem;
+    font-size: 1.4rem;
+    color: #ffb74d;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.nav-card p {
+    margin: 0 1.25rem 1.5rem;
+    color: #b0b0b0;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+/* Light Mode Styling for Cards */
+body:not(.dark-mode) .nav-card {
+    background: #fff;
+    border-color: rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+body:not(.dark-mode) .nav-card:hover {
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+    border-color: #d2691e;
+}
+
+body:not(.dark-mode) .nav-card h2 {
+    color: #d2691e;
+}
+
+body:not(.dark-mode) .nav-card p {
+    color: #555;
+}
+
+/* Content Container Tweaks */
+.content-container strong {
+    color: #ffb74d;
+    font-weight: 700;
+}
+
+body:not(.dark-mode) .content-container strong {
+    color: #d2691e;
+}

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SADHANA - Shri Ram Pradakshina</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&family=Roboto:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="common.css">
+    <link rel="icon" type="image/png" href="images/app_icon.png">
+    <link rel="manifest" href="manifest.json">
+
+</head>
+
+<body class="dark-mode">
+
+
+    <div class="container">
+        <div class="banner-container">
+            <!-- Using custom class for Ram banner positioning -->
+            <img src="images/ram_banner.jpeg" alt="Ram Banner" class="banner ram-banner">
+
+            <input type="checkbox" id="audio-checkbox" />
+            <label for="audio-checkbox" class="toggleSwitch">
+                <div class="speaker">
+                    <svg xmlns="http://www.w3.org/2000/svg" version="1.0" viewBox="0 0 75 75">
+                        <path
+                            d="M39.389,13.769 L22.235,28.606 L6,28.606 L6,47.699 L21.989,47.699 L39.389,62.75 L39.389,13.769z"
+                            style="stroke:#fff;stroke-width:5;stroke-linejoin:round;fill:#fff;"></path>
+                        <path
+                            d="M48,27.6a19.5,19.5 0 0 1 0,21.4M55.1,20.5a30,30 0 0 1 0,35.6M61.6,14a38.8,38.8 0 0 1 0,48.6"
+                            style="fill:none;stroke:#fff;stroke-width:5;stroke-linecap:round"></path>
+                    </svg>
+                </div>
+
+                <div class="mute-speaker">
+                    <svg version="1.0" viewBox="0 0 75 75" stroke="#fff" stroke-width="5">
+                        <path d="m39,14-17,15H6V48H22l17,15z" fill="#fff" stroke-linejoin="round"></path>
+                        <path d="m49,26 20,24m0-24-20,24" fill="#fff" stroke-linecap="round"></path>
+                    </svg>
+                </div>
+            </label>
+        </div>
+        <div class="header">
+            <div>
+                <h1>Shri Ram Pradakshina</h1>
+            </div>
+
+
+
+            <div class="header-controls no-drawer" style="align-items: center; gap: 1rem;">
+                <div class="segment-control-container">
+                    <button id="btn-lang-en" class="segment-btn">English</button>
+                    <button id="btn-lang-te" class="segment-btn">Telugu</button>
+                </div>
+
+
+                <label class="theme-toggler-container">
+                    <input type="checkbox" id="theme-toggle-checkbox">
+                    <svg viewBox="0 0 384 512" height="1em" xmlns="http://www.w3.org/2000/svg" class="moon">
+                        <path
+                            d="M223.5 32C100 32 0 132.3 0 256S100 480 223.5 480c60.6 0 115.5-24.2 155.8-63.4c5-4.9 6.3-12.5 3.1-18.7s-10.1-9.7-17-8.5c-9.8 1.7-19.8 2.6-30.1 2.6c-96.9 0-175.5-78.8-175.5-176c0-65.8 36-123.1 89.3-153.3c6.1-3.5 9.2-10.5 7.7-17.3s-7.3-11.9-14.3-12.5c-6.3-.5-12.6-.8-19-.8z">
+                        </path>
+                    </svg>
+                    <svg viewBox="0 0 512 512" height="1em" xmlns="http://www.w3.org/2000/svg" class="sun">
+                        <path
+                            d="M361.5 1.2c5 2.1 8.6 6.6 9.6 11.9L391 121l107.9 19.8c5.3 1 9.8 4.6 11.9 9.6s1.5 10.7-1.6 15.2L446.9 256l62.3 90.3c3.1 4.5 3.7 10.2 1.6 15.2s-6.6 8.6-11.9 9.6L391 391 371.1 498.9c-1 5.3-4.6 9.8-9.6 11.9s-10.7 1.5-15.2-1.6L256 446.9l-90.3 62.3c-4.5 3.1-10.2 3.7-15.2 1.6s-8.6-6.6-9.6-11.9L121 391 13.1 371.1c-5.3-1-9.8-4.6-11.9-9.6s-1.5-10.7 1.6-15.2L65.1 256 2.8 165.7c-3.1-4.5-3.7-10.2-1.6-15.2s6.6-8.6 11.9-9.6L121 121 140.9 13.1c1-5.3 4.6-9.8 9.6-11.9s10.7-1.5 15.2 1.6L256 65.1 346.3 2.8c4.5-3.1 10.2-3.7 15.2-1.6zM160 256a96 96 0 1 1 192 0 96 96 0 1 1 -192 0zm224 0a128 128 0 1 0 -256 0 128 128 0 1 0 256 0z">
+                        </path>
+                    </svg>
+                </label>
+            </div>
+            <!-- Reusing existing button class but linking Home -->
+
+        </div>
+        <div class="time-tracker">
+            <div>Start Time: <span id="start-time">-</span></div>
+            <div>End Time: <span id="end-time">-</span></div>
+        </div>
+        <div class="dashboard">
+            <main>
+                <div id="progress-container">
+                    <div id="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                    <div id="progress-label">0%</div>
+                </div>
+                <div id="steps-container"></div>
+            </main>
+            <aside>
+                <div id="history-container" class="card">
+                    <h2>Completion History</h2>
+                    <ul id="history-list" role="list"></ul>
+                    <button id="clear-history" aria-label="Clear completion history">Clear History</button>
+                </div>
+            </aside>
+        </div>
+    </div>
+    <audio id="background-music" loop src="audio/ram.mp3"></audio>
+
+    <script src="data.js" defer></script>
+    <script src="utils.js" defer></script>
+    <script src="engine.js" defer></script>
+    <script src="ram_script.js" charset="UTF-8" defer></script>
+</body>
+
+</html>

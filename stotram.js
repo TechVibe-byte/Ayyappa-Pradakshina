@@ -5,10 +5,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const btnLangEn = document.getElementById('btn-lang-en');
     const btnLangTe = document.getElementById('btn-lang-te');
+    const stotramGrid = document.getElementById('stotram-grid');
+
+    // Modal Elements
+    const modal = document.getElementById('stotram-modal');
+    const modalCloseBtn = document.getElementById('modal-close-button');
+    const stotramContent = document.getElementById('stotram-content');
+    const modalTitle = document.getElementById('modal-title');
 
     // Load initial language
     const storedLang = localStorage.getItem('language') || 'telugu';
-
     setLanguage(storedLang);
 
     function updateLangButtons(lang) {
@@ -21,65 +27,72 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    function renderCards(lang) {
+        if (!stotramGrid || typeof stotrams === 'undefined') return;
+
+        stotramGrid.innerHTML = ''; // Clear existing
+
+        stotrams.forEach(stotram => {
+            const card = document.createElement('div');
+            card.className = 'nav-card';
+            card.style.cursor = 'pointer';
+
+            // Get data for language
+            const title = stotram.title[lang];
+            const desc = stotram.description[lang];
+
+            card.innerHTML = `
+                <img src="${stotram.image}" alt="${title}">
+                <h2>${title}</h2>
+                <p>${desc}</p>
+            `;
+
+            // Click Event
+            card.addEventListener('click', () => {
+                openModal(stotram, lang);
+            });
+
+            stotramGrid.appendChild(card);
+        });
+    }
+
+    function openModal(stotram, lang) {
+        if (!modal || !stotramContent || !modalTitle) return;
+
+        modalTitle.textContent = stotram.title[lang];
+        stotramContent.innerHTML = stotram.content[lang];
+
+        modal.style.display = 'flex';
+    }
+
     // Set Language
     function setLanguage(lang) {
         localStorage.setItem('language', lang);
         document.documentElement.lang = lang === 'telugu' ? 'te' : 'en';
         updateLangButtons(lang);
 
-        // Update Title
+        // Update Page Titles
         const pageTitle = document.getElementById('stotram-page-title');
-        if (pageTitle && typeof homeTranslations !== 'undefined') {
-            // Re-using stotramCardTitle as it fits 'Stotram' / 'స్తోత్రం'
-            if (homeTranslations[lang] && homeTranslations[lang].stotramCardTitle) {
-                // Capitalize for title if needed, or use as is (Data has "STOTRAM" in English)
-                // Let's use Title Case for the page header to match others
+        const pageSubtitle = document.getElementById('stotram-page-subtitle');
+
+        if (homeTranslations && homeTranslations[lang]) {
+            if (pageTitle) {
                 let titleText = homeTranslations[lang].stotramCardTitle;
-                if (lang === 'english') titleText = "Stotram"; // Override for proper casing if data is uppercase
+                if (lang === 'english') titleText = "Stotram";
                 pageTitle.textContent = titleText;
             }
-        }
-
-
-        // Update Subtitle
-        const pageSubtitle = document.getElementById('stotram-page-subtitle');
-        if (pageSubtitle) {
-            pageSubtitle.textContent = lang === 'telugu' ? 'దైవిక స్తోత్రాలు' : 'Divine Hymns';
-        }
-
-        // Update Card Content
-        const cardTitle = document.getElementById('ayyappa-stotram-title');
-        const cardDesc = document.getElementById('ayyappa-stotram-desc');
-        if (cardTitle) cardTitle.textContent = lang === 'telugu' ? 'అయ్యప్ప స్తోత్రం' : 'Ayyappa Stotram';
-        if (cardDesc) cardDesc.textContent = lang === 'telugu' ? 'స్తోత్రం' : 'Chants';
-    }
-
-    // Modal Handling
-    const modal = document.getElementById('stotram-modal');
-    const modalCloseBtn = document.getElementById('modal-close-button');
-    const stotramContent = document.getElementById('stotram-content');
-    const cardAyyappa = document.getElementById('card-ayyappa-stotram');
-    const modalTitle = document.getElementById('modal-title');
-
-    if (cardAyyappa) {
-        cardAyyappa.addEventListener('click', () => {
-            const currentLang = localStorage.getItem('language') || 'telugu';
-            const slogans = currentLang === 'telugu' ? teluguSlogans : englishSlogans;
-
-            // Update Modal Title
-            if (modalTitle) modalTitle.textContent = currentLang === 'telugu' ? 'అయ్యప్ప స్తోత్రం' : 'Ayyappa Stotram';
-
-            // Populate Content
-            if (stotramContent && slogans) {
-                stotramContent.innerHTML = slogans.map(line => `<p>${line}</p>`).join('');
+            if (pageSubtitle) {
+                pageSubtitle.textContent = lang === 'telugu' ? 'దైవిక స్తోత్రాలు' : 'Divine Hymns';
             }
-            if (modal) modal.style.display = 'flex';
-        });
+        }
+
+        // Re-render cards with new language
+        renderCards(lang);
     }
 
     if (modalCloseBtn) {
         modalCloseBtn.addEventListener('click', () => {
-            if (modal) modal.style.display = 'none';
+            modal.style.display = 'none';
         });
     }
 

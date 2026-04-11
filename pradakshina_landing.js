@@ -21,7 +21,9 @@ document.addEventListener('DOMContentLoaded', () => {
         hanumanCardTitle: document.getElementById('hanuman-title'),
         hanumanCardDesc: document.getElementById('hanuman-desc'),
         saiCardTitle: document.getElementById('sai-title'),
-        saiCardDesc: document.getElementById('sai-desc')
+        saiCardDesc: document.getElementById('sai-desc'),
+        ramCardTitle: document.getElementById('ram-title'),
+        ramCardDesc: document.getElementById('ram-desc')
     };
 
     function updateLanguage(lang) {
@@ -44,6 +46,8 @@ document.addEventListener('DOMContentLoaded', () => {
         els.hanumanCardDesc.textContent = text.hanumanCardDesc;
         els.saiCardTitle.textContent = text.saiCardTitle;
         els.saiCardDesc.textContent = text.saiCardDesc;
+        if (els.ramCardTitle) els.ramCardTitle.textContent = text.ramCardTitle;
+        if (els.ramCardDesc) els.ramCardDesc.textContent = text.ramCardDesc;
 
         // Update buttons
         if (lang === 'telugu') {

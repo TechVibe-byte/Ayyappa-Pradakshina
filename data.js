@@ -1,4 +1,4 @@
-﻿// Data for Sai Baba Pradakshina
+// Data for Sai Baba Pradakshina
 const saiBabaMantraText = "<div class='sai-mantra-border'><span class='sai-line-1'>Om Sai Namo Namah</span> <br> <span class='sai-line-2'>Shri Sai Namo Namah</span> <br> <span class='sai-line-3'>Jai Jai Sai Namo Namah</span> <br> <span class='sai-line-4'>Sadguru Sai Namo Namah</span></div>";
 const saiBabaMantra = Array(108).fill(saiBabaMantraText);
 
@@ -11,6 +11,14 @@ const hanumanMantra = Array(108).fill(hanumanMantraText);
 
 const hanumanMantraTextTelugu = "<div class='sai-mantra-border'><span class='sai-line-1'>ఆంజనేయం మహావీరం</span> <br> <span class='sai-line-2'>బ్రహ్మ విష్ణు శివాత్మకం</span> <br> <span class='sai-line-3'>తరుణార్క ప్రభం శాంతం</span> <br> <span class='sai-line-4'>ఆంజనేయం నమామ్యహమ్</span></div>";
 const hanumanMantraTelugu = Array(108).fill(hanumanMantraTextTelugu);
+
+// Data for Ram Pradakshina
+const ramMantraText = "<div class='sai-mantra-border'><span class='sai-line-1'>Shri Ram Jay Ram Jay Jay Ram</span></div>";
+const ramMantra = Array(108).fill(ramMantraText);
+
+const ramMantraTextTelugu = "<div class='sai-mantra-border'><span class='sai-line-1'>శ్రీ రామ్ జయ రామ్ జయ జయ రామ్</span></div>";
+const ramMantraTelugu = Array(108).fill(ramMantraTextTelugu);
+
 
 // Data for Sarana Ghosha and Naama Japam
 const saranaGhosha = [
@@ -377,6 +385,8 @@ const homeTranslations = {
         hanumanCardDesc: "Jai Bajrangbali",
         saiCardTitle: "SAI BABA PRADAKSHINA",
         saiCardDesc: "Om Sai Ram",
+        ramCardTitle: "SHRI RAM PRADAKSHINA",
+        ramCardDesc: "Shri Ram Jay Ram Jay Jay Ram",
         mantraCardTitle: "MANTRA JAPA",
         mantraCardDesc: "Divine Chants",
         poojaCardTitle: "POOJA",
@@ -397,6 +407,8 @@ const homeTranslations = {
         hanumanCardDesc: "జై బజరంగబలి",
         saiCardTitle: "సాయి బాబా ప్రదక్షిణ",
         saiCardDesc: "ఓం సాయి రామ్",
+        ramCardTitle: "శ్రీ రామ్ ప్రదక్షిణ",
+        ramCardDesc: "శ్రీ రామ్ జయ రామ్ జయ జయ రామ్",
         mantraCardTitle: "మంత్ర జపం",
         mantraCardDesc: "దైవిక శ్లోకాలు",
         poojaCardTitle: "పూజ",
@@ -1049,5 +1061,294 @@ Thus, ends the excerpt from Skānda Purāna about the Legend of Syamantaka Jewel
 
 చెంగల్వ చేమంతి చెలరేగి గన్నేరు తామరలు తంగేడు తరచుగాను ।
 పుష్పజాతులు తెచ్చి పూజింతు నేనెపుడు బహుబుద్ధి గణపతికి బాగుగాను ॥జయ ॥
+`,
+    english: `
+**Ganesh Chaturthi Pooja Procedure & Vrata Kalpam**
+
+**Prayer**
+Shuklambaradharam Vishnum Shashivarnam Chaturbhujam |
+Prasanna Vadanam Dhyayet Sarva Vighnopashantaye ||
+
+May this Muhurta be auspicious.
+Tadeva Lagnam Sudinam Tadeva, Tarabalam Chandrabalam Tadeva...
+
+**Body Purification (Sharira Shuddhi)**
+Apavitrah Pavitro Va Sarvavastham Gatopi Va |
+Yah Smaret Pundarikaksham Sa Bahyabhyantara Shuchih ||
+
+**Achamana**
+Om Keshavaya Swaha, Om Narayanaya Swaha, Om Madhavaya Swaha (Sip water 3 times)
+Om Govindaya Namaha, Om Vishnave Namaha... (Touch body parts)
+Om Sri Krishna Parabrahmane Namo Namah.
+
+**Sankalpa (Vow)**
+Mamopatta Durita Kshaya Dvara...
+To destroy my sins, to please Lord Parameshwara, I perform this Vara Siddhi Vinayaka Vrata for the well-being, peace, and prosperity of my family, and for the success of my endeavors.
+
+**Kalasha Pooja**
+(Worship the Kalasha pot symbolizing the universe)
+Kalasashya Mukhe Vishnuh...
+I worship the Divine in the Kalasha.
+
+**Prana Pratishtha**
+(Invoking the Deity into the Idol)
+Om Asunite Punarasmasu Chakshuh...
+Om Sri Vara Siddhi Vinayakaya Namah. Swami, please reside in this idol until the end of the Pooja.
+
+**Shodashopachara Pooja (16 Steps of Worship)**
+
+**1. Dhyanam (Meditation)**
+Dhyayet Gajananam Devam...
+I meditate upon Lord Ganesha.
+
+**2. Avahanam (Invocation)**
+Atra Gaccha Jagadvandya...
+I invite Lord Ganesha.
+
+**3. Asanam (Seat)**
+Ratna Simhasanam Charu...
+I offer a seat to the Lord.
+
+**4. Arghyam**
+I offer water for washing hands.
+
+**5. Padyam**
+I offer water for washing feet.
+
+**6. Madhuparkam**
+I offer a mixture of honey and milk.
+
+**7. Achamaniyam**
+I offer water for sipping.
+
+**8. Panchamrita Snanam**
+I offer a bath with five nectars (Milk, Curd, Ghee, Honey, Sugar).
+
+**9. Shuddhodaka Snanam**
+I offer a bath with pure water.
+
+**10. Vastram**
+I offer clothes.
+
+**11. Yajnopavitam**
+I offer the sacred thread.
+
+**12. Gandham**
+I offer Sandalwood paste.
+
+**13. Akshatas**
+I offer sacred rice grains.
+
+**14. Pushpani**
+I offer flowers.
+
+**Anga Pooja (Worshipping Body Parts)**
+Om Ganeshaya Namah - I worship the feet.
+Om Ekadantaya Namah - I worship the ankles.
+Om Shurpakarnaya Namah - I worship the knees.
+Om Vighnarajaya Namah - I worship the calves.
+Om Akhuvahanaya Namah - I worship the thighs.
+Om Herambaya Namah - I worship the waist.
+Om Lambodaraya Namah - I worship the stomach.
+Om Gananathaya Namah - I worship the navel.
+Om Ganeshaya Namah - I worship the heart.
+Om Sthulakanthaya Namah - I worship the neck.
+Om Skandagrajaya Namah - I worship the shoulders.
+Om Pashahastaya Namah - I worship the hands.
+Om Gajavaktraya Namah - I worship the face.
+Om Vighnahantre Namah - I worship the eyes.
+Om Shurpakarnaya Namah - I worship the ears.
+Om Phalachandraya Namah - I worship the forehead.
+Om Sarveshvaraya Namah - I worship the head.
+Om Vighnarajaya Namah - I worship the entire body.
+
+**Patra Pooja (Worship with 21 Leaves)**
+I worship Lord Ganesha with 21 types of sacred leaves (Machi, Brihati, Bilva, Durva, etc.).
+
+**Pushpa Pooja (Worship with 21 Flowers)**
+I worship Lord Ganesha with 21 types of flowers.
+
+**Ashttottara Shatanamavali**
+(Chanting 108 names of Lord Ganesha)
+Om Gajananaya Namah
+Om Ganadhyakshaya Namah
+... (Chant the 108 names) ...
+Om Sri Vighneshwaraya Namah.
+
+**15. Dhupam**
+I offer Incense.
+
+**16. Deepam**
+I offer Light.
+
+**Naivedyam**
+I offer food (Undrallu, Kudumulu, Fruits, etc).
+
+**Tambulam**
+I offer Betel leaves and nuts.
+
+**Nirajanam**
+I offer Camphor flame.
+
+**Mantra Pushpam**
+I offer flowers with Vedic chants.
+
+**Pradakshina**
+I circumambulate the Lord.
+Yani Kani Cha Papani Janmantara Kritani Cha |
+Tani Tani Pranashyanti Pradakshina Pade Pade ||
+
+**Punah Arghyam**
+I offer water again.
+
+**Story (Vrata Katha)**
+A very long time ago, sages who had accomplished the most intense meditative vows and other distinguished brahmins had gathered in the Naimisha forest to ask Sūta, an accomplished Sage, if there was any sacred vow that one can undertake so as to complete one’s work or initiative without any obstacles and can bear fruits of labour as desired, and that if there was one, they requested him to kindly throw light upon it.
+Upon being greeted with verbal niceties in this manner, Sage Sūta, who was an erudite Puranic scholar and a master of all Shastras, says, “In the past, during the gory war for the kingdom of Hastinapura between the cousins – Pāndavas and Kauravas, the eldest of the Pandavas, Dharma Rāja (Yudhishtira) requests Krishna to enlighten him of the God who is to be prayed to win the war and of a sacred vow that when carried out would help win back the lost kingdom.
+To this, Lord Krishna answers that every year, on the 4th day of the bright fortnight in the Bhādrapada month, one must perform Sri Varasiddhi Vināyaka Vrata. He adds that the vower must bathe with sesame seed oil, dressed in clean and new clothes, be clean minded on that day and to the best of his strength and ability, make an idol of the Lord using gold, silver, copper or clay, and pray to this idol. He further adds that this idol of Ganesha must be Ekadanta – one-toothed (one-tusked); Shurpa-karna – comprising of ears like a winnowing fan; Chatur-bhuja – the one with four hands, and there’s a noose, elephant goad, kadubu – a traditional stuffed dessert and Abhaya mudra – a gesture of fearlessness in each of his hands. This idol is seated on a well-decorated ornamental dais and is to be worshipped with bhakti – infallible devotion. The vower must offer sandalwood in the name of Ganadhipa (The chief of all Ganas or clans); flowers in the name of Vināyaka (the one without a ruler); incense sticks in the name of Umasuta (the son of Goddess Uma); lamps lit using cotton wicks soaked in ghee, in the name of Rudrapriya (the one loved by Lord Rudra); twenty-one modaks (fried or steamed stuffed dumplings) in the name of Vighna-nāshaka (the destroyer of Obstacles); twenty-one fresh Bermuda grass strips, while chanting twenty-one Ganadhipa names, and aarti (a religious ritual where in a flame/light is offered to the deity) using camphor. Ten of the twenty-one modaks should be donated to needy people along with dakshina (a token of offering either in money or material gifts) and their blessings are to be accepted.
+If thus done, all the good-intentioned goals and aspirations shall fructify. Earlier, Lord Shiva during the burning of Tripura; King Rāma during the search for his wife, Sīta; Bhagīratha who got the river Gangā to the earth; the Gods and demons during the churning of ocean for Amrita (the elixir of life) and Samba, ailing with leprosy, had performed and gained blessings by observing Varasiddhi Vināyaka Vrata. And thus, Krishna persuaded Yudhishtira to undertake this sacred vow to win back his kingdom.”
+“By observing this vrata, the impoverished gain wealth, the childless beget offspring, a married woman is guaranteed with long companionship, students earn useful knowledge, and a maiden would be blessed with a perfect husband.” Thus, Sage Sūta preaches the other saints about the Varasiddhi Vināyaka Vrata and summarizes that one would befall wrongful accusations if one peeks at the Moon on the fourth day of the bright fortnight in the Bhādrapada month. As a remedy, one must listen to the Syamantakopakhyana (an apologue about a jewel named Syamantaka). Upon hearing this, the other scholarly monks request Sage Sūta to elaborate about the legend behind Syamantaka jewel.
+
+**Syamantakopakhyana (The legend of the Syamantaka Jewel)**
+A very long time ago, Lord Shiva anoints Ganesha as the chief of all Ganas (clan of attendants to Lord Shiva), blesses him with the eight classical siddhis (accomplishments) and buddhi (knowledge) as his two wives in the presence of all the Gods. Lord Brahma further blesses that anyone who offers twenty-one modaks to Lord Ganesha, their hard work shall be fructified with the blessings of the Lord Ganesha. Saying so, Lord Brahma offers twenty-one modaks to Lord Ganesha and seeks blessings to carry on his work of Creation without any impediments. The blissful Ganesha then happens to set off on his vehicle – the mouse along with his two wives, Siddhi and Buddhi on a relaxed vacation.
+As He passed by the haughty Chandra (the Moon personified), who was arrogant of his beauty, in the Chandraloka (the Moon), He was laughed at in a condescending manner by Chandra. The enraged Ganesha curses that his beauty shall wane. Chandra gets terrified of the curse and hides under a lotus. The other Gods found pity and persuaded Chandra to offer respectful apologies to the Lord. Upon doing so, an obliging Ganesha, offered to reduce the gravity of curse and announced that anyone who peeks at Chandra on the fourth day of the bright fortnight in the Bhādrapada month shall be subject to wrongful accusations, and to be released of the perilous bane, one must read or listen to the legend of Syamantaka jewel. Chandra was filled with humility and devotion and observed the Varasiddhi Vināyaka Vrata as a token of gratitude.
+In the Dwapara Yuga, Lord Narayana incarnates as the son of Vasudeva and Devaki, bearing the name Krishna, with a sole intention of relieving the earth of all the evils (and thus reducing the load it bears). Ugrasena’s son Satrājit, a Yadava nobleman prayed ardently to the Sun God. Upon being delighted by his devotion, the Sun God appears in front of him as a dazzling fiery shape. Satrājit requests the Lord to appear in a less blinding form. The Sun God removes the Syamantaka jewel off his neck so as to show His real self with a body like burnished copper and slightly red eyes. Satrājit was elated and offered his greetings and adorations, for which he was gifted with the boon of Syamantaka jewel. He was also apprised that if worn with utter austerity and cleanliness (with respect to both body and mind), the jewel would bestow eight folds of gold each day. When Satrājit returned to Dwāraka with Syamantaka jewel around his neck, people mistook him for the Sun God. He later presented it to his brother Prasena, who was also a ruler of the Yādava province.
+On one such day, Prasena happened to wear the Syamantaka jewel and set off hunting with Krishna and Balarāma. In the forest, Prasena was killed unfortunately by a lion that takes the jewel along with it. However, later, the lion was killed by the king of bears, Jāmbavanta, who adorned this jewel on his daughter, Jāmbavati in his cave.
+At the same time, as Krishna returned to Dwāraka, a wrongful rumour spread across the city like wildfire alleging that Krishna killed Prasena in the forest for the Syamantaka jewel. Krishna having felt miserable at this blame, learnt from Sage Narada that performing Varasiddhi Vināyaka Vrata on the fourth day of the bright fortnight in the Bhādrapada month would liberate him of all the blame. Having followed his instructions, Krishna set off to the forest, tracing the whereabouts of Prasena. The path led him to the traces of Prasena and the lion, both of whom were dead by then, and then to the cave of Jāmbavanta. Krishna discovered the Syamantaka jewel around Jāmbavati. An overjoyed Krishna blew his conch and attracted the attention of Jāmbavanta. A violent war broke out between the two inside the cave for twenty-one days. The people outside the cave almost lost hopes that Krishna would make it alive, while inside the cave Krishna had to engage for a very long time to gradually tire out Jāmbavanta. Eventually, Krishna presents his Rāmāvatāra (incarnation as Lord Rāma) and thus reveals that He is indeed the respected friend of Jāmbavanta from the Treta Yuga. Jāmbavanta then, graciously accepts defeat and offers his daughter Jāmbavati in marriage to Krishna. And then, along with her even the Syamantaka jewel makes its way to Dwāraka. Krishna goes on to return the jewel to Satrājit, who upon knowing the truth, offers his daughter Satyabhāma in marriage to Krishna and lets him keep the Syamantaka jewel. Thus, the peeking of Chandra on that particular day and the corresponding observance of Varasiddhi Vināyaka Vrata absolved Krishna off the wrongful accusation.
+Similarly, anyone who happens to catch a glimpse of the moon on the fourth day of Bhādrapada month, during the bright fortnight can chant the following verse to be free of the consequences:
+
+*Simhah Prasenamavadhit Simho Jambavata Hatah |*
+*Sukumaraka Ma Rodih Tava-Hyesha-Shyamantakah ||*
+
+A lion killed Prasena; the lion was killed by Jambavan.
+Don't cry, O dear child! This Syamantaka jewel is yours.
+
+**Udvasana**
+(Conclusion)
+I invoke the Lord to return to his abode.
+Om Sri Vara Siddhi Vinayakaya Namah.
+
+**Mangalam**
+Jaya Mangalam Nitya Shubha Mangalam.
 `
 };
+
+const ganeshStotramTelugu = `
+(శ్రీ విఘ్నేశ్వర షోడశనామ స్తోత్రం)
+సుముఖశ్చైకదంతశ్చ కపిలో గజకర్ణికః ।
+లంబోదరశ్చ వికటో విఘ్నరాజో గణాధిపః ॥ 1 ॥
+
+ధూమకేతు-ర్గణాధ్యక్షో ఫాలచంద్రో గజాననః ।
+వక్రతుండ-శ్శూర్పకర్ణో హేరంబ-స్స్కందపూర్వజః ॥ 2 ॥
+
+షోడశైతాని నామాని యః పఠే-చ్ఛృణు-యాదపి ।
+విద్యారంభే వివాహే చ ప్రవేశే నిర్గమే తథా ।
+సంగ్రామే సర్వ కార్యేషు విఘ్నస్తస్య న జాయతే ॥ 3 ॥
+
+అభీప్సితార్థ సిద్ధ్యర్థం పూజితో యస్సురైరపి ।
+సర్వవిఘ్నచ్చిదేతస్మై శ్రీ మహాగణాధిపతయే నమః ॥
+
+(సంకష్ట నాశన గణేశ స్తోత్రం)
+ప్రణమ్య శిరసా దేవం గౌరీపుత్రం వినాయకమ్ ।
+భక్తావాసం స్మరేన్నిత్యం ఆయుఃకామార్థసిద్ధయే ॥ 1 ॥
+
+ప్రథమం వక్రతుండం చ ఏకదంతం ద్వితీయకమ్ ।
+తృతీయం కృష్ణపింగాక్షం గజవక్త్రం చతుర్థకమ్ ॥ 2 ॥
+
+లంబోదరం పంచమం చ షష్ఠం వికటమేవ చ ।
+సప్తమం విఘ్నరాజం చ ధూమ్రవర్ణం తథాష్టమమ్ ॥ 3 ॥
+
+నవమం ఫాలచంద్రం చ దశమం తు వినాయకమ్ ।
+ఏకాదశం గణపతిం ద్వాదశం తు గజాననమ్ ॥ 4 ॥
+
+ద్వాదశైతాని నామాని త్రిసంధ్యం యః పఠేన్నరః ।
+న చ విఘ్నభయం తస్య సర్వసిద్ధికరం పరమ్ ॥ 5 ॥
+
+విద్యార్థీ లభతే విద్యాం ధనార్థీ లభతే ధనమ్ ।
+పుత్రార్థీ లభతే పుత్రాన్మోక్షార్థీ లభతే గతిమ్ ॥ 6 ॥
+
+జపేద్గణపతిస్తోత్రం షడ్భిర్మాసైః ఫలం లభేత్ ।
+సంవత్సరేణ సిద్ధిం చ లభతే నాత్ర సంశయః ॥ 7 ॥
+
+అష్టభ్యో బ్రాహ్మణేభ్యశ్చ లిఖిత్వా యః సమర్పయేత్ ।
+తస్య విద్యా భవేత్సర్వా గణేశస్య ప్రసాదతః ॥ 8 ॥
+
+ఇతి శ్రీనారదపురాణే సంకష్టనాశనం నామ గణేశ స్తోత్రమ్ ॥
+`;
+
+const ganeshStotramEnglish = `
+**Sri Vighneshwara Shodasha Nama Stotram**
+Sumukhashchaikadantashcha Kapilo Gajakarnikah |
+Lambodarashcha Vikato Vighnarajo Ganadhipah || 1 ||
+
+Dhumaketurganadhyaksho Phalachandro Gajananah |
+Vakratundashshurpakarno Herambasskandapurvajah || 2 ||
+
+Shodashaitani Namani Yah Pathecchrunuyadapi |
+Vidyarambhe Vivahe Cha Praveshe Nirgame Tatha |
+Sangrame Sarva Karyeshu Vighnastasya Na Jayate || 3 ||
+
+Abhipsitartha Siddhyartham Pujito Yassurairapi |
+Sarvavighnacchidetasmai Sri Mahaganadhipataye Namah ||
+
+**Sankata Nashana Ganesha Stotram**
+Pranamya Shirasa Devam Gauri Putram Vinayakam |
+Bhakthavasam Smarennityam Ayuh Kamartha Siddhaye || 1 ||
+
+Prathamam Vakratundam Cha Ekadantam Dvitiyakam |
+Trutiyam Krishna Pingaksham Gajavaktram Chaturthakam || 2 ||
+
+Lambodaram Panchamam Cha Shashtham Vikatameva Cha |
+Saptamam Vighnarajam Cha Dhumravarnam Tathashtamam || 3 ||
+
+Navamam Phalachandram Cha Dashamam Tu Vinayakam |
+Ekadasham Ganapathim Dvadasham Tu Gajanam || 4 ||
+
+Dvadashaitani Namani Trisandhyam Yah Pathennarah |
+Na Cha Vighnabhayam Tasya Sarvasiddhikaram Param || 5 ||
+
+Vidyarthi Labhate Vidyam Dhanarthi Labhate Dhanam |
+Putrarthi Labhate Putran Moksharthi Labhate Gatim || 6 ||
+
+Japedganapati Stotram Shadbhir-masaih Phalam Labhet |
+Samvatsarena Siddhim Cha Labhate Natra Samshayah || 7 ||
+
+Ashtabhyo Brahmanebhyashcha Likhitva Yah Samarpayet |
+Tasya Vidya Bhavetsarva Ganeshasya Prasadatah || 8 ||
+
+Iti Sri Narada Purane Sankashta Nashanam Nama Ganesha Stotram ||
+`;
+
+const stotrams = [
+    {
+        id: 'ayyappa-stotram',
+        title: {
+            english: 'Ayyappa Stotram',
+            telugu: 'అయ్యప్ప స్తోత్రం'
+        },
+        description: {
+            english: 'Divine Chants',
+            telugu: 'స్తోత్రం'
+        },
+        image: 'images/logo/ayyappa_logo.png',
+        content: {
+            english: englishSlogans.map(line => `<p>${line}</p>`).join(''),
+            telugu: teluguSlogans.map(line => `<p>${line}</p>`).join('')
+        }
+    },
+    {
+        id: 'ganesh-stotram',
+        title: {
+            english: 'Ganesh Stotram',
+            telugu: 'గణేశ స్తోత్రం'
+        },
+        description: {
+            english: 'Sankata Nashana Stotram',
+            telugu: 'సంకష్ట నాశన గణేశ స్తోత్రం'
+        },
+        image: 'images/logo/Ganesh_logo.png',
+        content: {
+            english: ganeshStotramEnglish.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').split('\n').map(line => line.trim() ? `<p>${line}</p>` : '').join(''),
+            telugu: ganeshStotramTelugu.split('\n').map(line => line.trim() ? `<p>${line}</p>` : '').join('')
+        }
+    }
+];
