@@ -195,6 +195,18 @@ class PradakshinaEngine {
                 if (window.triggerHaptic) {
                     window.triggerHaptic([20]);
                 }
+
+                // Gold flash animation on the card
+                if (checkbox.checked) {
+                    const stepEl = checkbox.closest('.step');
+                    if (stepEl) {
+                        stepEl.classList.remove('just-checked');
+                        // Force reflow to restart animation
+                        void stepEl.offsetWidth;
+                        stepEl.classList.add('just-checked');
+                        setTimeout(() => stepEl.classList.remove('just-checked'), 650);
+                    }
+                }
             });
 
             const checkboxWrapper = document.createElement('div');
