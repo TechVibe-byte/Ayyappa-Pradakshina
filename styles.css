@@ -12,6 +12,8 @@ body {
     /* Context for particles */
     z-index: 1;
     /* Establish stacking context */
+    overscroll-behavior-y: none;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .container {

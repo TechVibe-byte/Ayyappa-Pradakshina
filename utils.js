@@ -324,6 +324,80 @@ function initWakeLock() {
     requestWakeLock();
 }
 
+function initInstallPrompt() {
+    let deferredPrompt;
+    
+    // Check if prompt was dismissed previously
+    if (localStorage.getItem('pwaPromptDismissed')) return;
+
+    // Create prompt UI
+    const promptContainer = document.createElement('div');
+    promptContainer.id = 'pwa-install-prompt';
+    promptContainer.innerHTML = `
+        <div style="display:flex; align-items:center; gap: 10px;">
+            <img src="images/app_icon.png" width="40" height="40" style="border-radius: 8px;" alt="Icon" onerror="this.src='./images/logo/PRADAKSHINA_LOGO.png'">
+            <div style="flex:1;">
+                <h4 style="margin:0; color:#fff; font-size:14px;">Install SADHANA</h4>
+                <p style="margin:2px 0 0; color:#bbb; font-size:11px;">Add to Home Screen for a seamless App experience.</p>
+            </div>
+            <button id="pwa-install-btn" style="background:#ffb74d; color:#121212; border:none; border-radius:16px; padding:6px 12px; font-weight:bold; font-size:12px; cursor:pointer;">Install</button>
+            <button id="pwa-close-btn" style="background:transparent; color:#888; border:none; font-size:20px; cursor:pointer;">&times;</button>
+        </div>
+    `;
+    
+    // Styling
+    Object.assign(promptContainer.style, {
+        position: 'fixed',
+        bottom: '-150px', // Hidden initially
+        left: '50%',
+        transform: 'translateX(-50%)',
+        width: '90%',
+        maxWidth: '400px',
+        backgroundColor: 'rgba(30,30,30,0.98)',
+        backdropFilter: 'blur(10px)',
+        border: '1px solid rgba(255,255,255,0.1)',
+        padding: '12px',
+        borderRadius: '12px',
+        boxShadow: '0 10px 25px rgba(0,0,0,0.5)',
+        zIndex: '3000',
+        transition: 'bottom 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
+        boxSizing: 'border-box',
+        fontFamily: 'inherit'
+    });
+
+    document.body.appendChild(promptContainer);
+
+    window.addEventListener('beforeinstallprompt', (e) => {
+        // Prevent Chrome 67 and earlier from automatically showing the prompt
+        e.preventDefault();
+        // Stash the event so it can be triggered later.
+        deferredPrompt = e;
+        // Update UI to notify the user they can add to home screen
+        setTimeout(() => {
+            // Slide up, avoiding the bottom nav bar (adjust height accordingly)
+            promptContainer.style.bottom = '85px'; 
+        }, 1500); // Small delay to not overwhelm on initial load
+    });
+
+    document.getElementById('pwa-install-btn').addEventListener('click', async () => {
+        if (!deferredPrompt) return;
+        // Hide our user interface that shows our A2HS button
+        promptContainer.style.bottom = '-150px';
+        // Show the prompt
+        deferredPrompt.prompt();
+        // Wait for the user to respond to the prompt
+        const { outcome } = await deferredPrompt.userChoice;
+        console.log(`User response to the install prompt: ${outcome}`);
+        // We've used the prompt, and can't use it again
+        deferredPrompt = null;
+    });
+
+    document.getElementById('pwa-close-btn').addEventListener('click', () => {
+        promptContainer.style.bottom = '-150px';
+        localStorage.setItem('pwaPromptDismissed', 'true');
+    });
+}
+
 
 // Auto-initialize when file is loaded
 document.addEventListener('DOMContentLoaded', () => {
@@ -334,4 +408,5 @@ document.addEventListener('DOMContentLoaded', () => {
     initSwipeGestures();
     initHaptics();
     initWakeLock();
+    initInstallPrompt();
 });
