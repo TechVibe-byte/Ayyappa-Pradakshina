@@ -2235,3 +2235,85 @@ body:not(.dark-mode) .celebration-close-btn {
     color: #333;
     border-color: #ccc;
 }
+
+/* =========================================
+   STOTRAM MODAL ENHANCEMENTS
+   ========================================= */
+.stotram-modal-content {
+    background: linear-gradient(145deg, #1e1e1e, #2a2a2a) !important;
+    border: 2px solid #ffb74d !important;
+    box-shadow: 0 0 30px rgba(255, 183, 77, 0.2), inset 0 0 20px rgba(255, 183, 77, 0.05) !important;
+    border-radius: 16px !important;
+    text-align: center;
+}
+
+body:not(.dark-mode) .stotram-modal-content {
+    background: linear-gradient(145deg, #fff, #fef8f0) !important;
+    border: 2px solid #d2691e !important;
+    box-shadow: 0 0 30px rgba(210, 105, 30, 0.2), inset 0 0 20px rgba(210, 105, 30, 0.05) !important;
+}
+
+.stotram-modal-title {
+    font-family: 'Roboto Slab', serif;
+    color: #ffb74d;
+    font-size: 2rem;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    border-bottom: 1px solid rgba(255, 183, 77, 0.3);
+    padding-bottom: 1rem;
+}
+
+body:not(.dark-mode) .stotram-modal-title {
+    color: #d2691e;
+    text-shadow: none;
+    border-bottom: 1px solid rgba(210, 105, 30, 0.3);
+}
+
+.stotram-content-beautiful {
+    max-height: 60vh;
+    overflow-y: auto;
+    padding: 0.5rem;
+}
+
+/* Hide scrollbar for clean look but allow scrolling */
+.stotram-content-beautiful::-webkit-scrollbar {
+    width: 6px;
+}
+.stotram-content-beautiful::-webkit-scrollbar-track {
+    background: transparent;
+}
+.stotram-content-beautiful::-webkit-scrollbar-thumb {
+    background: rgba(255, 183, 77, 0.3);
+    border-radius: 4px;
+}
+
+.stotram-content-beautiful p {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: #e0e0e0;
+    margin: 0 0 0.8rem 0;
+    font-family: 'Roboto Slab', serif;
+    padding: 0.8rem;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-align: center;
+}
+
+.stotram-content-beautiful p:last-child {
+    margin-bottom: 0;
+}
+
+.stotram-content-beautiful p:hover {
+    background-color: rgba(255, 183, 77, 0.1);
+    transform: scale(1.02);
+}
+
+body:not(.dark-mode) .stotram-content-beautiful p {
+    color: #333;
+}
+
+body:not(.dark-mode) .stotram-content-beautiful p:hover {
+    background-color: rgba(210, 105, 30, 0.08);
+}

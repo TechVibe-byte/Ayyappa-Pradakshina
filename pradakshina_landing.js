@@ -27,10 +27,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Specific override for page title in Pradakshina page
         if (lang === 'telugu') {
-            els.appTitle.textContent = "ప్రదక్షిణ";
+            els.appTitle.textContent = "ప్రదక్షిణ & జపం";
             els.subtitle.textContent = "ప్రతి అడుగులో గణన - ప్రతి మంత్రంలో స్మరణ";
         } else {
-            els.appTitle.textContent = "PRADAKSHINA";
+            els.appTitle.textContent = "PRADAKSHINA & JAPA";
             els.subtitle.textContent = "Count Every Step, Chant Every Mantra";
         }
 

@@ -379,21 +379,21 @@ const homeTranslations = {
     english: {
         appTitle: "SADHANA",
         subtitle: "Select your path of devotion",
-        ayyappaCardTitle: "AYYAPPA PRADAKSHINA",
+        ayyappaCardTitle: "AYYAPPA",
         ayyappaCardDesc: "Om Sri Swamiye Saranam Ayyappa",
-        hanumanCardTitle: "HANUMAN PRADAKSHINA",
+        hanumanCardTitle: "HANUMAN",
         hanumanCardDesc: "Jai Bajrangbali",
-        saiCardTitle: "SAI BABA PRADAKSHINA",
+        saiCardTitle: "SAI BABA",
         saiCardDesc: "Om Sai Ram",
-        ramCardTitle: "SHRI RAM PRADAKSHINA",
+        ramCardTitle: "SHRI RAM",
         ramCardDesc: "Shri Ram Jay Ram Jay Jay Ram",
         mantraCardTitle: "MANTRA JAPA",
         mantraCardDesc: "Divine Chants",
         poojaCardTitle: "POOJA",
-        poojaCardDesc: "Worship Procedures",
+        poojaCardDesc: "Coming Soon",
         ganeshPoojaTitle: "Ganesha Chaturthi Pooja Vidhanam & Vrata Kalpam",
         ganeshPoojaDesc: "Complete Pooja Procedure",
-        pradakshinaCardTitle: "PRADAKSHINA",
+        pradakshinaCardTitle: "PRADAKSHINA & JAPA",
         pradakshinaCardDesc: "Count Every Step, Chant Every Mantra",
         stotramCardTitle: "STOTRAM",
         stotramCardDesc: "Stotram"
@@ -401,21 +401,21 @@ const homeTranslations = {
     telugu: {
         appTitle: "సాధన",
         subtitle: "మీ భక్తి మార్గాన్ని ఎంచుకోండి",
-        ayyappaCardTitle: "అయ్యప్ప ప్రదక్షిణ",
+        ayyappaCardTitle: "అయ్యప్ప",
         ayyappaCardDesc: "ఓం శ్రీ స్వామియే శరణం అయ్యప్ప",
-        hanumanCardTitle: "హనుమాన్ ప్రదక్షిణ",
+        hanumanCardTitle: "హనుమాన్",
         hanumanCardDesc: "జై బజరంగబలి",
-        saiCardTitle: "సాయి బాబా ప్రదక్షిణ",
+        saiCardTitle: "సాయి బాబా",
         saiCardDesc: "ఓం సాయి రామ్",
-        ramCardTitle: "శ్రీ రామ్ ప్రదక్షిణ",
+        ramCardTitle: "శ్రీ రామ్",
         ramCardDesc: "శ్రీ రామ్ జయ రామ్ జయ జయ రామ్",
         mantraCardTitle: "మంత్ర జపం",
         mantraCardDesc: "దైవిక శ్లోకాలు",
         poojaCardTitle: "పూజ",
-        poojaCardDesc: "పూజా విధానాలు",
+        poojaCardDesc: "త్వరలో రాబోతుంది",
         ganeshPoojaTitle: "వినాయక చవితి పూజా విధానం & వ్రత కల్పం",
         ganeshPoojaDesc: "పూర్తి పూజా విధానం",
-        pradakshinaCardTitle: "ప్రదక్షిణ",
+        pradakshinaCardTitle: "ప్రదక్షిణ & జపం",
         pradakshinaCardDesc: "ప్రతి అడుగు లెక్కించండి, ప్రతి మంత్రం జపించండి",
         stotramCardTitle: "స్తోత్రం",
         stotramCardDesc: "స్తోత్రం"
@@ -1349,6 +1349,22 @@ const stotrams = [
         content: {
             english: ganeshStotramEnglish.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').split('\n').map(line => line.trim() ? `<p>${line}</p>` : '').join(''),
             telugu: ganeshStotramTelugu.split('\n').map(line => line.trim() ? `<p>${line}</p>` : '').join('')
+        }
+    },
+    {
+        id: 'hayagreeva-stotram',
+        title: {
+            english: 'Hayagreeva Stotram',
+            telugu: 'హయగ్రీవ స్తోత్రం'
+        },
+        description: {
+            english: 'Vidya Mantra',
+            telugu: 'విద్యా మంత్రం'
+        },
+        image: 'images/logo/Hayagreeva_logo.png',
+        content: {
+            english: `<p>Gnananandamayam Devam</p><p>Nirmala Spatikakruthim,</p><p>Aadharam Sarva Vidyaanaam</p><p>Hayagreevam Upasmahe !</p>`,
+            telugu: `<p>జ్ఞాన నందమయం దేవం</p><p>నిర్మల స్పటికాకృతిమ్‌,</p><p>ఆధారం సర్వ విద్యానాం</p><p>హయగ్రీవము పాస్మహే !</p>`
         }
     }
 ];
